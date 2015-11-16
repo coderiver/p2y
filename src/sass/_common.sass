@@ -46,12 +46,62 @@
 // 	+png(blabla)
 // p
 // 	+jpg(bla)
++font("ProximaNova Light", proximanova-light)
++font("ProximaNova Regular", proximanova-reg)
++font("ProximaNova Bold", proximanova-bold)
++font("ProximaNova XBold", proximanova-xbold)
++font("Geometria Bold", geometria-bold)
 
+=light
+	font-family: "ProximaNova Light", Arial, sans-serif
+=reg
+	font-family: "ProximaNova Regular", Arial, sans-serif
+=bold
+	font-family: "ProximaNova Bold", Arial, sans-serif
+=xbold
+	font-family: "ProximaNova XBold", Arial, sans-serif
+=geobold
+	font-family: "Geometria Bold", Arial, sans-serif
 
 body
-	font-family: Arial, sans-serif
-	font-size: 12px
-	line-height: 1.4
+	+reg
+	font-size: 14px
+	line-height: 1.3
 
 
-// common blocks
+//reset
+a
+	text-decoration: none
+
+h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
+	font-weight: normal
+	font-style: normal
+
+//mods
+.btn
+	display: inline-block
+	vertical-align: top
+	position: relative
+	&:active
+		span
+			background-image: linear-gradient(4deg, #ef5c23 0%, #ff0042 100%)
+	&:before
+		content: "" 
+		position: absolute
+		top: 2px
+		left: 5px
+		right: 5px
+		bottom: -2px
+		background: rgba(#f05724, 0.5)
+	span
+		position: relative
+		display: block
+		+geobold
+		font-size: 14px
+		color: #fff
+		line-height: 1
+		padding: 18px 85px 17px
+		background-image: linear-gradient(4deg, #ff0042 0%, #ef5c23 100%)
+		text-transform: uppercase
+		letter-spacing: 0.1em 
+		

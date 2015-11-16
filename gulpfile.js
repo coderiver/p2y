@@ -6,7 +6,10 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('autoprefixer'),
     rigger = require('gulp-rigger'),
-    jade = require('gulp-rigger'),
+    jade = require('gulp-jade'),
+    notify = require('gulp-notify'),
+    plumber = require('gulp-plumber'),
+    changed = require('gulp-changed'),
     spritesmith = require('gulp.spritesmith'),
     browserSync = require("browser-sync"),
     iconfont = require("gulp-iconfont"),
@@ -118,21 +121,21 @@ gulp.task('delete', function (cb) {
 // = gulp-jade
 // = gulp-changed
 // = gulp-plumber
-// gulp.task('jade', function() {
-//     return gulp.src([src.jade + '/*.jade', '!' + src.jade + '/_*.jade', '!' + src.jade + '/includes/*.jade'])
-//         .pipe(plumber({errorHandler: notify.onError(function(error){return error.message;})}))
-//         .pipe(changed(dest.html, {extension: '.html'}))
-//         .pipe(jade({pretty: true}))
-//         .pipe(gulp.dest(dest.html));
-// });
+gulp.task('jade', function() {
+    return gulp.src([src.jade + '/*.jade', '!' + src.jade + '/_*.jade', '!' + src.jade + '/includes/*.jade'])
+        .pipe(plumber({errorHandler: notify.onError(function(error){return error.message;})}))
+        .pipe(changed(dest.html, {extension: '.html'}))
+        .pipe(jade({pretty: true}))
+        .pipe(gulp.dest(dest.html));
+});
 
-// //compile all jade files
-// gulp.task('jade-all', function() {
-//     return gulp.src([src.jade + '/*.jade', '!' + src.jade + '/_*.jade', '!' + src.jade + '/includes/*.jade'])
-//         .pipe(plumber({errorHandler: notify.onError(function(error){return error.message;})}))
-//         .pipe(jade({pretty: true}))
-//         .pipe(gulp.dest(dest.html));
-// });
+//compile all jade files
+gulp.task('jade-all', function() {
+    return gulp.src([src.jade + '/*.jade', '!' + src.jade + '/_*.jade', '!' + src.jade + '/includes/*.jade'])
+        .pipe(plumber({errorHandler: notify.onError(function(error){return error.message;})}))
+        .pipe(jade({pretty: true}))
+        .pipe(gulp.dest(dest.html));
+});
 
 
 // icon font
@@ -202,9 +205,11 @@ gulp.task('watch', function() {
     gulp.watch('src/img/*', ['copy']);
     gulp.watch('src/img/svg/*', ['font']);
     gulp.watch(['src/*.html', 'src/partials/*.html'], ['html']);
+    gulp.watch(src.jade + '/**/*.jade', ['jade']);
+    gulp.watch([src.jade + '/_*.jade', src.jade + '/includes/*.jade'], ['jade-all']);
     gulp.watch(src.img + '/icons/*.png', ['sprite']);
 });
 
 
 gulp.task('default', ['browser-sync', 'watch'], function() {});
-gulp.task('build', ['html','font','sprite','copy','js','sass'], function() {});
+gulp.task('build', ['jade-all','font','sprite','copy','js','sass'], function() {});
