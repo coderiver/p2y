@@ -46,6 +46,10 @@
 // 	+png(blabla)
 // p
 // 	+jpg(bla)
+=wo
+	will-change: opacity
+
+
 +font("ProximaNova Light", proximanova-light)
 +font("ProximaNova Regular", proximanova-reg)
 +font("ProximaNova Bold", proximanova-bold)
@@ -104,4 +108,56 @@ h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
 		background-image: linear-gradient(4deg, #ff0042 0%, #ef5c23 100%)
 		text-transform: uppercase
 		letter-spacing: 0.1em 
-		
+
+.input-yellow
+	width: 100%
+	border: 1px solid #e6d971
+	color: #383838
+	font-size: 15px
+	padding: 14px 20px 13px 
+	+reg
+
+.checkbox-yellow
+	position: relative
+	display: inline-block
+	vertical-align: top
+	cursor: pointer
+	user-select: none
+	input
+		position: absolute
+		visibility: hidden
+		opacity: 0
+		top: 0
+		left: 0 
+		&:checked + span
+			i
+				top: 10px
+				visibility: visible
+				opacity: 1
+	span
+		color: #fff600
+		font-size: 15px
+		line-height: 1
+		padding: 7px 0 6px 45px
+		display: inline-block 
+		&:before
+			content: "" 
+			position: absolute
+			top: 0
+			left: 0
+			border: 1px solid #fff600
+			border-radius: 50%
+			width: 28px
+			height: 28px
+		b
+			+bold
+		i
+			font-size: 11px
+			color: #fff
+			position: absolute
+			top: 5px
+			left: 7px
+			visibility: hidden
+			opacity: 0
+			+wo
+			transition: all 0.2s

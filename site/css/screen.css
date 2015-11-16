@@ -19,14 +19,17 @@ div, input, textarea, select, button, h1, h2, h3, h4, h5, h6, a, span, a:focus {
 ul, ol { list-style-type: none; }
 table { border-spacing: 0; border-collapse: collapse; width: 100%; }
 
+html { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+* { -webkit-box-sizing: border-box; box-sizing: border-box; }
+*:before, *:after { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
 @font-face { font-family: "svgfont"; src: url("fonts/svgfont.eot"); src: url("fonts/svgfont.eot?#iefix") format("eot"), url("fonts/svgfont.woff") format("woff"), url("fonts/svgfont.woff2") format("woff2"), url("fonts/svgfont.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 .icon, [class^="icon-"], [class*=" icon-"] { font-family: "svgfont"; font-style: normal; font-weight: normal; text-rendering: auto; speak: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 .icon, [class^="icon-"], [class*=" icon-"] { display: inline-block; }
 
-.icon-sepa:before { content: ""; }
-
-.icon-skrill:before { content: ""; }
+.icon-check-yellow:before { content: ""; }
 
 @font-face { font-family: "ProximaNova Light"; src: url("fonts/proximanova-light.eot"); src: url("fonts/proximanova-light.eot?#iefix") format("embedded-opentype"), url("fonts/proximanova-light.woff2") format("woff2"), url("fonts/proximanova-light.woff") format("woff"), url("fonts/proximanova-light.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 @font-face { font-family: "ProximaNova Regular"; src: url("fonts/proximanova-reg.eot"); src: url("fonts/proximanova-reg.eot?#iefix") format("embedded-opentype"), url("fonts/proximanova-reg.woff2") format("woff2"), url("fonts/proximanova-reg.woff") format("woff"), url("fonts/proximanova-reg.ttf") format("truetype"); font-weight: normal; font-style: normal; }
@@ -44,15 +47,47 @@ h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td { font-weight: normal; font-sty
 .btn:before { content: ""; position: absolute; top: 2px; left: 5px; right: 5px; bottom: -2px; background: rgba(240, 87, 36, 0.5); }
 .btn span { position: relative; display: block; font-family: "Geometria Bold", Arial, sans-serif; font-size: 14px; color: #fff; line-height: 1; padding: 18px 85px 17px; background-image: -webkit-linear-gradient(86deg, #ff0042 0%, #ef5c23 100%); background-image: linear-gradient(4deg, #ff0042 0%, #ef5c23 100%); text-transform: uppercase; letter-spacing: 0.1em; }
 
+.input-yellow { width: 100%; border: 1px solid #e6d971; color: #383838; font-size: 15px; padding: 14px 20px 13px; font-family: "ProximaNova Regular", Arial, sans-serif; }
+
+.checkbox-yellow { position: relative; display: inline-block; vertical-align: top; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.checkbox-yellow input { position: absolute; visibility: hidden; opacity: 0; top: 0; left: 0; }
+.checkbox-yellow input:checked + span i { top: 10px; visibility: visible; opacity: 1; }
+.checkbox-yellow span { color: #fff600; font-size: 15px; line-height: 1; padding: 7px 0 6px 45px; display: inline-block; }
+.checkbox-yellow span:before { content: ""; position: absolute; top: 0; left: 0; border: 1px solid #fff600; -webkit-border-radius: 50%; border-radius: 50%; width: 28px; height: 28px; }
+.checkbox-yellow span b { font-family: "ProximaNova Bold", Arial, sans-serif; }
+.checkbox-yellow span i { font-size: 11px; color: #fff; position: absolute; top: 5px; left: 7px; visibility: hidden; opacity: 0; will-change: opacity; -webkit-transition: all 0.2s; transition: all 0.2s; }
+
 .l { *zoom: 1; }
 .l:after { content: " "; display: table; clear: both; }
 .l .l-col1 { float: left; width: 20%; }
 .l .l-col2 { float: right; width: 70%; }
+
+.header__inner { max-width: 960px; margin: 0 auto; padding: 0 5px 0 35px; *zoom: 1; }
+.header__inner:after { content: " "; display: table; clear: both; }
+
+.nav { float: right; }
+.nav a { margin: 0 25px; display: inline-block; vertical-align: top; color: #fff; font-size: 12px; line-height: 20px; text-transform: uppercase; letter-spacing: 0.1em; position: relative; padding: 45px 0 30px; }
+.nav a:hover { text-decoration: underline; }
+.nav a.is-active { font-family: "ProximaNova XBold", Arial, sans-serif; }
+.nav a.is-active:hover { text-decoration: none; }
+.nav a.is-active:before { height: 4px; }
+.nav a:before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 0; -webkit-transition: height 0.2s ease; transition: height 0.2s ease; background: #fff600; }
+
+.logo { float: left; *zoom: 1; max-width: 400px; margin: 28px 0 0; }
+.logo:after { content: " "; display: table; clear: both; }
+.logo h1 { font-family: "ProximaNova XBold", Arial, sans-serif; font-size: 38px; color: #fff600; line-height: 30px; float: left; padding: 6px 17px 2px 0; border-right: 1px solid #fff600; margin: 0 17px 0 0; }
+.logo p { overflow: hidden; font-family: "ProximaNova Light", Arial, sans-serif; color: #fff; font-size: 14px; line-height: 16px; padding: 4px 0 2px; }
+
+.top { background: url(../img/main-v2.jpg); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; min-height: 800px; position: relative; }
+
+.step { text-align: center; }
+.step_one { padding: 200px 0 0; }
+.step__title { font-size: 16px; line-height: 1; color: #fff; font-family: "ProximaNova Bold", Arial, sans-serif; text-transform: uppercase; margin-bottom: 30px; }
+.step__block { background: white; border: 1px solid #fff600; margin: 0 auto 30px; }
+.step__input { padding: 30px 39px 36px 34px; max-width: 415px; }
+.step__btn { padding: 5px 0 30px; }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px){
  *{ -webkit-text-size-adjust: none; } }
-@media only screen and (max-width: 1024px){
- div{ display: block; }
- p{ background: red; } }
 
 
 

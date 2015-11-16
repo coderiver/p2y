@@ -1,9 +1,86 @@
-// Normally mainpage styles
-// body
-// 	+s(coderiver)
-div
-	+r(1024)
-		display: block
-p
-	+r(1024)
-		background: red
+.header
+	&__inner
+		max-width: 960px
+		margin: 0 auto 
+		padding: 0 5px 0 35px
+		+clr
+
+.nav
+	float: right
+	a
+		margin: 0 25px
+		display: inline-block
+		vertical-align: top 
+		color: #fff
+		font-size: 12px
+		line-height: 20px
+		text-transform: uppercase
+		letter-spacing: 0.1em 
+		position: relative
+		padding: 45px 0 30px 
+		&:hover
+			text-decoration: underline
+		&.is-active
+			+xbold
+			&:hover
+				text-decoration: none
+			&:before
+				height: 4px
+		&:before
+			content: "" 
+			position: absolute
+			left: 0
+			right: 0
+			top: 0
+			height: 0
+			transition: height 0.2s ease
+			background: #fff600 
+
+.logo
+	float: left
+	+clr
+	max-width: 400px
+	margin: 28px 0 0 
+	h1
+		+xbold
+		font-size: 38px
+		color: #fff600
+		line-height: 30px
+		float: left
+		padding: 6px 17px 2px 0
+		border-right: 1px solid #fff600
+		margin: 0 17px 0 0 
+	p
+		overflow: hidden
+		+light
+		color: #fff
+		font-size: 14px
+		line-height: 16px
+		padding: 4px 0 2px
+
+.top
+	background: url(../img/main-v2.jpg)
+	+cover
+	min-height: 800px 
+	position: relative
+
+.step
+	text-align: center
+	&_one
+		padding: 200px 0 0 
+	&__title
+		font-size: 16px
+		line-height: 1
+		color: #fff
+		+bold
+		text-transform: uppercase
+		margin-bottom: 30px
+	&__block
+		background: white
+		border: 1px solid #fff600
+		margin: 0 auto 30px
+	&__input
+		padding: 30px 39px 36px 34px
+		max-width: 415px
+	&__btn
+		padding: 5px 0 30px

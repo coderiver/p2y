@@ -4,4 +4,20 @@ block title
 	title Title of template
 
 block content
-	include ./includes/_header.jade
+	main.main
+		section.top
+			include ./includes/_header.jade
+			.step.step_one
+				h4.step__title Для получения средств укажите номер перевода
+				form.step__form
+					.step__block.step__input
+						input(type="text" placeholder="Номер перевода").input-yellow
+					.step__btn
+						button.btn
+							span Далее
+					label.checkbox-yellow
+						input(type="checkbox")
+						span С 
+							b условиями 
+							| ознакомлен/а
+							i.icon-check-yellow
