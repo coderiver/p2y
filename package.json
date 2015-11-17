@@ -19,6 +19,11 @@
     "gulp-rigger": "^0.5.8",
     "gulp-ruby-sass": "~2.0.3",
     "gulp-sourcemaps": "^1.5.2",
+    "gulp-util": "^3.0.7",
+    "gulp-jade": "*",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-changed": "*",
     "gulp.spritesmith": "^4.1.0",
     "lodash": "^3.10.1",
     "rimraf": "^2.4.3"

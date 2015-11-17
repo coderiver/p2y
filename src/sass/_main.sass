@@ -34,7 +34,7 @@
 			top: 0
 			height: 0
 			transition: height 0.2s ease
-			background: #fff600 
+			background: $yellow
 
 .logo
 	float: left
@@ -44,11 +44,11 @@
 	h1
 		+xbold
 		font-size: 38px
-		color: #fff600
+		color: $yellow
 		line-height: 30px
 		float: left
 		padding: 6px 17px 2px 0
-		border-right: 1px solid #fff600
+		border-right: 1px solid $yellow
 		margin: 0 17px 0 0 
 	p
 		overflow: hidden
@@ -59,6 +59,7 @@
 		padding: 4px 0 2px
 
 .top
+	position: relative
 	background: url(../img/main-v2.jpg)
 	+cover
 	min-height: 800px 
@@ -67,7 +68,7 @@
 .step
 	text-align: center
 	&_one
-		padding: 200px 0 0 
+		padding: 200px 0 0
 	&__title
 		font-size: 16px
 		line-height: 1
@@ -77,10 +78,48 @@
 		margin-bottom: 30px
 	&__block
 		background: white
-		border: 1px solid #fff600
+		border: 1px solid $yellow
 		margin: 0 auto 30px
 	&__input
 		padding: 30px 39px 36px 34px
 		max-width: 415px
 	&__btn
 		padding: 5px 0 30px
+
+.rates
+	padding: 48px 0 51px
+	text-align: center
+	&__in
+		@extend %in-sm
+	&__but
+		margin-top: 30px
+	strong
+		+bold
+	p
+		line-height: 1.8
+
+.answer	
+	padding: 34px 0 50px
+	color: #fff
+	background: url(../img/answer-bg.png) no-repeat 50% 50%
+	background-size: cover
+	&__in
+		@extend %in-sm
+.annex
+	padding: 28px 0
+	text-align: center
+	&__in
+		@extend %in
+	&__row
+		margin-top: 20px
+		font-size: 0
+	.app
+		margin-left: 16px
+		&:first-child
+			margin-left: 0
+.question
+	padding: 40px 0 49px
+	&__in
+		@extend %in
+	.title
+		margin-bottom: 22px
