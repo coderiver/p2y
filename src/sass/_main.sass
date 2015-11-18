@@ -19,22 +19,21 @@
 		position: relative
 		padding: 45px 0 30px 
 		&:hover
-			text-decoration: underline
+			&:before
+				background: $yellow
 		&.is-active
 			+xbold
-			&:hover
-				text-decoration: none
 			&:before
-				height: 4px
+				background: $yellow
 		&:before
 			content: "" 
 			position: absolute
 			left: 0
 			right: 0
 			top: 0
-			height: 0
-			transition: height 0.2s ease
-			background: $yellow
+			height: 4px
+			transition: background .2s
+			background: transparent
 
 .logo
 	float: left
@@ -68,7 +67,15 @@
 .step
 	text-align: center
 	&_one
-		padding: 200px 0 0
+		margin-top: 200px
+		.step__block
+			padding: 30px 39px 36px 34px
+			max-width: 415px
+	&_two
+		margin: 110px auto 0
+		width: 316px
+		.btn + .btn
+			margin-top: 30px
 	&__title
 		font-size: 16px
 		line-height: 1
@@ -80,11 +87,143 @@
 		background: white
 		border: 1px solid $yellow
 		margin: 0 auto 30px
-	&__input
-		padding: 30px 39px 36px 34px
-		max-width: 415px
 	&__btn
 		padding: 5px 0 30px
+	&__row
+		padding: 19px 10px
+		font-size: 15px
+		border-bottom: 1px solid $d_gray
+		box-shadow: inset 0 1px 0 #fff
+		&.is-blue
+			padding: 14px 10px 30px
+			background: $l_blue
+	&__code,
+	&__card
+		margin-top: 7px
+		+bold
+	&__in
+		margin: 0 auto
+		width: 873px
+
+.cards
+	+clr
+	&__col
+		float: left
+		margin-left: 4%
+		width: 48%
+		text-align: left
+		&:first-child
+			text-align: right
+			margin-left: 0
+	.title-middle
+		margin-bottom: 20px
+
+.card
+	text-align: left
+	background: white
+	border: 1px solid $yellow
+	&__in
+		padding: 32px 39px 32px 32px
+	&__row
+		position: relative
+		margin-top: 18px
+		font-size: 0
+		+clr
+		&:first-child
+			margin-top: 0
+	&__month,
+	&__year,
+	&__cvc
+		float: left
+		width: 91px
+	&__year
+		margin-left: 18px
+	&__code
+		float: left
+		width: 128px
+	&__cvc
+		position: relative
+		float: right
+	&__info
+		position: absolute
+		top: -12px
+		right: -7px
+	&__icon
+		font-size: 12px
+		color: $turquoise
+		+reg
+		background-color: transparent
+		&:hover
+			& + .card__block
+				opacity: 1
+				visibility: visible
+				z-index: 2
+	&__block
+		position: absolute
+		left: -80px
+		top: 100%
+		margin-top: 7px
+		padding: 7px 14px
+		width: 340px
+		font-size: 10px
+		visibility: hidden
+		opacity: 0
+		z-index: -1
+		transition: visibility .2s, opacity .2s
+		border: 1px solid $bd-bord-blue
+		background: #fff
+	&__label
+		position: absolute
+		top: 5px
+		left: 20px
+		color: $c_inp-lab
+		font-size: 10px
+		z-index: 1
+	&__question
+		margin: -2px 0 0 10px
+		color: $c_blue
+		font-size: 10px
+		line-height: 1
+		transition: border-color .2s
+		border-bottom: 1px solid transparent
+		vertical-align: top
+		display: inline-block
+		&:hover
+			border-color: $c_blue
+	&__cont
+		padding: 32px 39px 44px 32px
+		display: none
+	&__ul
+		width: 100%
+		font-size: 12px
+		display: table
+		li
+			min-width: 136px
+			vertical-align: top
+			transition: background .2s
+			border-left: 1px solid #fff
+			background: $yellow
+			display: table-cell
+			&:hover,
+			&.is-active
+				background: $l_yellow
+			&:first-child
+				border-left: none
+				a
+					padding-left: 35px
+				.icon
+					left: 9px
+		a
+			position: relative
+			padding: 7px 45px 10px 30px
+			height: 53px
+			color: $c_tab-card
+			display: block
+			.icon
+				position: absolute
+				top: 11px
+				left: 11px
+
 
 .rates
 	padding: 48px 0 51px

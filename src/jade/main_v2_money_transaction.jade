@@ -5,34 +5,70 @@ block title
 
 block content
 	section.top
-		include ./includes/_header.jade
-		.step.step_one
-			h4.step__title Для получения средств укажите номер перевода
-			form.step__form
-				.step__block
-					input(type="text" placeholder="Номер перевода").input-yellow
-				.step__btn
-					button.btn.btn_shad(type="submit")
-						span Далее
-				label.checkbox-yellow
-					input(type="checkbox")
-					span С 
-						b условиями 
-						| ознакомлен/а
-						i.icon-check-yellow
-		.step.step_two(style="display: none;")
-			h4.step__title ПРОВЕРЬТЕ ПРАВИЛЬНОСТЬ ДАННЫХ
-			.step__block
-				form.step__form
-					.step__row
-						p Код операции
-						.step__code 768996
-					.step__row.is-blue
-						p Карта получателя
-						.step__card 6792 9827 2890 1765
-			button.btn.btn_bord-red(type="button") РЕДАКТИРОВАТЬ
-			button.btn.btn_shad(type="submit") 
-				span ПОДТВЕРДИТЬ
+		include ./includes/_header_send.jade
+		.step
+			.step__in
+				form
+					.cards
+						.cards__col
+							h4.title-middle КАРТА ОТПРАВИТЕЛЯ
+							.card
+								.card__in
+									.card__row
+										input.input(type="text" placeholder="Номер карты")
+									.card__row
+										.card__month
+											input.input(type="text" placeholder="Месяц")
+										.card__year
+											input.input(type="text" placeholder="Год")
+										.card__cvc
+											input.input(type="text" placeholder="CVC")
+											.card__info
+												button.card__icon ?
+												.card__block 
+													|CVV-код – это трехзначный код для проверки подлинности Вашей карты при оплате через интернет и других видах операций. 
+													br
+													|Код CVV можно найти на обратной стороне карты – это последние 3 цифры из семизначного числа рядом с местом для подписи, которые, как правило, визуально отделены от всего числа.
+									.card__row
+										.card__label ваш номер телефона
+										input.input(type="text" placeholder="+38")
+						.cards__col
+							h4.title-middle ДАННЫЕ ПОЛУЧАТЕЛЯ
+							.card.js-tab-group
+								.card__cont.js-tab-cont.js-tab1
+									.card__row
+										input.input(type="text" placeholder="Номер карты")
+									.card__row
+										.card__code
+											input.input(type="text" placeholder="Промо-код")
+										a.card__question(href="#") как получить?
+								.card__cont.js-tab-cont.js-tab2
+									.card__row
+										input.input(type="text" placeholder="Номер телефона")
+									.card__row
+										.card__code
+											input.input(type="text" placeholder="Промо-код")
+										a.card__question(href="#") как получить?
+								.card__cont.js-tab-cont.js-tab3
+									.card__row
+										input.input(type="text" placeholder="Email-адрес")
+									.card__row
+										.card__code
+											input.input(type="text" placeholder="Промо-код")
+										a.card__question(href="#") как получить?
+								ul.card__ul.js-tab
+									li
+										a(href="js-tab1")
+											.icon.icon-card
+											span на карту
+									li
+										a(href="js-tab2")
+											.icon.icon-numb
+											span по номеру телефона
+									li
+										a(href="js-tab3")
+											.icon.icon-email
+											span по email
 	hr.line 
 	section.rates
 		.rates__in

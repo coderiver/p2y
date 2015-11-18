@@ -54,6 +54,7 @@
 +font("ProximaNova Regular", proximanova-reg)
 +font("ProximaNova Bold", proximanova-bold)
 +font("ProximaNova XBold", proximanova-xbold)
++font("ProximaNova-Black", ProximaNova-Black)
 +font("Geometria Bold", geometria-bold)
 
 =light
@@ -64,6 +65,8 @@
 	font-family: "ProximaNova Bold", Arial, sans-serif
 =xbold
 	font-family: "ProximaNova XBold", Arial, sans-serif
+=black
+	font-family: "ProximaNova-Black", Arial, sans-serif
 =geobold
 	font-family: "Geometria Bold", Arial, sans-serif
 
@@ -84,10 +87,47 @@ h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
 
 // variables
 $yellow: #fff600
+$l_yellow: #fffb86
 $green: #00ca7a
 $blue: #00c2fd
+$d_blue: #1e2e5d
+$l_blue: #f9faff
 $l_green: #00e0bf
+$turquoise: #00d9cd
 $gray: #d2d2d2
+$d_gray: #f4f5f7
+$red: #ff322c
+
+$c_input: #353535
+$c_inp-lab: #c3c3c3
+$c_tab-card: $c_input
+$c_blue: #3276fb
+
+$bg_f: #335fa2
+$bg_tw: #24a7df
+$bg_in: #006b9c
+$bg_g: #de4d3a
+
+$bd-input: #dedddd
+$bd-bord-blue: #00ceff
+
+// icons
+.icon
+	display: inline-block
+	&-f
+		+s(f)
+	&-tw
+		+s(tw)
+	&-in
+		+s(in)
+	&-g
+		+s(g)
+	&-card
+		+s(card)
+	&-numb
+		+s(numb)
+	&-email
+		+s(email)
 
 // extend
 .in
@@ -143,7 +183,34 @@ $gray: #d2d2d2
 		transition: border-color .2s
 		border: 1px solid $l_green
 		&:hover
-			border-color: $blue
+			border-color: darken($l_green, 20%)
+	&_bord-red
+		padding: 12px 43px
+		font-size: 12px
+		color: #fff
+		+geobold
+		text-transform: uppercase
+		background-color: transparent
+		transition: border-color .2s
+		border: 2px solid $red
+		&:hover
+			border-color: darken($red, 20%)
+
+.input
+	padding: 0 20px
+	height: 47px
+	width: 100%
+	color: $c_input
+	font-size: 15px
+	+reg
+	transform: translate3d(0,0,0)
+	transition: border-color .2s
+	border: 1px solid $bd-input
+	display: block
+	&:focus
+		border-color: $yellow
+		&::placeholder
+			font-size: 0
 
 .input-yellow
 	width: 100%
@@ -223,6 +290,14 @@ $gray: #d2d2d2
 	text-transform: uppercase
 	+bold
 
+// title-middle
+.title-middle
+	font-size: 16px
+	line-height: 1
+	color: #fff
+	+bold
+	text-transform: uppercase
+
 // title-small
 .title-small
 	+bold
@@ -251,3 +326,101 @@ $gray: #d2d2d2
 	&__block
 		padding-bottom: 14px
 		display: none
+
+// footer
+.footer
+	padding: 30px 0 50px
+	&__in
+		@extend %in
+	&__row
+		+clr
+	&__left
+		float: left
+	&__right
+		float: right
+	&__col
+		margin-left: 14px
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+	&__center
+		margin-top: 24px
+		text-align: center
+		font-size: 12px
+	.day
+		line-height: 1
+	strong
+		+bold
+
+// day
+.day
+	color: $yellow
+	font-size: 40px
+	+black
+
+// soc
+.soc
+	font-size: 0
+	&__item
+		margin-left: 15px
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+	&__ico
+		height: 24px
+		width: 24px
+		line-height: 23px
+		text-align: center
+		border-radius: 50%
+		transition: background .2s
+		vertical-align: top
+		display: inline-block
+		&.is-f
+			background: $bg_f
+			&:hover
+				background: darken($bg_f, 20%)
+			.icon
+				margin-left: -1px
+		&.is-tw
+			background: $bg_tw
+			&:hover
+				background: darken($bg_tw, 20%)
+			.icon
+				margin-bottom: -1px
+		&.is-in
+			background: $bg_in
+			&:hover
+				background: darken($bg_in, 20%)
+		&.is-g
+			background: $bg_g
+			&:hover
+				background: darken($bg_g, 20%)
+		.icon
+			vertical-align: middle
+	&__text
+		margin-top: 7px
+		text-align: center
+		color: $d_blue
+		text-align: center
+		font-size: 10px
+
+
+// partners
+.partners
+	margin-top: 50px
+	font-size: 0
+	text-align: center
+	&__item
+		margin-left: 15px
+		height: 39px
+		line-height: 39px
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+	.icon
+		vertical-align: middle
+	img
+		vertical-align: middle

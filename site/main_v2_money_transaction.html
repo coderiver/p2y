@@ -15,39 +15,91 @@
           <div class="header__inner"><a href="#" class="logo">
               <h1>P2Y</h1>
               <p>быстрые и безопасные переводы <br>в гривнах с карту на карту в банках Украины</p></a>
-            <nav class="nav"><a href="#">перевод средств</a><a href="#" class="is-active">получение средств</a></nav>
+            <nav class="nav"><a href="#" class="is-active">перевод средств</a><a href="#">получение средств</a></nav>
           </div>
         </header>
-        <div class="step step_one">
-          <h4 class="step__title">Для получения средств укажите номер перевода</h4>
-          <form class="step__form">
-            <div class="step__block">
-              <input type="text" placeholder="Номер перевода" class="input-yellow">
-            </div>
-            <div class="step__btn">
-              <button type="submit" class="btn btn_shad"><span>Далее</span></button>
-            </div>
-            <label class="checkbox-yellow">
-              <input type="checkbox"><span>С <b>условиями </b>ознакомлен/а<i class="icon-check-yellow"></i></span>
-            </label>
-          </form>
-        </div>
-        <div style="display: none;" class="step step_two">
-          <h4 class="step__title">ПРОВЕРЬТЕ ПРАВИЛЬНОСТЬ ДАННЫХ</h4>
-          <div class="step__block">
-            <form class="step__form">
-              <div class="step__row">
-                <p>Код операции</p>
-                <div class="step__code">768996</div>
-              </div>
-              <div class="step__row is-blue">
-                <p>Карта получателя</p>
-                <div class="step__card">6792 9827 2890 1765</div>
+        <div class="step">
+          <div class="step__in">
+            <form>
+              <div class="cards">
+                <div class="cards__col">
+                  <h4 class="title-middle">КАРТА ОТПРАВИТЕЛЯ</h4>
+                  <div class="card">
+                    <div class="card__in">
+                      <div class="card__row">
+                        <input type="text" placeholder="Номер карты" class="input">
+                      </div>
+                      <div class="card__row">
+                        <div class="card__month">
+                          <input type="text" placeholder="Месяц" class="input">
+                        </div>
+                        <div class="card__year">
+                          <input type="text" placeholder="Год" class="input">
+                        </div>
+                        <div class="card__cvc">
+                          <input type="text" placeholder="CVC" class="input">
+                          <div class="card__info">
+                            <button class="card__icon">?</button>
+                            <div class="card__block">
+                               
+                              CVV-код – это трехзначный код для проверки подлинности Вашей карты при оплате через интернет и других видах операций. <br>Код CVV можно найти на обратной стороне карты – это последние 3 цифры из семизначного числа рядом с местом для подписи, которые, как правило, визуально отделены от всего числа.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card__row">
+                        <div class="card__label">ваш номер телефона</div>
+                        <input type="text" placeholder="+38" class="input">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cards__col">
+                  <h4 class="title-middle">ДАННЫЕ ПОЛУЧАТЕЛЯ</h4>
+                  <div class="card js-tab-group">
+                    <div class="card__cont js-tab-cont js-tab1">
+                      <div class="card__row">
+                        <input type="text" placeholder="Номер карты" class="input">
+                      </div>
+                      <div class="card__row">
+                        <div class="card__code">
+                          <input type="text" placeholder="Промо-код" class="input">
+                        </div><a href="#" class="card__question">как получить?</a>
+                      </div>
+                    </div>
+                    <div class="card__cont js-tab-cont js-tab2">
+                      <div class="card__row">
+                        <input type="text" placeholder="Номер телефона" class="input">
+                      </div>
+                      <div class="card__row">
+                        <div class="card__code">
+                          <input type="text" placeholder="Промо-код" class="input">
+                        </div><a href="#" class="card__question">как получить?</a>
+                      </div>
+                    </div>
+                    <div class="card__cont js-tab-cont js-tab3">
+                      <div class="card__row">
+                        <input type="text" placeholder="Email-адрес" class="input">
+                      </div>
+                      <div class="card__row">
+                        <div class="card__code">
+                          <input type="text" placeholder="Промо-код" class="input">
+                        </div><a href="#" class="card__question">как получить?</a>
+                      </div>
+                    </div>
+                    <ul class="card__ul js-tab">
+                      <li><a href="js-tab1">
+                          <div class="icon icon-card"></div><span>на карту</span></a></li>
+                      <li><a href="js-tab2">
+                          <div class="icon icon-numb"></div><span>по номеру телефона</span></a></li>
+                      <li><a href="js-tab3">
+                          <div class="icon icon-email"></div><span>по email</span></a></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
-          <button type="button" class="btn btn_bord-red">РЕДАКТИРОВАТЬ</button>
-          <button type="submit" class="btn btn_shad"> <span>ПОДТВЕРДИТЬ</span></button>
         </div>
       </section>
       <hr class="line">

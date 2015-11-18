@@ -6,7 +6,7 @@ block title
 block content
 	section.top
 		include ./includes/_header.jade
-		.step.step_one
+		.step.step_one(style="display: none;")
 			h4.step__title Для получения средств укажите номер перевода
 			form.step__form
 				.step__block
@@ -20,7 +20,7 @@ block content
 						b условиями 
 						| ознакомлен/а
 						i.icon-check-yellow
-		.step.step_two(style="display: none;")
+		.step.step_two
 			h4.step__title ПРОВЕРЬТЕ ПРАВИЛЬНОСТЬ ДАННЫХ
 			.step__block
 				form.step__form
