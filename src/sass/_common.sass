@@ -96,12 +96,15 @@ $l_green: #00e0bf
 $turquoise: #00d9cd
 $gray: #d2d2d2
 $d_gray: #f4f5f7
+$d_red: #fc1147
 $red: #ff322c
+$l_red: #fed6d6
 
 $c_input: #353535
 $c_inp-lab: #c3c3c3
 $c_tab-card: $c_input
 $c_blue: #3276fb
+$c_error-text: #fc034a
 
 $bg_f: #335fa2
 $bg_tw: #24a7df
@@ -218,8 +221,22 @@ p
 		border-color: $yellow
 		&::placeholder
 			font-size: 0
+	&.is-error
+		border-color: $d_red
+		background: $l_red
+		& + .error-xext
+			display: block
 	&_yellow
 		border-color: $bd-yellow
+
+.error-xext
+	position: absolute
+	left: 0
+	bottom: 100%
+	margin-bottom: 5px
+	color: $c_error-text
+	font-size: 10px
+	display: none
 
 .input-field
 	position: relative

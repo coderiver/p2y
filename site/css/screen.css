@@ -75,7 +75,11 @@ p.is-yellow { color: #fff600; }
 .input:focus::-moz-placeholder { font-size: 0; }
 .input:focus:-ms-input-placeholder { font-size: 0; }
 .input:focus::placeholder { font-size: 0; }
+.input.is-error { border-color: #fc1147; background: #fed6d6; }
+.input.is-error + .error-xext { display: block; }
 .input_yellow { border-color: #eede7c; }
+
+.error-xext { position: absolute; left: 0; bottom: 100%; margin-bottom: 5px; color: #fc034a; font-size: 10px; display: none; }
 
 .input-field { position: relative; }
 .input-field .input { padding-right: 50px; }
