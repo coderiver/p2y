@@ -5,36 +5,40 @@ block title
 
 block content
 	section.top
-		include ./includes/_header.jade
-		.step.step_one
-			.step__in
-				h4.step__title Для получения средств укажите номер перевода
-				form.step__form
-					.step__block
-						input(type="text" placeholder="Номер перевода").input-yellow
-					.step__btn
-						button.btn.btn_shad(type="submit")
-							span Далее
-					label.checkbox-yellow
-						input(type="checkbox")
-						span С 
-							b условиями 
-							| ознакомлен/а
-							i.icon-check-yellow
-		.step.step_two(style="display: none;")
-			form.step__in
-				h4.step__title ПРОВЕРЬТЕ ПРАВИЛЬНОСТЬ ДАННЫХ
-				.step__block
+		include ./includes/_header_send.jade
+		.step.step_two
+			form.step__in.is-mod
+				h4.title-middle ОПЕРАЦИЯ ПРОШЛА УСПЕШНО!
+				.step__block.is-mod
 					.step__form
 						.step__row
-							p Код операции
-							.step__bold 768996
+							p Платеж
+							.step__bold 245195
 						.step__row.is-blue
 							p Карта получателя
-							.step__bold 6792 9827 2890 1765
-				button.btn.btn_bord-red(type="button") РЕДАКТИРОВАТЬ
-				button.btn.btn_shad(type="submit") 
-					span ПОДТВЕРДИТЬ
+								strong **** 1765
+							p Карта отправителя
+								strong **** 7898
+						.step__row
+							p Сумма перевода
+							.step__bold 15080 грн.
+						.step__row
+							p Дата перевода
+							.step__bold 21/12/2015
+				ul.step__nav
+					li 
+						a(href="#") Повторить перевод
+					li 
+						a(href="#") на главную
+				.step__inform
+					.title-middle Пригласите друзей попробовать наш сервис
+					.step__numb
+						input.input.input_yellow(placeholder="+38")
+					p Пригласите друзей попробовать наш сервис, подарив им 
+					p.is-yellow бесплатный перевод на сумму до 2000 грн.
+					p За каждого, кто воспользуется сервисом по Вашему приглашению, 
+					p.is-yellow Вы тоже получите бесплатный перевод на сумму до 2000 грн.
+				button.btn.btn_bord-red(type="button") ПРИГЛАСИТЬ
 	hr.line 
 	section.rates
 		.rates__in

@@ -15,42 +15,47 @@
           <div class="header__inner"><a href="#" class="logo">
               <h1>P2Y</h1>
               <p>быстрые и безопасные переводы <br>в гривнах с карту на карту в банках Украины</p></a>
-            <nav class="nav"><a href="#">перевод средств</a><a href="#" class="is-active">получение средств</a></nav>
+            <nav class="nav"><a href="#" class="is-active">перевод средств</a><a href="#">получение средств</a></nav>
           </div>
         </header>
-        <div class="step step_one">
-          <div class="step__in">
-            <h4 class="step__title">Для получения средств укажите номер перевода</h4>
-            <form class="step__form">
-              <div class="step__block">
-                <input type="text" placeholder="Номер перевода" class="input-yellow">
-              </div>
-              <div class="step__btn">
-                <button type="submit" class="btn btn_shad"><span>Далее</span></button>
-              </div>
-              <label class="checkbox-yellow">
-                <input type="checkbox"><span>С <b>условиями </b>ознакомлен/а<i class="icon-check-yellow"></i></span>
-              </label>
-            </form>
-          </div>
-        </div>
-        <div style="display: none;" class="step step_two">
-          <form class="step__in">
-            <h4 class="step__title">ПРОВЕРЬТЕ ПРАВИЛЬНОСТЬ ДАННЫХ</h4>
-            <div class="step__block">
+        <div class="step step_two">
+          <form class="step__in is-mod">
+            <h4 class="title-middle">ОПЕРАЦИЯ ПРОШЛА УСПЕШНО!</h4>
+            <div class="step__block is-mod">
               <div class="step__form">
                 <div class="step__row">
-                  <p>Код операции</p>
-                  <div class="step__bold">768996</div>
+                  <p>Платеж</p>
+                  <div class="step__bold">245195</div>
                 </div>
                 <div class="step__row is-blue">
-                  <p>Карта получателя</p>
-                  <div class="step__bold">6792 9827 2890 1765</div>
+                  <p>Карта получателя<strong>**** 1765</strong></p>
+                  <p>Карта отправителя<strong>**** 7898</strong></p>
+                </div>
+                <div class="step__row">
+                  <p>Сумма перевода</p>
+                  <div class="step__bold">15080 грн.</div>
+                </div>
+                <div class="step__row">
+                  <p>Дата перевода</p>
+                  <div class="step__bold">21/12/2015</div>
                 </div>
               </div>
             </div>
-            <button type="button" class="btn btn_bord-red">РЕДАКТИРОВАТЬ</button>
-            <button type="submit" class="btn btn_shad"> <span>ПОДТВЕРДИТЬ</span></button>
+            <ul class="step__nav">
+              <li> <a href="#">Повторить перевод</a></li>
+              <li> <a href="#">на главную</a></li>
+            </ul>
+            <div class="step__inform">
+              <div class="title-middle">Пригласите друзей попробовать наш сервис</div>
+              <div class="step__numb">
+                <input placeholder="+38" class="input input_yellow">
+              </div>
+              <p>Пригласите друзей попробовать наш сервис, подарив им </p>
+              <p class="is-yellow">бесплатный перевод на сумму до 2000 грн.</p>
+              <p>За каждого, кто воспользуется сервисом по Вашему приглашению, </p>
+              <p class="is-yellow">Вы тоже получите бесплатный перевод на сумму до 2000 грн.</p>
+            </div>
+            <button type="button" class="btn btn_bord-red">ПРИГЛАСИТЬ</button>
           </form>
         </div>
       </section>

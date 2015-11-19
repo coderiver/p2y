@@ -110,6 +110,11 @@ $bg_g: #de4d3a
 
 $bd-input: #dedddd
 $bd-bord-blue: #00ceff
+$bd-yellow: #eede7c
+
+p
+	&.is-yellow
+		color: $yellow
 
 // icons
 .icon
@@ -167,11 +172,12 @@ $bd-bord-blue: #00ceff
 			background: rgba(#f05724, 0.5)
 		span
 			position: relative
+			min-width: 247px
 			display: block
 			+geobold
 			color: #fff
 			line-height: 1
-			padding: 18px 85px 17px
+			padding: 18px 60px 17px
 			transition: box-shadow .1s
 			background: linear-gradient(4deg, #ff0042 0%, #ef5c23 100%)
 			text-transform: uppercase
@@ -185,7 +191,8 @@ $bd-bord-blue: #00ceff
 		&:hover
 			border-color: darken($l_green, 20%)
 	&_bord-red
-		padding: 12px 43px
+		padding: 12px 24px
+		min-width: 227px
 		font-size: 12px
 		color: #fff
 		+geobold
@@ -211,6 +218,8 @@ $bd-bord-blue: #00ceff
 		border-color: $yellow
 		&::placeholder
 			font-size: 0
+	&_yellow
+		border-color: $bd-yellow
 
 .input-field
 	position: relative
@@ -228,8 +237,8 @@ $bd-bord-blue: #00ceff
 
 .input-yellow
 	width: 100%
-	border: 1px solid #e6d971
-	color: #383838
+	border: 1px solid $bd-yellow
+	color: $c_input
 	font-size: 15px
 	padding: 14px 20px 13px 
 	+reg
