@@ -59,6 +59,7 @@
 
 .top
 	position: relative
+	color: #fff
 	background: url(../img/main-v2.jpg)
 	+cover
 	min-height: 800px 
@@ -66,14 +67,16 @@
 
 .step
 	text-align: center
+	height: 705px
+	+vertical
 	&_one
-		margin-top: 200px
 		.step__block
 			padding: 30px 39px 36px 34px
 			max-width: 415px
 	&_two
-		margin: 110px auto 0
-		width: 316px
+		.step__in
+			margin: 0 auto
+			width: 316px
 		.btn + .btn
 			margin-top: 30px
 	&__title
@@ -104,8 +107,23 @@
 	&__in
 		margin: 0 auto
 		width: 873px
+		font-size: 14px
+		vertical-align: middle
+		display: inline-block
+	&__wrap
+		margin: 0 auto
+		width: 324px
+		.title-middle
+			margin-bottom: 20px
+	&__text
+		margin-top: 28px
+	.price
+		margin: 18px 0 28px
+	.input-field
+		margin-bottom: 14px
 
 .cards
+	margin-bottom: 38px
 	+clr
 	&__col
 		float: left
@@ -169,6 +187,7 @@
 		visibility: hidden
 		opacity: 0
 		z-index: -1
+		color: #000
 		transition: visibility .2s, opacity .2s
 		border: 1px solid $bd-bord-blue
 		background: #fff
@@ -224,6 +243,11 @@
 				top: 11px
 				left: 11px
 
+.price
+	font-size: 16px
+	+bold
+	strong
+		font-size: 20px
 
 .rates
 	padding: 48px 0 51px

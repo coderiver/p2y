@@ -7,32 +7,34 @@ block content
 	section.top
 		include ./includes/_header.jade
 		.step.step_one(style="display: none;")
-			h4.step__title Для получения средств укажите номер перевода
-			form.step__form
-				.step__block
-					input(type="text" placeholder="Номер перевода").input-yellow
-				.step__btn
-					button.btn.btn_shad(type="submit")
-						span Далее
-				label.checkbox-yellow
-					input(type="checkbox")
-					span С 
-						b условиями 
-						| ознакомлен/а
-						i.icon-check-yellow
-		.step.step_two
-			h4.step__title ПРОВЕРЬТЕ ПРАВИЛЬНОСТЬ ДАННЫХ
-			.step__block
+			.step__in
+				h4.step__title Для получения средств укажите номер перевода
 				form.step__form
-					.step__row
-						p Код операции
-						.step__code 768996
-					.step__row.is-blue
-						p Карта получателя
-						.step__card 6792 9827 2890 1765
-			button.btn.btn_bord-red(type="button") РЕДАКТИРОВАТЬ
-			button.btn.btn_shad(type="submit") 
-				span ПОДТВЕРДИТЬ
+					.step__block
+						input(type="text" placeholder="Номер перевода").input-yellow
+					.step__btn
+						button.btn.btn_shad(type="submit")
+							span Далее
+					label.checkbox-yellow
+						input(type="checkbox")
+						span С 
+							b условиями 
+							| ознакомлен/а
+							i.icon-check-yellow
+		.step.step_two
+			.step__in
+				h4.step__title ПРОВЕРЬТЕ ПРАВИЛЬНОСТЬ ДАННЫХ
+				.step__block
+					form.step__form
+						.step__row
+							p Код операции
+							.step__code 768996
+						.step__row.is-blue
+							p Карта получателя
+							.step__card 6792 9827 2890 1765
+				button.btn.btn_bord-red(type="button") РЕДАКТИРОВАТЬ
+				button.btn.btn_shad(type="submit") 
+					span ПОДТВЕРДИТЬ
 	hr.line 
 	section.rates
 		.rates__in
