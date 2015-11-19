@@ -1,0 +1,128 @@
++font("HelveticaNeue-Thin", HelveticaNeueCyr-Thin)
++font("HelveticaNeue-Light", HelveticaNeueLight)
++font("HelveticaNeue", HelveticaNeueCyr-Roman)
++font("HelveticaNeue-Bold", HelveticaNeueCyr-Bold)
+
+=h100
+	font-family: "HelveticaNeue-Thin", Arial, sans-serif
+=h300
+	font-family: "HelveticaNeue-Light", Arial, sans-serif
+=h400
+	font-family: "HelveticaNeue", Arial, sans-serif
+=h700
+	font-family: "HelveticaNeue-Bold", Arial, sans-serif
+
+// variables
+$yellow: #fffc00
+
+$c_text: #383838
+$c_d-text: #424242
+$c_logo: #00e0b3
+$turquoise: #00e0bf
+$green: #41e262
+$blue: #99deef
+
+
+//reset
+a
+	text-decoration: none
+
+h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
+	font-weight: normal
+	font-style: normal
+
+body
+	color: $c_text
+	+h300
+	font-size: 14px
+	line-height: 1.3
+
+// header
+.header
+	padding: 28px 0 0
+	text-align: center
+
+// logo
+.logo
+	color: $c_d-text
+	font-size: 12px
+	h1
+		margin-bottom: 16px
+		color: $c_logo
+		font-size: 38px
+		line-height: 1
+		+h100
+
+// nav
+.nav
+	margin-top: 20px
+	font-size: 0
+	+h700
+	background-color: $turquoise
+	background-image: linear-gradient(18deg, $turquoise 0%, $green 100%)
+	a
+		position: relative
+		padding: 0 3px
+		margin-left: 45px
+		height: 69px
+		color: #fff
+		font-size: 14px
+		line-height: 69px
+		display: inline-block
+		&:hover,
+		&.is-active
+			&:before
+				background: $yellow
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			right: 0
+			height: 3px
+			transition: background .2s
+			background: transparent
+		&:first-child
+			margin-left: 0
+
+// step
+.step
+	height: 642px
+	+vertical
+	&__in
+		vertical-align: middle
+		display: inline-block
+	&__block
+		position: relative
+		padding: 30px 39px 24px 32px
+		border-radius: 20px
+		border: 1px solid $blue
+		background: #fff
+	&__shad
+		position: absolute
+		top: 0
+		right: 100%
+		bottom: -20px
+		margin-right: -20px
+		width: 60px
+		opacity: .3
+		z-index: -1
+		background-image: linear-gradient(268deg, #b6b6b6 0%, transparent 100%)
+		&:before,
+		&:after
+			position: absolute
+			content: ''
+			left: 0
+		&:before
+			top: 0
+			+arr(60,20,#fff,tl)
+		&:after
+			bottom: 0
+			+arr(60,20,#fff,br)
+
+// title-middle
+.title-middle
+	margin-bottom: 30px
+	color: $c_d-text
+	font-size: 16px
+	+h700
