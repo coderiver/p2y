@@ -12,15 +12,29 @@
 =h700
 	font-family: "HelveticaNeue-Bold", Arial, sans-serif
 
+// extend
+.in
+	margin: 0 auto
+	padding: 30px 28px 40px
+	width: 869px
+%in
+	@extend .in
+
 // variables
 $yellow: #fffc00
+$turquoise: #00e0bf
+$green: #41e262
+$blue: #99deef
 
 $c_text: #383838
 $c_d-text: #424242
 $c_logo: #00e0b3
-$turquoise: #00e0bf
-$green: #41e262
-$blue: #99deef
+$c_input: #353535
+$c_blue: #00c2fd
+$c_darc: #575757
+
+$bd_input: #e2e2e2
+$bd_green: #b1ffd6
 
 
 //reset
@@ -119,6 +133,18 @@ body
 		&:after
 			bottom: 0
 			+arr(60,20,#fff,br)
+	&__btn
+		margin-top: 50px
+	&__check
+		margin-top: 20px
+
+// title
+.title
+	margin-bottom: 22px
+	text-align: center
+	font-size: 22px
+	+h700
+	color: $c_darc
 
 // title-middle
 .title-middle
@@ -126,3 +152,188 @@ body
 	color: $c_d-text
 	font-size: 16px
 	+h700
+
+// btn
+.btn
+	position: relative
+	height: 49px
+	font-size: 16px
+	min-width: 247px
+	+h700
+	color: #fff
+	line-height: 49px
+	text-align: center
+	text-shadow: 0 1px 0 rgba(160, 160, 160, 0.43)
+	border-radius: 49px
+	overflow: hidden
+	background-color: $turquoise
+	display: inline-block
+	&:hover
+		&:before
+			left: -100%
+	&:before
+		position: absolute
+		content: ''
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		transition: left .3s
+		border-radius: 49px
+		background-image: linear-gradient(18deg, $turquoise 0%, $green 100%)
+	span
+		position: relative
+		z-index: 1
+	&_bord
+		color: $c_darc
+		font-size: 13px
+		&:hover
+			span
+				color: #fff
+				&:before
+					left: -100%
+		span
+			position: absolute
+			top: 1px
+			left: 1px
+			right: 1px
+			bottom: 1px
+			border-radius: 47px
+			transition: color .2s
+			overflow: hidden
+			display: inline-block
+			&:before
+				position: absolute
+				content: ''
+				left: 0
+				top: 0
+				width: 100%
+				height: 100%
+				background: #fff
+				transition: left .3s
+				z-index: -1
+				border-radius: 47px
+
+// input
+.input
+	padding: 0 20px
+	height: 47px
+	width: 100%
+	color: $c_input
+	font-size: 15px
+	+h400
+	transform: translate3d(0,0,0)
+	transition: border-color .2s
+	border: 1px solid $bd-input
+	display: block
+	// &:focus
+	// 	border-color: $yellow
+	// 	&::placeholder
+	// 		font-size: 0
+	// &.is-error
+	// 	border-color: $d_red
+	// 	background: $l_red
+	// 	& + .error-xext
+	// 		display: block
+	// &_yellow
+	// 	border-color: $bd-yellow
+
+// checkbox
+.checkbox
+	position: relative
+	font-size: 14px
+	display: block
+	position: relative
+	display: inline-block
+	vertical-align: top
+	cursor: pointer
+	user-select: none
+	input
+		position: absolute
+		visibility: hidden
+		opacity: 0
+		top: 0
+		left: 0 
+		&:checked + span
+			&:before
+				opacity: 0
+				transform: scale(0.1)
+			i
+				top: 10px
+				visibility: visible
+				transform: scale(1)
+	span
+		font-size: 15px
+		line-height: 1
+		padding: 7px 0 6px 35px
+		display: inline-block 
+		&:before
+			content: "" 
+			position: absolute
+			top: 0
+			left: 0
+			border: 1px solid $blue
+			border-radius: 50%
+			width: 28px
+			height: 28px
+			transition: opacity .2s, transform .2s
+		a
+			+h400
+			color: $c_blue
+			transition: border-color .2s
+			border-bottom: 1px solid transparent
+			&:hover
+				border-color: $c_blue
+		i
+			font-size: 11px
+			color: $c_blue
+			position: absolute
+			top: 5px
+			left: 7px
+			transform: scale(0)
+			transition: transform .2s, top .2s
+
+// line
+.line
+	margin: 0
+	padding: 0
+	height: 1px
+	background-color: $turquoise
+	background-image: linear-gradient(18deg, $turquoise 0%, $green 100%)
+	border: none
+
+// rates
+.rates
+	text-align: center
+	&__in
+		@extend %in
+		border: 1px solid $bd_green
+	.btn
+		margin-top: 25px
+	p
+		line-height: 1.9
+	strong
+		+h700
+
+// answer
+.answer
+	&__in
+		@extend %in
+
+// annex
+.annex
+	text-align: center
+	&__in
+		@extend %in
+	&__row
+		margin-top: 25px
+		font-size: 0
+	.app
+		margin-left: 25px
+		&:first-child
+			margin-left: 0
+
+// question
+.question
+	&__in
+		@extend %in

@@ -14,14 +14,15 @@ block content
 						.step__shad
 						input.input(type="text" placeholder="Номер перевода").input-yellow
 					.step__btn
-						button.btn.btn_shad(type="submit")
+						button.btn(type="submit") 
 							span Далее
-					label.checkbox-yellow
-						input(type="checkbox")
-						span С 
-							b условиями 
-							| ознакомлен/а
-							i.icon-check-yellow
+					.step__check
+						label.checkbox
+							input(type="checkbox")
+							span С 
+								a(href="#") условиями 
+								| ознакомлен/а
+								i.icon-check-yellow
 		.step.step_two(style="display: none;")
 			form.step__in
 				h4.step__title ПРОВЕРЬТЕ ПРАВИЛЬНОСТЬ ДАННЫХ
@@ -36,10 +37,9 @@ block content
 				button.btn.btn_bord-red(type="button") РЕДАКТИРОВАТЬ
 				button.btn.btn_shad(type="submit") 
 					span ПОДТВЕРДИТЬ
-	hr.line 
 	section.rates
 		.rates__in
-			h3.title ТАРИФЫ И ЛИМИТЫ
+			h3.title Тарифы и лимиты
 			p Максимальная сумма платежа - 
 				strong 15 000 грн, 
 				|в сутки - 
@@ -47,7 +47,8 @@ block content
 			p Принимаются все карты Украинских банков с поддержкой 3-D Secure
 			p Срок зачисления - от нескольких секунд до 3х дней
 			.rates__but
-				a(href="#").btn.btn_bord узнать о других лимитах
+				a(href="#").btn.btn_bord 
+					span узнать о других лимитах
 	section.answer
 		.answer__in
 			h3.title КАК ЭТО РАБОТАЕТ?
@@ -56,7 +57,7 @@ block content
 			p Также сервис позволяет получить деньги на Вашу карту, если получатель перевода - Вы.
 	section.annex
 		.annex__in
-			h3.title-small
+			h3.title-small Скачай приложение и переведи деньги с карты на карту в своем смартфоне
 			.annex__row
 				a(href="#").app
 					img(src="img/app-store.png" alt="img")
