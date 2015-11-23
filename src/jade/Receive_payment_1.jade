@@ -1,0 +1,91 @@
+extends _simple-layout
+
+block title
+	title Title of template
+
+block content
+	section.top
+		include ./includes/_header-simple.jade
+		.step.step_one
+			.step__in
+				h4.title-middle Для получения средств укажите номер перевода
+				form.step__form
+					.step__block
+						.step__shad
+						input.input(type="text" placeholder="Номер перевода").input-yellow
+					.step__btn
+						button.btn(type="submit") 
+							span далее
+					.step__check
+						label.checkbox
+							input(type="checkbox" checked)
+							span С 
+								a(href="#") условиями 
+								| ознакомлен/а
+								i.icon-check-yellow
+		.step.step_two(style="display: none;")
+			form.step__in
+				h4.step__title ПРОВЕРЬТЕ ПРАВИЛЬНОСТЬ ДАННЫХ
+				.step__block
+					.step__form
+						.step__row
+							p Код операции
+							.step__bold 768996
+						.step__row.is-blue
+							p Карта получателя
+							.step__bold 6792 9827 2890 1765
+				button.btn.btn_bord-red(type="button") РЕДАКТИРОВАТЬ
+				button.btn.btn_shad(type="submit") 
+					span ПОДТВЕРДИТЬ
+	section.rates
+		.rates__in
+			h3.title Тарифы и лимиты
+			p Максимальная сумма платежа - 
+				strong 15 000 грн, 
+				|в сутки - 
+				strong 75 000 грн.
+			p Принимаются все карты Украинских банков с поддержкой 3-D Secure
+			p Срок зачисления - от нескольких секунд до 3х дней
+			.rates__but
+				a(href="#").btn.btn_bord 
+					span узнать о других лимитах
+	section.answer
+		.answer__in
+			h3.title Как это работает?
+			.answer__text
+				p При переводе средств по номеру карты получателя, деньги будут зачислены на карту в режиме онлайн без дополнительных действий получателя.
+				p При переводе средств с указанием номера мобильного телефона получателя, на указанный номер поступит СМС-сообщение с кодом перевода и ссылкой на сайт услуги. Перейдя по ссылке, получатель сможет выбрать карту, на которую будут зачислены средства, после чего они станут для него доступны. Код перевода действителен в течение 7 календарных дней.
+				p Также сервис позволяет получить деньги на Вашу карту, если получатель перевода - Вы.
+	section.annex
+		.annex__in
+			h3.title-small Скачай приложение и переведи деньги с карты на карту в своем смартфоне
+			.annex__row
+				a(href="#").app
+					img(src="img/app-store2.png" alt="img")
+				a(href="#").app
+					img(src="img/google-play2.png" alt="img")
+	hr.line
+	section.question
+		.question__in
+			h3.title Вопросы и ответы
+			.question__wrap
+				.accord.js-accord.is-active
+					.accord__top.js-accord-but Перевод денег с карты на карту внутри банка
+					.accord__block.js-accord-block
+						p За перевод с карты на карту Тинькофф Банка комиссия не взимается.
+						p Деньги моментально поступают на счет получателя.
+				.accord.js-accord
+					.accord__top.js-accord-but Перевод денег с карты на карту другого банка
+					.accord__block.js-accord-block Lorem ipsum dolor sit amet, consectetur adipisicing.
+				.accord.js-accord
+					.accord__top.js-accord-but Куда можно переводить деньги?
+					.accord__block.js-accord-block Lorem ipsum dolor sit amet, consectetur adipisicing.
+				.accord.js-accord
+					.accord__top.js-accord-but Лимит перевода и от чего он зависит, возможные комиссии
+					.accord__block.js-accord-block Lorem ipsum dolor sit amet, consectetur adipisicing.
+				.accord.js-accord
+					.accord__top.js-accord-but Особенности перевода денег через интернет
+					.accord__block.js-accord-block Lorem ipsum dolor sit amet, consectetur adipisicing.
+	hr.line
+block footer
+	include ./includes/_footer-simple.jade

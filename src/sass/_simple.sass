@@ -24,7 +24,9 @@
 $yellow: #fffc00
 $turquoise: #00e0bf
 $green: #41e262
+$gray: #d2d2d2
 $blue: #99deef
+$d_blue: #1e2e5d
 
 $c_text: #383838
 $c_d-text: #424242
@@ -32,6 +34,11 @@ $c_logo: #00e0b3
 $c_input: #353535
 $c_blue: #00c2fd
 $c_darc: #575757
+
+$bg_f: #335fa2
+$bg_tw: #24a7df
+$bg_in: #006b9c
+$bg_g: #de4d3a
 
 $bd_input: #e2e2e2
 $bd_green: #b1ffd6
@@ -51,6 +58,24 @@ body
 	font-size: 14px
 	line-height: 1.3
 
+// icons
+.icon
+	display: inline-block
+	&-f
+		+s(f)
+	&-tw
+		+s(tw)
+	&-in
+		+s(in)
+	&-g
+		+s(g)
+	&-card
+		+s(card)
+	&-numb
+		+s(numb)
+	&-email
+		+s(email)
+
 // header
 .header
 	padding: 28px 0 0
@@ -61,7 +86,7 @@ body
 	color: $c_d-text
 	font-size: 12px
 	h1
-		margin-bottom: 16px
+		margin-bottom: 8px
 		color: $c_logo
 		font-size: 38px
 		line-height: 1
@@ -135,16 +160,24 @@ body
 			+arr(60,20,#fff,br)
 	&__btn
 		margin-top: 50px
+	&__form
+		.input
+			width: 342px
 	&__check
 		margin-top: 20px
 
 // title
 .title
-	margin-bottom: 22px
+	margin-bottom: 18px
 	text-align: center
 	font-size: 22px
 	+h700
 	color: $c_darc
+
+// title-small
+.title-small
+	font-size: 14px
+	+h700
 
 // title-middle
 .title-middle
@@ -187,6 +220,9 @@ body
 	&_bord
 		color: $c_darc
 		font-size: 13px
+		height: 43px
+		line-height: 43px
+		border-radius: 43px
 		&:hover
 			span
 				color: #fff
@@ -309,7 +345,7 @@ body
 		@extend %in
 		border: 1px solid $bd_green
 	.btn
-		margin-top: 25px
+		margin-top: 22px
 	p
 		line-height: 1.9
 	strong
@@ -319,12 +355,16 @@ body
 .answer
 	&__in
 		@extend %in
+	&__text
+		padding-right: 22px
 
 // annex
 .annex
 	text-align: center
 	&__in
+		margin-bottom: 32px
 		@extend %in
+		padding: 0
 	&__row
 		margin-top: 25px
 		font-size: 0
@@ -337,3 +377,127 @@ body
 .question
 	&__in
 		@extend %in
+		padding-bottom: 20px
+	.title
+		margin-bottom: 5px
+
+// accord
+.accord
+	border-top: 1px solid $gray
+	&:first-child
+		border-top: none
+	&.is-active
+		.accord__top:before
+			transform: rotate(90deg)
+	&__top
+		position: relative
+		padding: 12px 0
+		+h700
+		user-select: none
+		cursor: pointer
+		&:before
+			position: absolute
+			content: ''
+			top: 50%
+			right: 0
+			transition: transform .3s
+			transform: translate3d(0,0,0)
+			transform: translate(0,-50%)
+			+s(arrord-arr)
+	&__block
+		padding-bottom: 14px
+		+h400
+		display: none
+
+// footer
+.footer
+	&__in
+		margin: 0 auto
+		max-width: 920px
+		padding: 32px 15px 50px
+	&__row
+		+clr
+	&__left
+		float: left
+	&__right
+		float: right
+	&__col
+		margin-left: 35px
+		+h400
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+	&__center
+		margin-top: 28px
+		text-align: center
+		font-size: 12px
+	strong
+		+h700
+
+
+// soc
+.soc
+	font-size: 0
+	&__item
+		margin-left: 15px
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+	&__ico
+		height: 24px
+		width: 24px
+		line-height: 23px
+		text-align: center
+		border-radius: 50%
+		transition: background .2s
+		vertical-align: top
+		display: inline-block
+		&.is-f
+			background: $bg_f
+			&:hover
+				background: darken($bg_f, 20%)
+			.icon
+				margin-left: -1px
+		&.is-tw
+			background: $bg_tw
+			&:hover
+				background: darken($bg_tw, 20%)
+			.icon
+				margin-bottom: -1px
+		&.is-in
+			background: $bg_in
+			&:hover
+				background: darken($bg_in, 20%)
+		&.is-g
+			background: $bg_g
+			&:hover
+				background: darken($bg_g, 20%)
+		.icon
+			vertical-align: middle
+	&__text
+		margin-top: 7px
+		text-align: center
+		color: $d_blue
+		text-align: center
+		font-size: 10px
+
+
+// partners
+.partners
+	margin-top: 30px
+	font-size: 0
+	text-align: center
+	&__item
+		margin-left: 15px
+		height: 39px
+		line-height: 39px
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+	.icon
+		vertical-align: middle
+	img
+		vertical-align: middle
