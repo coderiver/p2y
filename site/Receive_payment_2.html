@@ -10,13 +10,13 @@
   <body>
     <!--BEGIN out-->
     <div class="out">
-      <section class="top">
+      <section class="top is-receive">
         <header class="header"><a href="#" class="logo">
             <h1>P2Y</h1>
             <p>быстрые и безопасные переводы <br>в гривнах с карту на карту в банках Украины</p></a>
           <menu class="nav"><a href="#" class="is-active">перевод средств</a><a href="#">получение средств</a></menu>
         </header>
-        <div class="step step_one">
+        <div style="display: none;" class="step step_one">
           <div class="step__in">
             <h4 class="title-middle">Для получения средств укажите номер перевода</h4>
             <form class="step__form">
@@ -35,7 +35,7 @@
             </form>
           </div>
         </div>
-        <div style="display: none;" class="step step_two">
+        <div class="step step_two">
           <form class="step__in">
             <h4 class="title-middle">Проверьте правильность данных</h4>
             <div class="step__block">
@@ -52,6 +52,11 @@
             </div>
             <div class="step__btn">
               <button type="submit" class="btn"> <span>далее</span></button>
+            </div>
+            <div class="step__check">
+              <label class="checkbox">
+                <input type="checkbox" checked><span>С <a href="#">условиями </a>ознакомлен/а<i class="icon-check-yellow"></i></span>
+              </label>
             </div>
           </form>
         </div>

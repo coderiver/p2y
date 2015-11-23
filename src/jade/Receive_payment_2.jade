@@ -4,9 +4,9 @@ block title
 	title Title of template
 
 block content
-	section.top
+	section.top.is-receive
 		include ./includes/_header-simple.jade
-		.step.step_one
+		.step.step_one(style="display: none;")
 			.step__in
 				h4.title-middle Для получения средств укажите номер перевода
 				form.step__form
@@ -23,7 +23,7 @@ block content
 								a(href="#") условиями 
 								| ознакомлен/а
 								i.icon-check-yellow
-		.step.step_two(style="display: none;")
+		.step.step_two
 			form.step__in
 				h4.title-middle Проверьте правильность данных
 				.step__block
@@ -37,6 +37,13 @@ block content
 				.step__btn
 					button.btn(type="submit") 
 						span далее
+				.step__check
+					label.checkbox
+						input(type="checkbox" checked)
+						span С 
+							a(href="#") условиями 
+							| ознакомлен/а
+							i.icon-check-yellow
 	section.rates
 		.rates__in
 			h3.title Тарифы и лимиты

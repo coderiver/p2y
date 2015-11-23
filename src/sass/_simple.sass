@@ -124,12 +124,24 @@ body
 		&:first-child
 			margin-left: 0
 
+// top
+.top
+	&.is-receive
+		.step
+			padding-top: 78px
+			&__in
+				vertical-align: top
+
 // step
 .step
 	height: 642px
 	+vertical
+	&_two
+		.step__btn
+			margin-top: 30px
 	&__in
 		vertical-align: middle
+		font-size: 14px
 		display: inline-block
 	&__block
 		position: relative
@@ -164,7 +176,18 @@ body
 		.input
 			width: 342px
 	&__check
-		margin-top: 20px
+		margin-top: 15px
+	&__row
+		margin-top: 35px
+		min-width: 342px
+		font-size: 15px
+		+h400
+		&:first-child
+			margin-top: 0
+		.step__bold
+			margin-bottom: 5px
+	&__bold
+		+h700
 
 // title
 .title
@@ -199,11 +222,14 @@ body
 	text-shadow: 0 1px 0 rgba(160, 160, 160, 0.43)
 	border-radius: 49px
 	overflow: hidden
+	transition: background-color .2s
 	background-color: $turquoise
 	display: inline-block
 	&:hover
 		&:before
 			left: -100%
+	&:active
+		background-color: darken($turquoise, 10%)
 	&:before
 		position: absolute
 		content: ''
