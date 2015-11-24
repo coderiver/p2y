@@ -179,6 +179,8 @@ body
 			+arr(60,20,#fff,br)
 	&__btn
 		margin-top: 50px
+	&__but
+		margin-top: 34px
 	&__form
 		.input
 			min-width: 342px
@@ -195,6 +197,15 @@ body
 			margin-bottom: 5px
 	&__bold
 		+h700
+	&__wrap
+		margin: 0 auto
+		width: 342px
+		.price
+			margin-top: 15px
+		.title-middle
+			margin-bottom: 18px
+	&__text
+		margin: 20px 0 10px
 
 // title
 .title
@@ -215,6 +226,12 @@ body
 	color: $c_d-text
 	font-size: 16px
 	+h700
+
+// price
+.price
+	font-size: 16px
+	strong
+		+h700
 
 // btn
 .btn
@@ -418,7 +435,7 @@ body
 
 // cards
 .cards
-	margin-bottom: 38px
+	margin: 10px 0 30px
 	width: 872px
 	+clr
 	&__col
@@ -461,7 +478,7 @@ body
 			bottom: 0
 			+arr(42,20,#fff,br)
 	&__in
-		padding: 32px 39px 32px 32px
+		padding: 38px 39px 37px 32px
 	&__row
 		position: relative
 		margin-top: 18px
@@ -532,7 +549,7 @@ body
 		&:hover
 			border-color: #3276fb
 	&__cont
-		padding: 32px 39px 44px 32px
+		padding: 39px 39px 37px 32px
 		display: none
 	&__ul
 		margin-right: -1px
@@ -566,20 +583,52 @@ body
 				&:before
 					display: none
 				a
-					padding-left: 35px
+					padding-left: 47px
 				.icon
-					left: 9px
+					left: 20px
 		a
 			position: relative
-			padding: 7px 45px 10px 30px
-			height: 53px
+			padding: 15px 35px 10px 41px
+			height: 64px
 			color: $c_text
+			+h400
 			display: block
 			.icon
 				position: absolute
-				top: 11px
-				left: 11px
+				top: 18px
+				left: 23px
 
+// input-field
+.input-field
+	position: relative
+	margin: 0 auto 12px
+	width: 342px
+	+h400
+	&__shad
+		position: absolute
+		top: -18px
+		right: 100%
+		bottom: -8px
+		width: 16px
+		opacity: .2
+		z-index: -1
+		background-image: linear-gradient(268deg, #b6b6b6 0%, transparent 100%)
+		&:before,
+		&:after
+			position: absolute
+			content: ''
+			left: 0
+		&:before
+			top: 0
+			+arr(42,30,#fff,tl)
+		&:after
+			bottom: 0
+			+arr(42,20,#fff,br)
+	.currency
+		position: absolute
+		right: 20px
+		top: 50%
+		transform: translate(0,-50%)
 
 // accord
 .accord

@@ -74,14 +74,16 @@ block content
 					.step__wrap
 						h4.title-middle Сумма перевода
 						.input-field
+							.input-field__shad
 							input.input(value="15000" placeholder="введите сумму")
 							.currency грн.
 						p комиссия 80 грн. 
 						.price сумма к оплате 
 							strong 15080 
 							|грн.
-						button.btn.btn_shad(type="submit") 
-							span перевести
+						.step__but
+							button.btn(type="submit") 
+								span перевести
 					.step__text Нажимая кнопку "Перевести", вы соглашаетесь с офертой
 	//- hr.line 
 	section.rates

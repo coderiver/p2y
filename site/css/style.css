@@ -76,18 +76,26 @@ body { color: #383838; font-family: "HelveticaNeue-Light", Arial, sans-serif; fo
 .step__shad:before { top: 0; width: 0px; height: 0px; border-style: solid; border-width: 20px 60px 0 0; border-color: #fff transparent transparent transparent; }
 .step__shad:after { bottom: 0; width: 0px; height: 0px; border-style: solid; border-width: 0 0 20px 60px; border-color: transparent transparent #fff transparent; }
 .step__btn { margin-top: 50px; }
+.step__but { margin-top: 34px; }
 .step__form .input { min-width: 342px; }
 .step__check { margin-top: 15px; }
 .step__row { margin-top: 35px; min-width: 342px; font-size: 15px; font-family: "HelveticaNeue", Arial, sans-serif; }
 .step__row:first-child { margin-top: 0; }
 .step__row .step__bold { margin-bottom: 5px; }
 .step__bold { font-family: "HelveticaNeue-Bold", Arial, sans-serif; }
+.step__wrap { margin: 0 auto; width: 342px; }
+.step__wrap .price { margin-top: 15px; }
+.step__wrap .title-middle { margin-bottom: 18px; }
+.step__text { margin: 20px 0 10px; }
 
 .title { margin-bottom: 18px; text-align: center; font-size: 22px; font-family: "HelveticaNeue-Bold", Arial, sans-serif; color: #575757; }
 
 .title-small { font-size: 14px; font-family: "HelveticaNeue-Bold", Arial, sans-serif; }
 
 .title-middle { margin-bottom: 30px; color: #424242; font-size: 16px; font-family: "HelveticaNeue-Bold", Arial, sans-serif; }
+
+.price { font-size: 16px; }
+.price strong { font-family: "HelveticaNeue-Bold", Arial, sans-serif; }
 
 .btn { position: relative; height: 49px; font-size: 16px; min-width: 247px; font-family: "HelveticaNeue-Bold", Arial, sans-serif; color: #fff; line-height: 49px; text-align: center; text-shadow: 0 1px 0 rgba(160, 160, 160, 0.43); -webkit-border-radius: 49px; border-radius: 49px; overflow: hidden; -webkit-transition: background-color 0.2s; transition: background-color 0.2s; background-color: #00e0bf; display: inline-block; }
 .btn:hover:before { left: -100%; }
@@ -139,7 +147,7 @@ body { color: #383838; font-family: "HelveticaNeue-Light", Arial, sans-serif; fo
 .question__in { padding-bottom: 20px; }
 .question .title { margin-bottom: 5px; }
 
-.cards { margin-bottom: 38px; width: 872px; *zoom: 1; }
+.cards { margin: 10px 0 30px; width: 872px; *zoom: 1; }
 .cards:after { content: " "; display: table; clear: both; }
 .cards__col { float: left; margin-left: 4%; width: 48%; text-align: left; }
 .cards__col:first-child { text-align: right; margin-left: 0; }
@@ -150,7 +158,7 @@ body { color: #383838; font-family: "HelveticaNeue-Light", Arial, sans-serif; fo
 .card__shad:before, .card__shad:after { position: absolute; content: ""; left: 0; }
 .card__shad:before { top: 0; width: 0px; height: 0px; border-style: solid; border-width: 30px 42px 0 0; border-color: #fff transparent transparent transparent; }
 .card__shad:after { bottom: 0; width: 0px; height: 0px; border-style: solid; border-width: 0 0 20px 42px; border-color: transparent transparent #fff transparent; }
-.card__in { padding: 32px 39px 32px 32px; }
+.card__in { padding: 38px 39px 37px 32px; }
 .card__row { position: relative; margin-top: 18px; font-size: 0; *zoom: 1; }
 .card__row:after { content: " "; display: table; clear: both; }
 .card__row:first-child { margin-top: 0; }
@@ -165,17 +173,24 @@ body { color: #383838; font-family: "HelveticaNeue-Light", Arial, sans-serif; fo
 .card__label { position: absolute; top: 3px; left: 20px; color: #bdbbbb; font-size: 10px; font-family: "HelveticaNeue", Arial, sans-serif; z-index: 1; }
 .card__question { margin: -2px 0 0 10px; color: #3276fb; font-size: 10px; line-height: 1; font-family: "HelveticaNeue", Arial, sans-serif; -webkit-transition: border-color 0.2s; transition: border-color 0.2s; border-bottom: 1px solid transparent; vertical-align: top; display: inline-block; }
 .card__question:hover { border-color: #3276fb; }
-.card__cont { padding: 32px 39px 44px 32px; display: none; }
+.card__cont { padding: 39px 39px 37px 32px; display: none; }
 .card__ul { margin-right: -1px; width: 100%; font-size: 12px; overflow: hidden; -webkit-border-radius: 0 0 20px 20px; border-radius: 0 0 20px 20px; background: #9de0f1; display: table; }
 .card__ul li { position: relative; min-width: 136px; vertical-align: top; -webkit-transition: background 0.2s; transition: background 0.2s; border-top: 1px solid #99deef; background: #9de0f1; display: table-cell; }
 .card__ul li:hover, .card__ul li.is-active { background: #c0eaf6; }
 .card__ul li:before { position: absolute; content: ""; top: -1px; left: 0; bottom: -1px; width: 1px; background: #fff; }
 .card__ul li:first-child { border-left: none; }
 .card__ul li:first-child:before { display: none; }
-.card__ul li:first-child a { padding-left: 35px; }
-.card__ul li:first-child .icon { left: 9px; }
-.card__ul a { position: relative; padding: 7px 45px 10px 30px; height: 53px; color: #383838; display: block; }
-.card__ul a .icon { position: absolute; top: 11px; left: 11px; }
+.card__ul li:first-child a { padding-left: 47px; }
+.card__ul li:first-child .icon { left: 20px; }
+.card__ul a { position: relative; padding: 15px 35px 10px 41px; height: 64px; color: #383838; font-family: "HelveticaNeue", Arial, sans-serif; display: block; }
+.card__ul a .icon { position: absolute; top: 18px; left: 23px; }
+
+.input-field { position: relative; margin: 0 auto 12px; width: 342px; font-family: "HelveticaNeue", Arial, sans-serif; }
+.input-field__shad { position: absolute; top: -18px; right: 100%; bottom: -8px; width: 16px; opacity: 0.2; z-index: -1; background-image: -webkit-linear-gradient(182deg, #b6b6b6 0%, transparent 100%); background-image: linear-gradient(268deg, #b6b6b6 0%, transparent 100%); }
+.input-field__shad:before, .input-field__shad:after { position: absolute; content: ""; left: 0; }
+.input-field__shad:before { top: 0; width: 0px; height: 0px; border-style: solid; border-width: 30px 42px 0 0; border-color: #fff transparent transparent transparent; }
+.input-field__shad:after { bottom: 0; width: 0px; height: 0px; border-style: solid; border-width: 0 0 20px 42px; border-color: transparent transparent #fff transparent; }
+.input-field .currency { position: absolute; right: 20px; top: 50%; -webkit-transform: translate(0, -50%); -ms-transform: translate(0, -50%); transform: translate(0, -50%); }
 
 .accord { border-top: 1px solid #d2d2d2; }
 .accord:first-child { border-top: none; }
