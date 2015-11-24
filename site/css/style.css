@@ -185,6 +185,8 @@ body { color: #383838; font-family: "HelveticaNeue-Light", Arial, sans-serif; fo
 .card__ul a { position: relative; padding: 15px 35px 10px 41px; height: 64px; color: #383838; font-family: "HelveticaNeue", Arial, sans-serif; display: block; }
 .card__ul a .icon { position: absolute; top: 18px; left: 23px; }
 
+.error-xext { position: absolute; left: 0; bottom: 100%; margin-bottom: 5px; color: #fc034a; font-size: 10px; display: none; }
+
 .input-field { position: relative; margin: 0 auto 12px; width: 342px; font-family: "HelveticaNeue", Arial, sans-serif; }
 .input-field__shad { position: absolute; top: -18px; right: 100%; bottom: -8px; width: 16px; opacity: 0.2; z-index: -1; background-image: -webkit-linear-gradient(182deg, #b6b6b6 0%, transparent 100%); background-image: linear-gradient(268deg, #b6b6b6 0%, transparent 100%); }
 .input-field__shad:before, .input-field__shad:after { position: absolute; content: ""; left: 0; }
