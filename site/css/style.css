@@ -68,9 +68,12 @@ body { color: #383838; font-family: "HelveticaNeue-Light", Arial, sans-serif; fo
 
 .step { height: 642px; text-align: center; font-size: 0; }
 .step:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
+.step.is-mod { padding: 20px 0 60px; height: auto; }
 .step_two .step__btn { margin-top: 30px; }
 .step__in { margin: 0 auto; max-width: 920px; vertical-align: middle; font-size: 14px; display: inline-block; }
 .step__block { position: relative; padding: 30px 39px 24px 32px; -webkit-border-radius: 20px; border-radius: 20px; border: 1px solid #99deef; background: #fff; }
+.step__block.is-mod { -webkit-border-radius: 20px 20px 0 0; border-radius: 20px 20px 0 0; }
+.step__block.is-mod:before { position: absolute; content: ""; top: 100%; left: 0; right: 0; height: 5px; margin-top: -1px; background: url(../img/bg-bl.png) repeat-x 0 0; }
 .step__shad { position: absolute; top: 0; right: 100%; bottom: -20px; margin-right: -20px; width: 60px; opacity: 0.3; z-index: -1; background-image: -webkit-linear-gradient(182deg, #b6b6b6 0%, transparent 100%); background-image: linear-gradient(268deg, #b6b6b6 0%, transparent 100%); }
 .step__shad:before, .step__shad:after { position: absolute; content: ""; left: 0; }
 .step__shad:before { top: 0; width: 0px; height: 0px; border-style: solid; border-width: 20px 60px 0 0; border-color: #fff transparent transparent transparent; }
@@ -79,14 +82,45 @@ body { color: #383838; font-family: "HelveticaNeue-Light", Arial, sans-serif; fo
 .step__but { margin-top: 34px; }
 .step__form .input { min-width: 342px; }
 .step__check { margin-top: 15px; }
-.step__row { margin-top: 35px; min-width: 342px; font-size: 15px; font-family: "HelveticaNeue", Arial, sans-serif; }
+.step__row { margin-top: 35px; min-width: 342px; font-size: 15px; font-family: "HelveticaNeue", Arial, sans-serif; *zoom: 1; }
+.step__row:after { content: " "; display: table; clear: both; }
+.step__row.is-mod { padding-left: 20px; padding-right: 20px; }
 .step__row:first-child { margin-top: 0; }
 .step__row .step__bold { margin-bottom: 5px; }
+.step__row strong { float: right; margin-left: 2px; font-family: "HelveticaNeue-Bold", Arial, sans-serif; }
+.step__row p { margin: 5px 0 0 0; }
 .step__bold { font-family: "HelveticaNeue-Bold", Arial, sans-serif; }
 .step__wrap { margin: 0 auto; width: 342px; }
 .step__wrap .price { margin-top: 15px; }
 .step__wrap .title-middle { margin-bottom: 18px; }
 .step__text { margin: 20px 0 10px; }
+.step__wrapper { margin: 0 auto; width: 315px; }
+.step__wrapper .step__row { position: relative; margin: 18px 0 0; padding: 18px 0 0; min-width: 242px; width: 242px; }
+.step__wrapper .step__row.is-mod { padding-left: 20px; padding-right: 20px; }
+.step__wrapper .step__row:first-child { margin-top: 0; padding-top: 0; }
+.step__wrapper .step__row:first-child:before { display: none; }
+.step__wrapper .step__row:nth-child(even):before { width: 84px; }
+.step__wrapper .step__row:before { position: absolute; content: ""; top: 0; left: 50%; -webkit-transform: translate(-50%, 0); -ms-transform: translate(-50%, 0); transform: translate(-50%, 0); width: 184px; height: 1px; background: #ebebeb; }
+.step__wrapper .step__btn { margin-top: 35px; }
+.step__wrapper .step__btn + .step__btn { margin-top: 20px; }
+.step__wrapper .title-middle { margin-bottom: 18px; }
+.step__wrapper .price { font-family: "HelveticaNeue-Bold", Arial, sans-serif; font-size: 16px; }
+.step__sms { width: 355px; }
+.step__sms .input-field { width: 100%; }
+.step__sms .btn { margin-top: 35px; }
+.step__sms .btn + .btn { margin-top: 20px; }
+.step__sms .title-middle { margin-bottom: 18px; }
+.step__sms .sms-code { margin-top: 18px; }
+.step__nav { margin: 20px 0 27px; text-align: right; font-size: 14px; font-family: "HelveticaNeue-Bold", Arial, sans-serif; *zoom: 1; }
+.step__nav:after { content: " "; display: table; clear: both; }
+.step__nav li { vertical-align: top; display: inline-block; }
+.step__nav li:first-child { float: left; }
+.step__nav a { color: #00d0ef; -webkit-transition: border-color 0.2s; transition: border-color 0.2s; border-bottom: 1px solid transparent; }
+.step__nav a:hover { border-color: #00d0ef; }
+.step__numb { position: relative; margin: 18px auto; width: 342px; }
+.step__inform { margin: 0 -65px 25px; max-width: 520px; font-size: 16px; font-family: "HelveticaNeue", Arial, sans-serif; }
+.step__inform strong { font-family: "HelveticaNeue-Bold", Arial, sans-serif; }
+.step .commission { font-size: 12px; }
 
 .title { margin-bottom: 18px; text-align: center; font-size: 22px; font-family: "HelveticaNeue-Bold", Arial, sans-serif; color: #575757; }
 
