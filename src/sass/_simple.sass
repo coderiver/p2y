@@ -17,6 +17,10 @@
 	margin: 0 auto
 	padding: 30px 28px 40px
 	width: 869px
+	+r(920)
+		padding: 20px 15px 30px
+		width: auto
+		max-width: 500px
 %in
 	@extend .in
 
@@ -58,6 +62,7 @@ h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
 	font-style: normal
 
 body
+	min-width: 480px
 	color: $c_text
 	+h300
 	font-size: 14px
@@ -134,6 +139,8 @@ body
 	&.is-receive
 		.step
 			padding-top: 78px
+			+r(920)
+				padding-top: 42px
 			&__in
 				vertical-align: top
 
@@ -141,9 +148,15 @@ body
 .step
 	height: 642px
 	+vertical
+	+r(920)
+		padding: 42px 15px 45px
+		height: auto
 	&.is-mod
 		padding: 20px 0 60px
 		height: auto
+		+r(920)
+			padding: 52px 15px 45px
+			height: auto
 	&_two
 		.step__btn
 			margin-top: 30px
@@ -499,9 +512,13 @@ body
 // rates
 .rates
 	text-align: center
+	+r(920)
+		padding: 0 40px
 	&__in
 		@extend %in
 		border: 1px solid $bd_green
+		+r(920)
+			max-width: 100%
 	.btn
 		margin-top: 22px
 	p
@@ -523,6 +540,8 @@ body
 		margin-bottom: 32px
 		@extend %in
 		padding: 0
+		+r(920)
+			max-width: 100%
 	&__row
 		margin-top: 25px
 		font-size: 0
@@ -544,6 +563,10 @@ body
 	margin: 10px 0 30px
 	width: 872px
 	+clr
+	+r(920)
+		margin: 0 0 50px
+		padding: 0 15px
+		width: auto
 	&__col
 		float: left
 		margin-left: 4%
@@ -552,6 +575,16 @@ body
 		&:first-child
 			text-align: right
 			margin-left: 0
+			+r(920)
+				margin-top: 0
+				text-align: center
+		+r(920)
+			float: none
+			margin: 50px 0 0
+			width: 100%
+			max-width: 415px
+			text-align: center
+			display: block
 	.title-middle
 		margin-bottom: 20px
 
@@ -634,6 +667,9 @@ body
 		transition: opacity .2s, visibility .2s
 		border: 1px solid $bd-bord-blue
 		background: #fff
+		+r(920)
+			left: auto
+			right: -32px
 	&__label
 		position: absolute
 		top: 3px
