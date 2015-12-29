@@ -1,5 +1,18 @@
 $(document).ready(function() {
 	
+	// slider
+	$('.js-slider').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+		dots: true,
+		arrows: false,
+		infinite: true,
+		speed: 500,
+		fade: true,
+		cssEase: 'linear'
+	});
+
 	// accordion
 	function accord() {
 		$('.js-accord').each(function() {

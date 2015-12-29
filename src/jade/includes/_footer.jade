@@ -1,2 +1,77 @@
 footer.footer
-	
+	.footer__top
+	.footer__in
+		.footer__left
+			//- logo
+			.logo
+				a(href="#")
+					+icon('logo')
+					span.logo__text Сервис денежных переводов
+				//- hint
+				.hint 
+					span больше сервисов!
+			//- copy
+			.copy 
+				| Copyright © 2014-2015 Онлайн сервис денежных переводов PAY2YOU.
+				| Все права защищены.
+		.footer__center
+			img(src="img/phone.png", alt="img")
+		.footer__right
+			.title-small наши решения
+			//- app
+			.app 
+				a.app__item(href="#")
+					+icon('google-play')
+					span.app__text Google Play
+				a.app__item(href="#")
+					+fa('apple')
+					span.app__text App Store
+				a.app__item(href="#")
+					+icon('f-app')
+					span.app__text App
+			//- soc
+			.soc
+				.title-small МЫ на связи
+				ul.soc__list
+					li.soc__item
+						a(href="#")
+							+fa('facebook')
+					li.soc__item
+						a(href="#")
+							+fa('vk')
+					li.soc__item
+						a(href="#")
+							+fa('google-plus')
+			//- support
+			.support
+				.title-small служба поддержки
+				//- cont
+				.cont
+					+fa('medkit')
+					.cont__right
+						a(href="tel:+380444954955") +38 044 495 49 55
+						a(href="mailto:help@p2y.com.ua") help@p2y.com.ua
+	.footer__partners
+		//- partners
+		ul.partners
+			li.partners__item
+				a(href="#")
+					+icon('pci')
+			li.partners__item
+				a(href="#")
+					+icon('secure')
+			li.partners__item
+				a(href="#")
+					+icon('mc-maney-send')
+			li.partners__item
+				a(href="#")
+					+icon('verified-visa')
+			li.partners__item
+				a(href="#")
+					+icon('mc-securecode')
+			li.partners__item
+				a(href="#")
+					+icon('visa')
+			li.partners__item
+				a(href="#")
+					+icon('mc')

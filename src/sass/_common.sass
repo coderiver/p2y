@@ -74,7 +74,330 @@ a
 
 h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
 	font-weight: normal
-	font-style: normal
 
 // variables
+$black: #000
 $white: #fff
+$blue: #2A7CB2
+
+$bg_blue: #2a7cb3
+
+$bord_header: #21618c
+$bord_timer: #3497da
+
+$shad_header: #3498db
+$shad_number: #216181
+$shad_number_out: #1c5e89
+
+
+// extend
+.in
+	padding: 0 10px
+	margin: 0 auto
+	max-width: 960px
+	+clr
+
+%in
+	@extend .in
+
+// header
+.header
+	position: relative
+	height: 62px
+	color: $white
+	font-size: 12px
+	z-index: 1
+	box-shadow: inset 0 -1px 0 $shad_header
+	border-bottom: 1px solid $bord_header
+	background: $bg_blue
+	&__in
+		@extend %in
+	&__right
+		float: right
+		margin-top: 15px
+		+clr
+
+// logo
+.logo
+	position: relative
+	float: left
+	margin-top: 11px
+	&:hover
+		.hint
+			opacity: 1
+			visibility: visible
+			z-index: 1
+	a
+		color: $white
+		+clr
+	.icon
+		float: left
+		margin-right: 5px
+	&__text
+		float: left
+		margin-top: 6px
+		width: 105px
+
+// timer
+.timer
+	position: absolute
+	left: 50%
+	transform: translate(-50%,0)
+	margin-left: 1%
+	margin-top: 15px
+	font-size: 22px
+	&:hover
+		.hint
+			opacity: 1
+			visibility: visible
+			z-index: 1
+	+r700
+	+clr
+	&__wrap,
+	&__numb,
+	&__thous,
+	&__text
+		float: left
+	&__thous
+		margin-left: 2px
+		padding-top: 9px
+		line-height: 1
+	&__numb
+		position: relative
+		margin-left: 2px
+		height: 29px
+		line-height: 27px
+		border: 1px solid $bord_timer
+		box-shadow: inset 0 1px 0 $shad_number_out, 0 1px 0 $shad_number_out
+		border-radius: 3px
+		&:before,
+		&:after
+			position: absolute
+			content: ''
+			left: 0
+			right: 0
+			height: 1px
+			z-index: 2
+		&:before
+			top: 11px
+			background: rgba($shad_number, .7)
+		&:after
+			top: 12px
+			background: rgba($white, .5)
+		&:first-child
+			margin-left: 0
+		span
+			position: relative
+			padding: 0 6px
+			z-index: 1
+			display: block
+			&:before
+				position: absolute
+				content: ''
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				opacity: .1
+				background: radial-gradient(50% 50%, circle farthest-corner, rgba($white, 0) 0%, rgba($black, 1) 100%)
+	&__text
+		margin-left: 9px
+		width: 95px
+		font-size: 12px
+		+r400
+	.hint
+		margin-top: 11px
+		
+
+// hint
+.hint
+	position: absolute
+	top: 100%
+	left: 50%
+	transform: translate(-26%, -4px)
+	font-size: 11px
+	white-space: nowrap
+	visibility: hidden
+	z-index: -1
+	opacity: 0
+	transition: opacity .2s, visibility .2s
+	span
+		padding: 8px 9px
+		color: $blue
+		border-radius: 2px
+		box-shadow: 2px 2px 2px rgba($black, .3)
+		background: $white
+		display: inline-block
+
+// cont
+.cont
+	float: left
+	& + .lang
+		margin-left: 20px
+	.fa
+		margin-right: 8px
+		font-size: 32px
+	&__right
+		float: right
+		margin-top: 2px
+		a
+			margin-top: 1px
+			color: $white
+			line-height: 1.2
+			transition: border-color .2s
+			border-bottom: 1px solid transparent
+			display: block
+			&:hover
+				border-color: $white
+			&:first-child
+				margin-top: 0
+
+// lang
+.lang
+	float: right
+	+clr
+	&__item
+		float: left
+		margin-left: 5px
+		&:first-child
+			margin-left: 0
+		&.is-active
+			a
+				color: $blue
+				&:before
+					transform: scale(1)
+					opacity: 1
+	a
+		position: relative
+		height: 32px
+		width: 32px
+		color: $white
+		line-height: 30px
+		text-align: center
+		text-transform: uppercase
+		border-radius: 50%
+		transition: color .3s, box-shadow .3s
+		border: 1px solid $white
+		display: block
+		&:hover
+			color: $blue
+			box-shadow: 0px 2px 2px rgba($black, 0.3)
+			&:before
+				transform: scale(1)
+				opacity: 1
+		&:before
+			position: absolute
+			content: ''
+			top: -1px
+			left: -1px
+			right: -1px
+			bottom: -1px
+			background: $white
+			transition: transform .3s, opacity .3s
+			transform: translate3d(0,0,0)
+			transform: scale(0)
+			will-change: opacity
+			opacity: 0
+			border-radius: 50%
+		span
+			position: relative
+			z-index: 1
+
+// slider
+.slider
+	box-shadow: inset 0 -1px 0 $bg_blue
+	border-bottom: 1px solid $bord_header
+	background: url(../img/cloud.png) no-repeat 65% 10px, $bg_blue
+	&__in
+		@extend %in
+	&__slide
+		width: 100%
+	.slick-dots
+		right: 125px
+		bottom: 16px
+		text-align: right
+		font-size: 0
+		line-height: 1
+		li
+			margin-left: 7px
+			padding: 0
+			&:first-child
+				margin-left: 0
+			&.slick-active
+				button
+					opacity: 1
+					&:before
+						transform: scale(1)
+						opacity: 1
+		button
+			position: relative
+			height: 13px
+			width: 13px
+			border: 1px solid $white
+			background: none
+			&:before
+				position: absolute
+				content: ''
+				top: 2px
+				left: 2px
+				height: 7px
+				width: 7px
+				border-radius: 50%
+				background: $white
+				will-change: opacity
+				transition: background .3s, transform .3s, opacity .3s
+				transform: scale(0)
+				opacity: 0
+
+// stock
+.stock
+	padding: 10px 0 10px 55px
+	text-align: center
+	color: $white
+	+r900
+	// &__top
+	&__text
+		margin-top: 45px
+		text-transform: uppercase
+		font-size: 13px
+		text-shadow: 0px 0.82px 1.64px rgba($black, .2)
+		vertical-align: top
+		display: inline-block
+		span
+			&.is-up
+				font-size: 22px
+			& + span
+				margin-left: 8px
+	&__disc
+		position: relative
+		margin-left: 5px
+		vertical-align: top
+		display: inline-block
+	&__plus
+		position: absolute
+		top: 100%
+		left: 50%
+		transform: translate(-68%, -9px)
+	&__more
+		text-align: right
+		margin-top: -10px
+
+// btn
+.btn
+	position: relative
+	padding: 5px 20px
+	color: $white
+	+r400
+	font-size: 12px
+	line-height: 1.1
+	transition: color .2s, box-shadow .2s, background .2s
+	border: 1px solid $white
+	border-radius: 25px
+	display: inline-block
+	&:hover
+		color: $blue
+		box-shadow: 0px 2px 2px rgba($black, 0.3)
+		background: $white
+
+button.btn
+	line-height: 1

@@ -1,36 +1,125 @@
 header.header
 	.header__in
 		//- logo
-		a.logo(href="#")
-			+icon('logo')
-			span.logo__text Сервис денежных переводов
+		.logo
+			a(href="#")
+				+icon('logo')
+				span.logo__text Сервис денежных переводов
 			//- hint
-			.hint больше сервисов!
+			.hint 
+				span больше сервисов!
 		//- timer
 		.timer
 			.timer__wrap
-				.timer__numb 1
-				.timer__numb 7
-				.timer__numb 8
+				.timer__numb 
+					span 1
+				.timer__numb 
+					span 7
+				.timer__numb 
+					span 8
 				span.timer__thous ,
-				.timer__numb 6
-				.timer__numb 7
-				.timer__numb 8
+				.timer__numb 
+					span 6
+				.timer__numb 
+					span 7
+				.timer__numb 
+					span 8
 			.timer__text Всего успешных переводов
+			//- hint
+			.hint 
+				span присоединяйтесь :)
 		.header__right
 			//- cont
 			.cont
 				+fa('medkit')
 				.cont__right
-					a(href="tel:+38 044 495 49 55") +38 044 495 49 55
+					a(href="tel:+380444954955") +38 044 495 49 55
 					a(href="mailto:help@p2y.com.ua") help@p2y.com.ua
 			//- lang
 			ul.lang
 				li.lang__item
-					a(href="#") УКР
+					a(href="#") 
+						span УКР
 				li.lang__item
-					a(href="#") ENG
-				li.lang__item
-					a(href="#") РУС
-section.banner
-	+icon('stock')
+					a(href="#") 
+						span ENG
+				li.lang__item.is-active
+					a(href="#") 
+						span РУС
+section.slider
+	.slider__in.js-slider
+		.slider__slide
+			//- stock
+			.stock
+				.stock__top
+					.stock__text
+						span ПереВЕСТИ ДЕНЬГИ 
+						span.is-up Всего за
+					.stock__disc
+						+icon('stock')
+						.stock__plus + 5 грн
+					.stock__text
+						span.is-up КОМИССИИ
+						span онлайн в интернете!
+				.stock__more
+					a.btn(href="#") Подробнее
+		.slider__slide
+			//- stock
+			.stock
+				.stock__top
+					.stock__text
+						span ПереВЕСТИ ДЕНЬГИ 
+						span.is-up Всего за
+					.stock__disc
+						+icon('stock')
+						.stock__plus + 5 грн
+					.stock__text
+						span.is-up КОМИССИИ
+						span онлайн в интернете! 2
+				.stock__more
+					a.btn(href="#") Подробнее
+		.slider__slide
+			//- stock
+			.stock
+				.stock__top
+					.stock__text
+						span ПереВЕСТИ ДЕНЬГИ 
+						span.is-up Всего за
+					.stock__disc
+						+icon('stock')
+						.stock__plus + 5 грн
+					.stock__text
+						span.is-up КОМИССИИ
+						span онлайн в интернете! 3
+				.stock__more
+					a.btn(href="#") Подробнее
+		.slider__slide
+			//- stock
+			.stock
+				.stock__top
+					.stock__text
+						span ПереВЕСТИ ДЕНЬГИ 
+						span.is-up Всего за
+					.stock__disc
+						+icon('stock')
+						.stock__plus + 5 грн
+					.stock__text
+						span.is-up КОМИССИИ
+						span онлайн в интернете! 4
+				.stock__more
+					a.btn(href="#") Подробнее
+		.slider__slide
+			//- stock
+			.stock
+				.stock__top
+					.stock__text
+						span ПереВЕСТИ ДЕНЬГИ 
+						span.is-up Всего за
+					.stock__disc
+						+icon('stock')
+						.stock__plus + 5 грн
+					.stock__text
+						span.is-up КОМИССИИ
+						span онлайн в интернете! 5
+				.stock__more
+					a.btn(href="#") Подробнее
