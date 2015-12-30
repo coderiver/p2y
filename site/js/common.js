@@ -1,5 +1,9 @@
 $(document).ready(function() {
 	
+	$('.js-slider').on('init', function(slick){
+		$(this).addClass('is-init');
+	});
+	
 	// slider
 	$('.js-slider').slick({
 		slidesToShow: 1,

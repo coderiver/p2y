@@ -84,6 +84,7 @@ $bg_blue: #2a7cb3
 
 $bord_header: #21618c
 $bord_timer: #3497da
+$bord_foot: #3db1ff
 
 $shad_header: #3498db
 $shad_number: #216181
@@ -232,6 +233,7 @@ $shad_number_out: #1c5e89
 // cont
 .cont
 	float: left
+	font-size: 12px
 	& + .lang
 		margin-left: 20px
 	.fa
@@ -309,12 +311,21 @@ $shad_number_out: #1c5e89
 	border-bottom: 1px solid $bord_header
 	background: url(../img/cloud.png) no-repeat 65% 10px, $bg_blue
 	&__in
+		height: 139px
 		@extend %in
 	&__slide
 		width: 100%
 	.slick-dots
 		right: 125px
 		bottom: 16px
+
+.slick-slider
+	visibility: hidden
+	opacity: 0
+	&.is-init
+		visibility: visible
+		opacity: 1
+	.slick-dots
 		text-align: right
 		font-size: 0
 		line-height: 1
@@ -401,3 +412,121 @@ $shad_number_out: #1c5e89
 
 button.btn
 	line-height: 1
+
+// title-small
+.title-small
+	+r700
+	text-transform: uppercase
+	font-size: 12px
+
+// footer
+.footer
+	color: $white
+	background: url(../img/bg-foot.png) no-repeat 50% 25px
+	background-size: cover
+	&__top
+		height: 25px
+	&__in
+		margin: 0 auto
+		padding: 20px 10px 25px
+		max-width: 865px
+		text-align: center
+		+clr
+	&__left
+		float: left
+		text-align: left
+		font-size: 12px
+	&__center
+		margin-top: -45px
+		display: inline-block
+	&__right
+		float: right
+		text-align: left
+	&__row
+		margin-top: 18px
+		+clr
+		.soc,
+		.support
+			float: left
+		.support
+			margin-left: 20px
+	&__partners
+		padding: 24px 0 36px
+		border-top: 1px solid $blue
+		box-shadow: 0 -1px 0 $bord_foot
+	.logo
+		margin-top: 0
+		float: none
+	.title-small
+		margin-bottom: 12px
+
+// copy
+.copy
+	margin-top: 20px
+	max-width: 215px
+
+// partners
+.partners
+	@extend %in
+	text-align: center
+	&__item
+		margin-top: 12px
+		margin-left: 22px
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+
+// app
+.app
+	margin-top: 10px
+	+clr
+	&__item
+		float: left
+		margin-left: 8px
+		padding: 0 7px 0 10px
+		height: 32px
+		color: $white
+		transition: color .2s, box-shadow .2s, background .2s
+		line-height: 30px
+		border: 1px solid $white
+		border-radius: 4px
+		&:hover
+			color: $blue
+			box-shadow: 0px 2px 2px rgba($black, 0.3)
+			background: $white
+		&:first-child
+			margin-left: 0
+		.fa,
+		.icon
+			margin-right: 4px
+			vertical-align: middle
+			display: inline-block
+		.fa
+			font-size: 22px
+	&__text
+		display: inline
+
+// soc
+.soc
+	+clr
+	&__item
+		float: left
+		margin-left: 10px
+		&:first-child
+			margin-left: 0
+	a
+		height: 32px
+		width: 32px
+		color: $white
+		font-size: 16px
+		text-align: center
+		line-height: 30px
+		border-radius: 50%
+		transition: color .2s, box-shadow .2s, background .2s
+		border: 1px solid $white
+		display: block
+		&:hover
+			color: $blue
+			box-shadow: 0px 2px 2px rgba($black, 0.3)
+			background: $white
