@@ -80,16 +80,24 @@ $black: #000
 $white: #fff
 $blue: #2A7CB2
 
+$c_step_numb: #989898
+
 $bg_blue: #2a7cb3
 
 $bord_header: #21618c
 $bord_timer: #3497da
 $bord_foot: #3db1ff
+$bord_step: #ccc
 
 $shad_header: #3498db
 $shad_number: #216181
 $shad_number_out: #1c5e89
 
+$serv_green: rgba(255, 243, 213, 1)
+$l_serv_green: rgba(246, 255, 247, 1)
+$l_serv_red: rgba(213, 243, 255, 1)
+$serv_blue: rgba(250, 255, 232, 1)
+$l_serv_blue: rgba(255, 246, 249, 1)
 
 // extend
 .in
@@ -100,6 +108,33 @@ $shad_number_out: #1c5e89
 
 %in
 	@extend .in
+
+// btn
+.btn
+	position: relative
+	padding: 5px 20px
+	color: $white
+	+r400
+	font-size: 12px
+	line-height: 1.1
+	transition: color .2s, box-shadow .2s, background .2s
+	border: 1px solid $white
+	border-radius: 25px
+	background: transparent
+	display: inline-block
+	&:hover
+		color: $blue
+		box-shadow: 0px 2px 2px rgba($black, 0.3)
+		background: $white
+
+button.btn
+	line-height: 1
+
+// title-small
+.title-small
+	+r700
+	text-transform: uppercase
+	font-size: 12px
 
 // header
 .header
@@ -393,31 +428,107 @@ $shad_number_out: #1c5e89
 		text-align: right
 		margin-top: -10px
 
-// btn
-.btn
+// steps
+.steps
+	overflow: hidden
+	background: url(../img/bg-steps.png) repeat
+	&__in
+		position: relative
+		@extend %in
+		padding-left: 50px
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 20px
+			bottom: 0
+			z-index: 1
+			width: 1px
+			background: $bord_step
+
+// step
+.step
 	position: relative
-	padding: 5px 20px
-	color: $white
-	+r400
-	font-size: 12px
-	line-height: 1.1
-	transition: color .2s, box-shadow .2s, background .2s
-	border: 1px solid $white
-	border-radius: 25px
-	display: inline-block
-	&:hover
-		color: $blue
-		box-shadow: 0px 2px 2px rgba($black, 0.3)
+	&:before,
+	&:after
+		position: absolute
+		content: ''
+		top: 0
+		height: 100%
+		width: 1000%
 		background: $white
+		display: none
+	&:before
+		right: 100%
+	&:after
+		left: 100%
+	&.is-active
+		.step__block,
+		.step__all
+			display: inline
+	&.is-valid
+		background: $white
+		&:before,
+		&:after
+			display: block
+		& + .is-active
+			background: $white
+			&:before,
+			&:after
+				display: block
+	&__top
+		position: relative
+	&__numb
+		position: absolute
+		left: -50px
+		width: 40px
+		height: 40px
+		color: $c_step_numb
+		font-size: 18px
+		line-height: 38px
+		text-align: center
+		z-index: 3
+		border-radius: 50%
+		border: 1px solid $bord_step
+		background: $white
+		&.is-receipt
+			.fa
+				display: inline-block
+		.fa
+			vertical-align: middle
+			display: none
+	&__all
+		font-size: 12px
+		letter-spacing: -.4px
+		display: none
+	&__block
+		display: none
 
-button.btn
-	line-height: 1
+// services
+.services
+	+clr
+	&__col
+		float: left
+		width: 360px
 
-// title-small
-.title-small
-	+r700
-	text-transform: uppercase
-	font-size: 12px
+
+// service
+.service
+	+clr
+	border-radius: 4px
+	box-shadow : 0px 2px 2px rgba($black, 0.3)
+	&.is-card
+		.service__top
+			background: linear-gradient(28.44deg, $serv_green 0%, $l_serv_green 100%)
+	&.is-phone
+		.service__top
+			background: linear-gradient(28.44deg, $serv_blue 0%, $l_serv_blue 100%)
+	&.is-get
+		.service__top
+			background: linear-gradient(28.44deg, $l_serv_green 0%, $l_serv_red 100%)
+	&__col
+		float: left
+		width: 50%
 
 // footer
 .footer
