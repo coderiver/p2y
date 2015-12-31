@@ -63,6 +63,7 @@
 
 // body 
 body
+	color: $c_body
 	+r400
 	font-size: 14px
 	line-height: 1.3
@@ -74,30 +75,6 @@ a
 
 h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
 	font-weight: normal
-
-// variables
-$black: #000
-$white: #fff
-$blue: #2A7CB2
-
-$c_step_numb: #989898
-
-$bg_blue: #2a7cb3
-
-$bord_header: #21618c
-$bord_timer: #3497da
-$bord_foot: #3db1ff
-$bord_step: #ccc
-
-$shad_header: #3498db
-$shad_number: #216181
-$shad_number_out: #1c5e89
-
-$serv_green: rgba(255, 243, 213, 1)
-$l_serv_green: rgba(246, 255, 247, 1)
-$l_serv_red: rgba(213, 243, 255, 1)
-$serv_blue: rgba(250, 255, 232, 1)
-$l_serv_blue: rgba(255, 246, 249, 1)
 
 // extend
 .in
@@ -126,6 +103,16 @@ $l_serv_blue: rgba(255, 246, 249, 1)
 		color: $blue
 		box-shadow: 0px 2px 2px rgba($black, 0.3)
 		background: $white
+	&_blue
+		color: $white
+		border-color: $l_blue
+		background: $l_blue
+		&:hover
+			color: $l_blue
+			background: $white
+			box-shadow: none
+	&_middle
+		padding: 9px 20px
 
 button.btn
 	line-height: 1
@@ -478,8 +465,12 @@ button.btn
 				display: block
 	&__top
 		position: relative
+		padding: 12px 0
+	&__title
+		color: $l_gray
 	&__numb
 		position: absolute
+		top: 0
 		left: -50px
 		width: 40px
 		height: 40px
@@ -509,26 +500,181 @@ button.btn
 	+clr
 	&__col
 		float: left
+		margin-left: 10px
 		width: 360px
-
+		&:first-child
+			margin-left: 0
 
 // service
 .service
-	+clr
+	width: 100%
 	border-radius: 4px
 	box-shadow : 0px 2px 2px rgba($black, 0.3)
+	background: $white
+	display: inline-table
+	+clr
+	& + .service
+		margin-top: 10px
 	&.is-card
 		.service__top
 			background: linear-gradient(28.44deg, $serv_green 0%, $l_serv_green 100%)
+		.service__ico
+			&:before
+				+svg(shad-step-card,129,127)
 	&.is-phone
 		.service__top
-			background: linear-gradient(28.44deg, $serv_blue 0%, $l_serv_blue 100%)
+			background: linear-gradient(28.44deg, $l_serv_green 0%, $l_serv_red 100%)
+		.service__ico
+			&:before
+				top: 3px
+				left: 7px
+				+svg(shad-step-phone,117,141)
 	&.is-get
 		.service__top
-			background: linear-gradient(28.44deg, $l_serv_green 0%, $l_serv_red 100%)
+			background: linear-gradient(28.44deg, $serv_blue 0%, $l_serv_blue 100%)
+		.service__ico
+			&:before
+				top: 6px
+				+svg(shad-step-get,128,126)
 	&__col
-		float: left
 		width: 50%
+		border-left: 1px solid $bord_serv
+		vertical-align: top
+		display: table-cell
+		&:first-child
+			text-align: center
+		.link
+			margin-top: 18px
+		p
+			letter-spacing: -.35px
+	&__wrap
+		padding: 15px 12px
+	&__top
+		padding: 15px 12px
+		.btn
+			margin-top: 15px
+	&__img
+		margin: 19px 0
+	&__ico
+		position: relative
+		vertical-align: top
+		display: inline-block
+		&:before
+			position: absolute
+			content: ''
+			top: 5px
+			left: 5px
+		img
+			position: relative
+			z-index: 1
+			display: block
+	&__bot
+		padding: 14px
+		border-top: 1px solid $bord_serv
+	.alert
+		margin-top: 4px
+
+// rating
+.rating
+	&__list
+		font-size: 0
+		line-height: 1
+	&__item
+		position: relative
+		margin-left: 8px
+		font-size: 20px
+		color: $c_rat
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+		&:hover,
+		&.is-active
+			color: $orange
+		&.is-half
+			&:before
+				position: absolute
+				content: "\f005"
+				top: 0
+				left: 0
+				width: 50%
+				overflow: hidden
+				color: $orange
+				display: inline-block
+				font: normal normal normal 14px/1 FontAwesome
+				font-size: inherit
+				cursor: pointer
+				text-rendering: auto
+				-webkit-font-smoothing: antialiased
+				-moz-osx-font-smoothing: grayscale
+		a
+			color: inherit
+			transition: color .2s
+	&__quantity
+		margin-top: 5px
+		color: $c_step_numb
+
+// link
+.link
+	color: $l_blue
+	transition: border-color .2s
+	line-height: 1.3
+	border-bottom: 1px solid transparent
+	display: inline-block
+	&:hover
+		border-color: $l_blue
+
+// altert arr
+=altarr($color)
+	background: $color
+	&:before
+		+arr(4,8,$color,tr)
+	&:after
+		+arr(4,8,$color,br)
+	span:before
+		+arr(4,8,$color,tl)
+	span:after
+		+arr(4,8,$color,bl)
+
+// alert
+.alert
+	position: relative
+	padding: 0 14px
+	color: $white
+	line-height: 1.2
+	text-transform: uppercase
+	vertical-align: top
+	display: inline-block
+	+altarr($red)
+	&:before,
+	&:after,
+	span:before,
+	span:after
+		position: absolute
+		content: ''
+	&:before
+		top: 0
+		left: -4px
+	&:after
+		bottom: 0
+		left: -4px
+	span:before
+		top: 0
+		right: -4px
+	span:after
+		right: -4px
+		bottom: 0
+	&.is-orange
+		+altarr($orange)
+
+// counter
+.counter
+	&__numb,
+	&__thous
+		vertical-align: top
+		display: inline-block
+	&__inf
+		color: $c_text
 
 // footer
 .footer

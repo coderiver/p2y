@@ -16,7 +16,7 @@ block content
 						span.step__all из 4
 						+fa('check')
 					.step__title Выбор услуги
-				.step__block
+				.step__block 
 					//- services
 					.services
 						.services__col
@@ -25,7 +25,8 @@ block content
 								.service__col
 									.service__top
 										.service__title По номеру карты 
-										.alert топ
+										.alert 
+											span топ
 										.service__img
 											.service__ico
 												img(src="img/step-card.png", alt="img")
@@ -44,11 +45,11 @@ block content
 												li.rating__item.is-active
 													a(href="#")
 														+fa('star')
-												li.rating__item
+												li.rating__item.is-active
 													a(href="#")
 														+fa('star')
 											.rating__quantity 10750 человек
-										button.btn.btn_blue(type="button") Перевести деньги
+										button.btn.btn_blue.btn_middle(type="button") Перевести деньги
 									.service__bot
 										//- counter
 										.counter
@@ -66,10 +67,11 @@ block content
 													span 8
 											.counter__inf успешных оплат
 								.service__col
-									p Эта услуга позволит Вам перевести деньги любой Вашей банковской карты на банковскую карту другого человека. Для перевода денег Вам достаточно знать номер карты отправителя и получателя.
-									a.link Подробнее
+									.service__wrap
+										p Эта услуга позволит Вам перевести деньги любой Вашей банковской карты на банковскую карту другого человека. Для перевода денег Вам достаточно знать номер карты отправителя и получателя.
+										a.link(href="#") Подробнее
 							//- service
-							.service.is-phone
+							.service.is-get
 								.service__col
 									.service__top
 										.service__title Получить деньги
@@ -79,23 +81,23 @@ block content
 										//- rating
 										.rating
 											ul.rating__list
-												li.rating__item
+												li.rating__item.is-active
 													a(href="#")
 														+fa('star')
-												li.rating__item
+												li.rating__item.is-active
 													a(href="#")
 														+fa('star')
-												li.rating__item
+												li.rating__item.is-active
 													a(href="#")
 														+fa('star')
-												li.rating__item
+												li.rating__item.is-active
 													a(href="#")
 														+fa('star')
 												li.rating__item
 													a(href="#")
 														+fa('star')
 											.rating__quantity 10750 человек
-										button.btn.btn_blue(type="button") Перевести деньги
+										button.btn.btn_blue.btn_middle(type="button") Перевести деньги
 									.service__bot
 										//- counter
 										.counter
@@ -108,38 +110,40 @@ block content
 													span 8
 											.counter__inf успешных оплат
 								.service__col
-									p Эта услуга позволит Вам перевести деньги любой Вашей банковской карты на банковскую карту другого человека. Для перевода денег Вам достаточно знать номер карты отправителя и получателя.
-									a.link(href="") Подробнее
+									.service__wrap
+										p Эта услуга позволит Вам перевести деньги любой Вашей банковской карты на банковскую карту другого человека. Для перевода денег Вам достаточно знать номер карты отправителя и получателя.
+										a.link(href="#") Подробнее
 						.services__col
 							//- service
-							.service.is-get
+							.service.is-phone
 								.service__col
 									.service__top 
 										.service__title По номеру телефона
-										.alert хит
+										.alert.is-orange 
+											span хит
 										.service__img
 											.service__ico
 												img(src="img/phone.png", alt="img")
 										//- rating
 										.rating
 											ul.rating__list
-												li.rating__item
+												li.rating__item.is-active
 													a(href="#")
 														+fa('star')
-												li.rating__item
+												li.rating__item.is-active
 													a(href="#")
 														+fa('star')
-												li.rating__item
+												li.rating__item.is-active
 													a(href="#")
 														+fa('star')
-												li.rating__item
+												li.rating__item.is-half
 													a(href="#")
 														+fa('star')
 												li.rating__item
 													a(href="#")
 														+fa('star')
 											.rating__quantity 10750 человек
-										button.btn.btn_blue(type="button") Перевести деньги
+										button.btn.btn_blue.btn_middle(type="button") Перевести деньги
 									.service__bot
 										//- counter
 										.counter
@@ -152,8 +156,9 @@ block content
 													span 8
 											.counter__inf успешных оплат
 								.service__col
-									p Если Вы не знаете номер карты Получателя, но знаете номер его мобильного телефона, рекомендуем Вам воспользоваться этим сервисом . Получателю придет СМС-сообщение с номером перевода и проверочным кодом, ссылкой на наш сайт. Перейдя на сайт PAY2YOU.ua, Получатель самостоятельно вносит номер карты для получения денег. 
-									.link Подробнее
+									.service__wrap
+										p Если Вы не знаете номер карты Получателя, но знаете номер его мобильного телефона, рекомендуем Вам воспользоваться этим сервисом . Получателю придет СМС-сообщение с номером перевода и проверочным кодом, ссылкой на наш сайт. Перейдя на сайт PAY2YOU.ua, Получатель самостоятельно вносит номер карты для получения денег. 
+										a.link(href="#") Подробнее
 			//- step
 			.step
 				.step__top
