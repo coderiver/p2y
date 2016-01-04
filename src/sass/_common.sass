@@ -117,6 +117,35 @@ h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
 button.btn
 	line-height: 1
 
+// title
+.title
+	+r700
+	color: $l_blue
+	font-size: 24px
+	text-transform: uppercase
+	text-shadow : 0px 1px 0px rgba($white, 1)
+	text-align: center
+
+// title-bord
+.title-bord
+	position: relative
+	padding: 10px 15px 7px 0
+	+r700
+	font-size: 16px
+	text-transform: uppercase
+	&:before
+		position: absolute
+		content: ''
+		top: 0
+		left: -15px
+		right: 0
+		bottom: 0
+		border: 1px solid $white
+	span
+		position: relative
+		z-index: 1
+
+
 // title-small
 .title-small
 	+r700
@@ -381,6 +410,35 @@ button.btn
 				transition: background .3s, transform .3s, opacity .3s
 				transform: scale(0)
 				opacity: 0
+	.slick-arrow
+		width: 40px
+		height: 40px
+		z-index: 1
+		font-size: 0
+		border-radius: 50%
+		box-shadow : 0px 2px 5px rgba(0, 0, 0, 0.3)
+		transition: box-shadow .2s
+		background: $white
+		&:hover
+			box-shadow : 0px 1px 4px rgba(0, 0, 0, 0.3)
+		&:before
+			color: $l_blue
+			font: normal normal normal 14px/1 FontAwesome
+			text-rendering: auto
+			-webkit-font-smoothing: antialiased
+			-moz-osx-font-smoothing: grayscale
+			font-size: 24px
+			line-height: 40px
+	.slick-prev
+		left: -20px
+		&:before
+			margin: 1px 3px 0 0
+			content: "\f053"
+	.slick-next
+		right: -20px
+		&:before
+			margin: 1px 0 0 4px
+			content: "\f054"
 
 // stock
 .stock
@@ -417,6 +475,7 @@ button.btn
 
 // steps
 .steps
+	padding: 20px 0
 	overflow: hidden
 	background: url(../img/bg-steps.png) repeat
 	&__in
@@ -428,7 +487,7 @@ button.btn
 			content: ''
 			top: 0
 			left: 20px
-			bottom: 0
+			bottom: 6px
 			z-index: 1
 			width: 1px
 			background: $bord_step
@@ -450,9 +509,10 @@ button.btn
 	&:after
 		left: 100%
 	&.is-active
-		.step__block,
 		.step__all
 			display: inline
+		.step__block
+			display: block
 	&.is-valid
 		background: $white
 		&:before,
@@ -463,6 +523,8 @@ button.btn
 			&:before,
 			&:after
 				display: block
+	& + .step
+		margin-top: 5px
 	&__top
 		position: relative
 		padding: 12px 0
@@ -483,7 +545,15 @@ button.btn
 		border: 1px solid $bord_step
 		background: $white
 		&.is-receipt
+			top: 7px
+			left: -47px
+			width: 35px
+			height: 35px
+			border-radius: 4px
+			transform: rotate(45deg)
 			.fa
+				transform: rotate(-45deg)
+				margin-bottom: 8px
 				display: inline-block
 		.fa
 			vertical-align: middle
@@ -493,6 +563,7 @@ button.btn
 		letter-spacing: -.4px
 		display: none
 	&__block
+		padding: 10px 0 5px
 		display: none
 
 // services
@@ -529,6 +600,14 @@ button.btn
 				top: 3px
 				left: 7px
 				+svg(shad-step-phone,117,141)
+	&.is-phone-big
+		.service__top
+			background: linear-gradient(28.44deg, $l_serv_green 0%, $l_serv_red 100%)
+		.service__ico
+			&:before
+				top: 5px
+				left: 6px
+				+svg(shad-phone-big,145,170)
 	&.is-get
 		.service__top
 			background: linear-gradient(28.44deg, $serv_blue 0%, $l_serv_blue 100%)
@@ -537,7 +616,7 @@ button.btn
 				top: 6px
 				+svg(shad-step-get,128,126)
 	&__col
-		width: 50%
+		width: 180px
 		border-left: 1px solid $bord_serv
 		vertical-align: top
 		display: table-cell
@@ -554,7 +633,7 @@ button.btn
 		.btn
 			margin-top: 15px
 	&__img
-		margin: 19px 0
+		margin: 19px 0 9px
 	&__ico
 		position: relative
 		vertical-align: top
@@ -669,12 +748,312 @@ button.btn
 
 // counter
 .counter
+	&__wrap
+		font-size: 0
 	&__numb,
 	&__thous
 		vertical-align: top
 		display: inline-block
+	&__numb
+		position: relative
+		margin-left: 2px
+		padding: 0 4px
+		+r700
+		font-size: 18px
+		color: $white
+		border-radius: 4px
+		box-shadow: 0px 1px 0px rgba($black, 0.3)
+		background: $bg_count
+		&:before,
+		&:after
+			position: absolute
+			content: ''
+			left: 0
+			right: 0
+			height: 1px
+		&:before
+			top: 11px
+			background : rgba(0, 0, 0, 1)
+			opacity : 0.3
+		&:after
+			top: 12px
+			background: rgba($white, 1)
+			opacity: 0.3
+		&:first-child
+			margin-left: 0
+	&__thous
+		margin-left: 2px
+		padding-top: 7px
+		font-size: 18px
+		line-height: 1
+		+r700
+		color: $bg_count
+		text-shadow: 0px 1px 0px rgba($white, 0.3)
 	&__inf
+		margin-top: 3px
 		color: $c_text
+
+// slid
+.slid
+	margin-top: 38px
+	border-radius: 6px
+	box-shadow: 0px 2px 6px rgba($black, 0.3)
+	background: $white
+	&__slide 
+		width: 100%
+		border-radius: 6px
+		overflow: hidden
+		display: inline-table
+		+clr
+	&__left,
+	&__right
+		vertical-align: top
+		display: table-cell
+	&__left
+		width: 214px
+	&__right
+		padding: 24px 10px 20px 30px
+	.service
+		float: none
+		box-shadow: none
+		border-right: 1px solid $bord_serv
+		display: block
+		&__top
+			padding: 20px 12px
+		&__col
+			width: 100%
+			border-left: none
+			display: block
+		&__title
+			font-size: 16px
+		&__img
+			margin: 8px 0 40px
+	.advance
+		margin-top: 20px
+
+// advance
+.advance
+	&__wrap
+		+clr
+	&__title
+		+r700
+		font-size: 12px
+	&__item
+		position: relative
+		float: left
+		margin-left: 34px
+		width: 133px
+		&:before
+			position: absolute
+			content: ''
+			left: -26px
+			bottom: 27px
+			+svg(arr-adv,19,21)
+		&:first-child
+			margin-left: 0
+			&:before
+				display: none
+		&.is-mod
+			img
+				right: auto
+				left: -6px
+	&__img
+		position: relative
+		margin-top: 5px
+		width: 133px
+		height: 137px
+		img
+			position: absolute
+			top: 0
+			right: 0
+			max-width: initial
+
+// hist
+.hist
+	margin-top: 22px
+	&__item
+		margin-left: 30px
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+	&__img
+		margin-right: 10px 
+		img
+			display: block
+	&__text,
+	&__img
+		vertical-align: middle
+		display: inline-block
+
+
+// attend
+.attend
+	margin-top: 48px
+	+clr
+	&__left
+		float: left
+		+clr
+	&__right
+		position: relative
+		float: left
+		margin-left: 18px
+		padding-left: 18px
+		+clr
+		&:before
+			position: absolute
+			content: ''
+			left: 0
+			top: -10px
+			bottom: 10px
+			border-left: 1px solid $bord_step
+	&__item
+		float: left
+		margin-left: 9px
+		width: 76px
+		transform: translate3d(0,0,0)
+		transition: transform .2s
+		&:first-child
+			margin: 0
+		&.is-active
+			border-radius: 4px
+			border: 1px solid $bord_step
+			.attend__img
+				border-bottom-right-radius: 0
+				border-bottom-left-radius: 0
+				border: none
+				background: $white
+			.attend__bot
+				padding: 5px
+			.alert
+				position: static
+				&:before,
+				&:after
+					position: absolute
+					content: ''
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+					border: none
+					background: inherit
+				span
+					position: relative
+					z-index: 1
+				.attend__img
+					box-shadow: none
+		.alert
+			transition: transform .2s
+			span
+				transform: translate3d(0,0,0)
+	a.attend__item
+		&:hover
+			transform: translate(0,-20px)
+			.alert
+				transform: translate(0,-5px)
+				span
+					transform: translate3d(0,0,0)
+			.attend__img
+				box-shadow: 0px 1px 2px rgba($shad_attend, 1)
+				background: $white
+	&__img
+		position: relative
+		height: 76px
+		transition: box-shadow .2s, background .2s
+		border-radius: 4px
+		overflow: hidden
+		border: 1px solid $bord_step
+		background: transparent
+		img
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%,-50%)
+	&__bot
+		position: relative
+		padding: 12px 0 5px
+		text-align: center
+
+// inform
+.inform
+	padding: 38px 0
+	background: url(../img/bg-inform.png) repeat 0 0
+	&__in
+		@extend %in
+
+// question
+.question
+	padding: 64px 0
+	color: $white
+	background: url(../img/question_bg.png) no-repeat 50% 100%
+	background-size: cover
+	&__in
+		@extend %in
+	// &__slider
+	&__slide
+		width: 100%
+		+clr
+	&__left
+		float: left
+		padding: 0 20px
+		width: 44.15%
+	&__right
+		float: right
+		width: 55.85%
+	&__bot
+		margin-top: 30px
+		.slick-dots
+			position: relative
+			margin-left: 20px
+			line-height: 25px
+			vertical-align: top
+			display: inline-block !important
+			li
+				outline: none
+	&__wrap
+		padding-right: 75px
+	p + p
+		margin-top: 20px
+	.title
+		margin-bottom: 30px
+		color: $white
+		text-align: left
+		text-shadow: none
+	.title-bord
+		margin-bottom: 10px
+
+// partner
+.partner
+	background: url(../img/bg-part.png) no-repeat 50% 0
+	background-size: cover
+	&__in
+		@extend %in
+	&__wrap
+		+clr
+	&__item
+		position: relative
+		float: left
+		text-align: center
+		&:hover,
+		&.is-active
+			.partner__name
+				transform: translateY(0)
+				opacity: 1
+			.partner__logo
+				transform: translateY(-40px)
+	&__logo
+		position: relative
+		transition: transform .2s
+	&__name
+		position: absolute
+		bottom: 8px
+		left: 0
+		right: 0
+		opacity: 0
+		will-change: opacity
+		transform: translate3d(0,0,0)
+		transition: transform .2s, opacity .2s
+		transform: translateX(-50%)
 
 // footer
 .footer

@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-	$('.js-slider').on('init', function(slick){
+	$('.js-slider, .js-inform-slider, .js-question-slider').on('init', function(slick){
 		$(this).addClass('is-init');
 	});
 	
@@ -14,6 +14,33 @@ $(document).ready(function() {
 		infinite: true,
 		speed: 500,
 		fade: true,
+		cssEase: 'linear'
+	});
+
+	$('.js-inform-slider').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: false,
+		dots: false,
+		infinite: true,
+		speed: 500,
+		cssEase: 'linear'
+	});
+
+	$('.js-question-slider').on('init', function(slick){
+		var this_ = $(this),
+			dots = this_.find('.slick-dots'),
+			bot = this_.find('.js-question-bot');
+		dots.appendTo(bot);
+	});
+
+	$('.js-question-slider').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: false,
+		dots: true,
+		infinite: true,
+		speed: 500,
 		cssEase: 'linear'
 	});
 
