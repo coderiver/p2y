@@ -145,12 +145,16 @@ button.btn
 		position: relative
 		z-index: 1
 
-
 // title-small
 .title-small
 	+r700
 	text-transform: uppercase
 	font-size: 12px
+
+// title-middle
+.title-middle
+	+r700
+	font-size: 16px
 
 // header
 .header
@@ -499,15 +503,15 @@ button.btn
 	&:after
 		position: absolute
 		content: ''
-		top: 0
-		height: 100%
+		top: -19px
+		bottom: 0
 		width: 1000%
 		background: $white
 		display: none
 	&:before
-		right: 100%
+		right: 50%
 	&:after
-		left: 100%
+		left: 50%
 	&.is-active
 		.step__all
 			display: inline
@@ -518,6 +522,20 @@ button.btn
 		&:before,
 		&:after
 			display: block
+		.step__numb
+			color: $white
+			font-size: 0
+			border-color: $l_green
+			background: $l_green
+			&:before
+				background: $l_green
+			.fa
+				font-size: 16px
+				display: inline-block
+		.step__title
+			color: $l_green
+			+r700
+			text-transform: uppercase
 		& + .is-active
 			background: $white
 			&:before,
@@ -528,8 +546,17 @@ button.btn
 	&__top
 		position: relative
 		padding: 12px 0
+		z-index: 1
+		+clr
 	&__title
 		color: $l_gray
+		vertical-align: top 
+		display: inline-block
+	&__stock
+		float: right
+		.icon
+			margin-top: -4px
+			vertical-align: top
 	&__numb
 		position: absolute
 		top: 0
@@ -544,6 +571,15 @@ button.btn
 		border-radius: 50%
 		border: 1px solid $bord_step
 		background: $white
+		&:before
+			position: absolute
+			content: ''
+			top: 100%
+			left: 50%
+			margin-left: -1px
+			width: 2px
+			height: 100%
+			background: transparent
 		&.is-receipt
 			top: 7px
 			left: -47px
@@ -565,6 +601,11 @@ button.btn
 	&__block
 		padding: 10px 0 5px
 		display: none
+
+// check
+.check
+	vertical-align: top
+	display: inline-block
 
 // services
 .services
@@ -985,6 +1026,8 @@ button.btn
 .question
 	padding: 64px 0
 	color: $white
+	box-shadow: inset 0 -1px 0 $white
+	border-bottom: 1px solid $l_gray
 	background: url(../img/question_bg.png) no-repeat 50% 100%
 	background-size: cover
 	&__in
@@ -1024,36 +1067,257 @@ button.btn
 
 // partner
 .partner
+	padding: 60px 0 70px
+	box-shadow: inset 0 -1px 0 $white
+	border-bottom: 1px solid $bord_par
 	background: url(../img/bg-part.png) no-repeat 50% 0
 	background-size: cover
 	&__in
 		@extend %in
 	&__wrap
+		margin: 140px 0 38px
+		text-align: center
+		font-size: 0
 		+clr
 	&__item
 		position: relative
-		float: left
+		margin-left: 35px
+		color: $c_body
+		font-size: 16px
+		+r400
 		text-align: center
+		vertical-align: top
+		display: inline-block
 		&:hover,
 		&.is-active
 			.partner__name
-				transform: translateY(0)
+				transform: scale(1)
 				opacity: 1
 			.partner__logo
-				transform: translateY(-40px)
+				transform: translateY(-40px) rotate(-45deg)
+				box-shadow: -1px 1px 2px rgba($black, 0.3)
+		&:first-child
+			margin-left: 0
+		&.is-green
+			.partner__logo
+				background: $green
+		&.is-blue
+			.partner__logo
+				background: $d_blue
 	&__logo
 		position: relative
-		transition: transform .2s
+		width: 86px
+		height: 86px
+		line-height: 86px
+		text-align: center
+		border-radius: 16px
+		transform: translate3d(0,0,0)
+		transform: rotate(-45deg)
+		transition: transform .2s, box-shadow .2s
+		background: $l_red
+		img
+			transform: rotate(45deg)
+			vertical-align: middle
+			display: inline-block
 	&__name
 		position: absolute
-		bottom: 8px
-		left: 0
-		right: 0
+		bottom: -2px
+		left: -4px
+		right: -4px
 		opacity: 0
 		will-change: opacity
 		transform: translate3d(0,0,0)
 		transition: transform .2s, opacity .2s
-		transform: translateX(-50%)
+		transform: scale(0)
+	&__inf
+		text-align: center
+		font-size: 16px
+		li
+			position: relative
+			margin-left: 8px
+			padding-left: 9px
+			display: inline-block
+			&:first-child
+				margin-left: 0
+				padding-left: 0
+				&:before
+					display: none
+			&:before
+				position: absolute
+				top: 0
+				left: -1px
+				content: '|'
+
+// reply
+.reply
+	padding: 50px 0 60px
+	border-bottom: 1px solid $bord_par
+	&__in
+		@extend %in
+	.title
+		margin-bottom: 40px
+
+// accord
+.accord
+	border-bottom: 1px solid $bord_par
+	&.is-active
+		.accord__top
+			+r700
+			text-transform: uppercase
+			&:before
+				transform: rotate(180deg)
+	&__top
+		position: relative
+		padding: 8px 20px 8px 10px
+		font-size: 16px
+		cursor: pointer
+		user-select: none
+		will-change: text-transform, font-weight
+		transform: translate3d(0,0,0)
+		transition: font-weight .2s, text-transform .2s
+		&:before
+			position: absolute
+			content: ''
+			right: 10px
+			top: 14px
+			transition: transform .3s
+			+arr(11,6,$l_gray,b)
+	&__block
+		padding: 0 45px 14px 10px
+		display: none
+	p 
+		& + p,
+		& + .video
+			margin-top: 20px
+
+// video
+.video
+	position: relative
+	color: $c_text
+	height: 201px
+	max-width: 301px
+	border: 1px solid $bord_video
+	&__title
+		position: absolute
+		top: 15px
+		left: 15px
+		right: 15px
+		z-index: 1
+	&__preload
+		position: absolute
+		top: 50%
+		left: 0
+		right: 0
+		text-align: center
+		margin-top: -33px
+		.circ
+			margin-bottom: 5px
+	img
+		display: block
+
+// circ
+.circ
+	position: relative
+	width: 45px
+	height: 45px
+	display: inline-block
+	&__item
+		position: absolute
+		background-color: $c_text
+		width: 11px
+		height: 11px
+		border-radius: 9px
+		animation: bounce 1.12s infinite normal
+
+		$animation-delay: 0s
+
+		@for $i from 1 through 8
+			&:nth-child(#{$i})
+				animation-delay: $animation-delay
+				$animation-delay: $animation-delay + .14s
+		&_1
+			left: 0
+			top: 18px
+		&_2
+			left: 4px
+			top: 4px
+		&_3
+			top: 0
+			left: 18px
+		&_4
+			right: 4px
+			top: 4px
+		&_5
+			right: 0
+			top: 18px
+		&_6
+			right: 4px
+			bottom: 4px
+		&_7
+			left: 18px
+			bottom: 0
+		&_8
+			left: 4px
+			bottom: 4px
+
+@keyframes bounce
+	0%
+		transform: scale(1)
+
+	100%
+		transform: scale(0.3)
+
+// more
+.more
+	position: relative
+	margin: 8px 0
+	padding: 0 24px 0 10px
+	font-size: 12px
+	color: $c_body
+	display: inline-block
+	&:before
+		position: absolute
+		content: ''
+		right: 0
+		top: 4px
+		transition: transform .3s
+		+arr(11,6,$l_gray,b)
+
+// rates
+.rates
+	padding: 52px 0 52px
+	&__in
+		@extend %in
+	.title
+		padding-bottom: 40px
+	p
+		& + p,
+		& + .list,
+		& + .title-middle
+			margin-top: 18px
+	.title-middle
+		& + .list
+			margin-top: 5px
+	.list
+		& + p
+			margin-top: 18px
+	strong
+		+r700
+
+// list
+.list
+	li
+		position: relative
+		text-indent: 37px
+		&:before
+			position: absolute
+			content: ''
+			top: 8px
+			left: 30px
+			height: 4px
+			width: 4px
+			border-radius: 50%
+			background: $c_body
 
 // footer
 .footer

@@ -10,13 +10,19 @@ block content
 	section.steps
 		.steps__in
 			//- step
-			.step.is-active
+			.step.is-valid
 				.step__top
 					.step__numb
 						span 1
 						span.step__all из 4
 						+fa('check')
-					.step__title Выбор услуги
+					.step__title ПЕРЕВОД ДЕНЕГ С КАРТЫ НА КАРТУ
+					a.check(href="#") 
+						+fa('refresh')
+						| Выбрать другой услугу
+					.step__stock
+						span Комиссия - 0.5% + 5 грн
+						+icon('stock_text')
 				.step__block 
 					//- services
 					.services
@@ -161,7 +167,7 @@ block content
 										p Если Вы не знаете номер карты Получателя, но знаете номер его мобильного телефона, рекомендуем Вам воспользоваться этим сервисом . Получателю придет СМС-сообщение с номером перевода и проверочным кодом, ссылкой на наш сайт. Перейдя на сайт PAY2YOU.ua, Получатель самостоятельно вносит номер карты для получения денег. 
 										a.link(href="#") Подробнее
 			//- step
-			.step
+			.step.is-active
 				.step__top
 					.step__numb
 						span 2
