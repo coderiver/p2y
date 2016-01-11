@@ -1,0 +1,549 @@
+extends _layout
+
+block title
+	title Title of template
+
+block content
+	include ./includes/_header.jade
+	
+	//- Steps
+	section.steps
+		.steps__in
+			//- step
+			.step.is-valid
+				.step__top
+					.step__numb
+						span 1
+						span.step__all из 4
+						+fa('check')
+					.step__title ПЕРЕВОД ДЕНЕГ С КАРТЫ НА КАРТУ
+					a.check(href="#")
+						+fa('refresh')
+						span Выбрать другой услугу
+					.step__stock
+						span Комиссия - 0.5% + 5 грн
+						+icon('stock_text')
+				.step__block 
+					//- services
+					.services
+						.services__col
+							//- service
+							.service.is-card
+								.service__col
+									.service__top
+										.service__title По номеру карты 
+										.alert 
+											span топ
+										.service__img
+											.service__ico
+												img(src="img/step-card.png", alt="img")
+										//- rating
+										.rating
+											ul.rating__list
+												li.rating__item.is-active
+													a(href="#")
+														+fa('star')
+												li.rating__item.is-active
+													a(href="#")
+														+fa('star')
+												li.rating__item.is-active
+													a(href="#")
+														+fa('star')
+												li.rating__item.is-active
+													a(href="#")
+														+fa('star')
+												li.rating__item.is-active
+													a(href="#")
+														+fa('star')
+											.rating__quantity 10750 человек
+										button.btn.btn_blue.btn_middle(type="button") Перевести деньги
+									.service__bot
+										//- counter
+										.counter
+											.counter__wrap
+												.counter__numb
+													span 7
+												.counter__numb
+													span 8
+												.counter__thous ,
+												.counter__numb
+													span 6
+												.counter__numb
+													span 7
+												.counter__numb
+													span 8
+											.counter__inf успешных оплат
+								.service__col
+									.service__wrap
+										p Эта услуга позволит Вам перевести деньги любой Вашей банковской карты на банковскую карту другого человека. Для перевода денег Вам достаточно знать номер карты отправителя и получателя.
+										a.link(href="#") Подробнее
+							//- service
+							.service.is-get
+								.service__col
+									.service__top
+										.service__title Получить деньги
+										.service__img
+											.service__ico
+												img(src="img/get_money.png", alt="img")
+										//- rating
+										.rating
+											ul.rating__list
+												li.rating__item.is-active
+													a(href="#")
+														+fa('star')
+												li.rating__item.is-active
+													a(href="#")
+														+fa('star')
+												li.rating__item.is-active
+													a(href="#")
+														+fa('star')
+												li.rating__item.is-active
+													a(href="#")
+														+fa('star')
+												li.rating__item
+													a(href="#")
+														+fa('star')
+											.rating__quantity 10750 человек
+										button.btn.btn_blue.btn_middle(type="button") Перевести деньги
+									.service__bot
+										//- counter
+										.counter
+											.counter__wrap
+												.counter__numb
+													span 6
+												.counter__numb
+													span 7
+												.counter__numb
+													span 8
+											.counter__inf успешных оплат
+								.service__col
+									.service__wrap
+										p Эта услуга позволит Вам перевести деньги любой Вашей банковской карты на банковскую карту другого человека. Для перевода денег Вам достаточно знать номер карты отправителя и получателя.
+										a.link(href="#") Подробнее
+						.services__col
+							//- service
+							.service.is-phone
+								.service__col
+									.service__top 
+										.service__title По номеру телефона
+										.alert.is-orange 
+											span хит
+										.service__img
+											.service__ico
+												img(src="img/phone.png", alt="img")
+										//- rating
+										.rating
+											ul.rating__list
+												li.rating__item.is-active
+													a(href="#")
+														+fa('star')
+												li.rating__item.is-active
+													a(href="#")
+														+fa('star')
+												li.rating__item.is-active
+													a(href="#")
+														+fa('star')
+												li.rating__item.is-half
+													a(href="#")
+														+fa('star')
+												li.rating__item
+													a(href="#")
+														+fa('star')
+											.rating__quantity 10750 человек
+										button.btn.btn_blue.btn_middle(type="button") Перевести деньги
+									.service__bot
+										//- counter
+										.counter
+											.counter__wrap
+												.counter__numb
+													span 6
+												.counter__numb
+													span 7
+												.counter__numb
+													span 8
+											.counter__inf успешных оплат
+								.service__col
+									.service__wrap
+										p Если Вы не знаете номер карты Получателя, но знаете номер его мобильного телефона, рекомендуем Вам воспользоваться этим сервисом . Получателю придет СМС-сообщение с номером перевода и проверочным кодом, ссылкой на наш сайт. Перейдя на сайт PAY2YOU.ua, Получатель самостоятельно вносит номер карты для получения денег. 
+										a.link(href="#") Подробнее
+			//- step
+			.step.is-active
+				.step__top
+					.step__numb
+						span 2
+						span.step__all из 4
+						+fa('check')
+					.step__title Ввод данных
+				.step__block
+					//- cards
+					.cards
+						form
+							.cards__wrap
+								//- card
+								.card.js-card
+									label.card__label(for="card-numb") 1. Отправитель
+									.card__row
+										input.input(type="text", name="card-numb" id="card-numb" placeholder="Номер карты")
+									.card__row
+										input.input.is-date(type="text", placeholder="Месяц")
+										input.input.is-date(type="text", placeholder="Год")
+										input.input.is-cvv(type="text", placeholder="CVV-код")
+									hr.line
+									.card__row
+										input.input.is-phone(type="text", placeholder="Номер телефона")
+								//- card
+								.card.js-card
+									label.card__label(for="card-numb-1") 2. Получатель
+										a.card__inf(href="#") Не знаю номер карты
+									.card__row
+										input.input(type="text", name="card-numb-1" id="card-numb-1" placeholder="Номер карты")
+									hr.line
+									label.card__label(for="sum") 3. Сумма перевода
+									.card__row
+										input.input.is-price(type="text", name="sum" id="sum" placeholder="от 1 до 15000")
+										span.card__cur грн
+									.card__foot 
+										span комиссия
+										a.card__inf(href="#") Есть Промо код
+											+fa('question-circle')
+							.cards__bott
+								button.btn.btn_blue.btn_big(type="submit") ВЫПОЛНИТЬ ПЕРЕВОД
+						.cards__foot
+							p Нажимая на кнопку «Выполнить перевод» Вы соглашаетесь с условиями 
+								a(href="#") Оферты
+						ul.cards__nav
+							li
+								a(href="#") Вопросы/Ответы
+							li
+								a(href="#") Видеоподсказка
+							li
+								a(href="#") Тарифы и Лимиты
+			//- step
+			.step
+				.step__top
+					.step__numb
+						span 3
+						span.step__all из 4
+						+fa('check')
+					.step__title Проверка банка
+				.step__block
+			//- step
+			.step
+				.step__top
+					.step__numb
+						span 4
+						span.step__all из 4
+						+fa('check')
+					.step__title Код подтверждения
+				.step__block
+			//- step
+			.step
+				.step__top
+					.step__numb.is-receipt
+						+fa('check')
+					.step__title Квитанция
+				.step__block
+	
+	//- inform
+	section.inform
+		.inform__in
+			h3.title как еще можно перевести деньги?
+			//- slid
+			.slid.js-inform-slider
+				.slid__slide 
+					.slid__left
+						//- service
+						.service.is-phone-big
+							.service__col
+								.service__top 
+									.service__title По номеру телефона
+									.service__img
+										.service__ico
+											img(src="img/phone-big.png", alt="img")
+									//- rating
+									.rating
+										ul.rating__list
+											li.rating__item.is-active
+												a(href="#")
+													+fa('star')
+											li.rating__item.is-active
+												a(href="#")
+													+fa('star')
+											li.rating__item.is-active
+												a(href="#")
+													+fa('star')
+											li.rating__item.is-half
+												a(href="#")
+													+fa('star')
+											li.rating__item
+												a(href="#")
+													+fa('star')
+										.rating__quantity 10750 человек
+									button.btn.btn_blue.btn_middle(type="button") Перевести деньги
+					.slid__right
+						.slid__text
+							|Если Вы не знаете номер карты Получателя, но знаете номер его мобильного телефона, рекомендуем Вам воспользоваться этим сервисом. Получателю придет СМС-сообщение с проверочным кодом и ссылкой на наш сайт. 
+							a.link(href="#")Подробнее
+						//- advance
+						.advance
+							.advance__wrap
+								.advance__item
+									.advance__title 1. Отправитель вводит номер тел. получателя
+									.advance__img
+										img(src="img/adv_1.png", alt="img")
+								.advance__item
+									.advance__title 2. Мы отправляем данные получателю
+									.advance__img
+										img(src="img/aaa.png", alt="img")
+								.advance__item.is-mod
+									.advance__title 3. Получатель вводит данные перевода
+									.advance__img
+										img(src="img/adv_3.png", alt="img")
+								.advance__item
+									.advance__title 4. Деньги на карте получателя!
+									.advance__img
+										img(src="img/adv_4.png", alt="img")
+							.hist
+								.hist__item
+									.hist__img
+										img(src="img/svg/sender.svg", alt="img")
+									span.hist__text - Отправитель
+								.hist__item
+									.hist__img
+										img(src="img/svg/recipient.svg", alt="img")
+									span.hist__text - Получатель
+				.slid__slide 
+					.slid__left
+						//- service
+						.service.is-phone-big
+							.service__col
+								.service__top 
+									.service__title По номеру телефона
+									.service__img
+										.service__ico
+											img(src="img/phone-big.png", alt="img")
+									//- rating
+									.rating
+										ul.rating__list
+											li.rating__item.is-active
+												a(href="#")
+													+fa('star')
+											li.rating__item.is-active
+												a(href="#")
+													+fa('star')
+											li.rating__item.is-active
+												a(href="#")
+													+fa('star')
+											li.rating__item.is-half
+												a(href="#")
+													+fa('star')
+											li.rating__item
+												a(href="#")
+													+fa('star')
+										.rating__quantity 10750 человек
+									button.btn.btn_blue.btn_middle(type="button") Перевести деньги
+					.slid__right
+						.slid__text
+							|Если Вы не знаете номер карты Получателя, но знаете номер его мобильного телефона, рекомендуем Вам воспользоваться этим сервисом. Получателю придет СМС-сообщение с проверочным кодом и ссылкой на наш сайт. 
+							a.link(href="#")Подробнее
+						//- advance
+						.advance
+							.advance__wrap
+								.advance__item
+									.advance__title 1. Отправитель вводит номер тел. получателя
+									.advance__img
+										img(src="img/adv_1.png", alt="img")
+								.advance__item
+									.advance__title 2. Мы отправляем данные получателю
+									.advance__img
+										img(src="img/aaa.png", alt="img")
+								.advance__item.is-mod
+									.advance__title 3. Получатель вводит данные перевода
+									.advance__img
+										img(src="img/adv_3.png", alt="img")
+								.advance__item
+									.advance__title 4. Деньги на карте получателя!
+									.advance__img
+										img(src="img/adv_4.png", alt="img")
+							.hist
+								.hist__item
+									.hist__img
+										img(src="img/svg/sender.svg", alt="img")
+									span.hist__text - Отправитель
+								.hist__item
+									.hist__img
+										img(src="img/svg/recipient.svg", alt="img")
+									span.hist__text - Получатель
+			//- attend
+			.attend
+				.attend__left
+					.attend__item.is-active(href="#")
+						.attend__img
+							img(src="img/attend-1.png", alt="img")
+						.attend__bot
+							.alert
+								span топ
+					a.attend__item(href="#")
+						.attend__img
+							img(src="img/attend-2.png", alt="img")
+						.attend__bot
+							.alert.is-orange
+								span хит
+					a.attend__item(href="#")
+						.attend__img
+							img(src="img/attend-3.png", alt="img")
+						.attend__bot
+							.alert.is-orange
+								span хит
+					.attend__item
+						.attend__img
+							img(src="img/attend-4.png", alt="img")
+						.attend__bot
+							span СКОРО
+					.attend__item
+						.attend__img
+							img(src="img/attend-5.png", alt="img")
+						.attend__bot
+							span СКОРО
+					.attend__item
+						.attend__img
+							img(src="img/attend-6.png", alt="img")
+						.attend__bot
+							span СКОРО
+					.attend__item
+						.attend__img
+							img(src="img/attend-7.png", alt="img")
+						.attend__bot
+							span СКОРО
+				.attend__right
+					a.attend__item(href="#")
+						.attend__img
+							img(src="img/attend-8.png", alt="img")
+						.attend__bot
+							.alert
+								span топ
+					a.attend__item(href="#")
+						.attend__img
+							img(src="img/attend-9.png", alt="img")
+						.attend__bot
+							.alert.is-orange
+								span хит
+					.attend__item
+						.attend__img
+							img(src="img/attend-10.png", alt="img")
+						.attend__bot
+							span СКОРО
+	
+	//- question
+	section.question
+		.question__in
+			.question__slider.js-question-slider
+				.question__slide
+					.question__left
+						img(src="img/quest_1.png", alt="img")
+					.question__right
+						.title почему выбирают нас?
+						.title-bord
+							span мы сделали ПЕРВый сервис ОНЛАЙН Переводов в УКРАИНе
+						.question__wrap
+							p За 4 года работы наша компания стала одним из лидеров украинского рынка онлайн платежей. Мы получили финансовую лицензию.
+							p Более 400 000 клиентов ежемесячно оплачивают услуги на нашем сайте. Широкая аудитория пользователей - от 18 до 65 лет.
+							|Все ведущие банки работают с нами. На сайте можно быстро перевести деньги и получить деньги с помощью ссылки.
+							p Мы получили финансовую лицензию.
+						.question__bot.js-question-bot
+							a.btn(href="#") Подробнее
+				.question__slide
+					.question__left
+						img(src="img/quest_1.png", alt="img")
+					.question__right
+						.title почему выбирают нас?
+						.title-bord
+							span мы сделали ПЕРВый сервис ОНЛАЙН Переводов в УКРАИНе
+						p За 4 года работы наша компания стала одним из лидеров украинского рынка онлайн платежей. Мы получили финансовую лицензию.
+						p Более 400 000 клиентов ежемесячно оплачивают услуги на нашем сайте. Широкая аудитория пользователей - от 18 до 65 лет.
+						|Все ведущие банки работают с нами. На сайте можно быстро перевести деньги и получить деньги с помощью ссылки.
+						p Мы получили финансовую лицензию.
+						.question__bot 
+							a.btn(href="#") Подробнее
+				.question__slide
+					.question__left
+						img(src="img/quest_1.png", alt="img")
+					.question__right
+						.title почему выбирают нас?
+						.title-bord
+							span мы сделали ПЕРВый сервис ОНЛАЙН Переводов в УКРАИНе
+						p За 4 года работы наша компания стала одним из лидеров украинского рынка онлайн платежей. Мы получили финансовую лицензию.
+						p Более 400 000 клиентов ежемесячно оплачивают услуги на нашем сайте. Широкая аудитория пользователей - от 18 до 65 лет.
+						|Все ведущие банки работают с нами. На сайте можно быстро перевести деньги и получить деньги с помощью ссылки.
+						p Мы получили финансовую лицензию.
+						.question__bot 
+							a.btn(href="#") Подробнее
+				.question__slide
+					.question__left
+						img(src="img/quest_1.png", alt="img")
+					.question__right
+						.title почему выбирают нас?
+						.title-bord
+							span мы сделали ПЕРВый сервис ОНЛАЙН Переводов в УКРАИНе
+						p За 4 года работы наша компания стала одним из лидеров украинского рынка онлайн платежей. Мы получили финансовую лицензию.
+						p Более 400 000 клиентов ежемесячно оплачивают услуги на нашем сайте. Широкая аудитория пользователей - от 18 до 65 лет.
+						|Все ведущие банки работают с нами. На сайте можно быстро перевести деньги и получить деньги с помощью ссылки.
+						p Мы получили финансовую лицензию.
+						.question__bot 
+							a.btn(href="#") Подробнее
+				.question__slide
+					.question__left
+						img(src="img/quest_1.png", alt="img")
+					.question__right
+						.title почему выбирают нас?
+						.title-bord
+							span мы сделали ПЕРВый сервис ОНЛАЙН Переводов в УКРАИНе
+						p За 4 года работы наша компания стала одним из лидеров украинского рынка онлайн платежей. Мы получили финансовую лицензию.
+						p Более 400 000 клиентов ежемесячно оплачивают услуги на нашем сайте. Широкая аудитория пользователей - от 18 до 65 лет.
+						|Все ведущие банки работают с нами. На сайте можно быстро перевести деньги и получить деньги с помощью ссылки.
+						p Мы получили финансовую лицензию.
+						.question__bot 
+							a.btn(href="#") Подробнее
+	
+	//- partner
+	section.partner
+		.partner__in
+			h3.title наШи партнеры
+			.partner__wrap
+				a.partner__item(href="#")
+					.partner__logo
+						img(src="img/part_alfa.png", alt="img")
+					.partner__name name
+				a.partner__item.is-green(href="#")
+					.partner__logo
+						img(src="img/part-sber.png", alt="img")
+					.partner__name name
+				a.partner__item.is-blue(href="#")
+					.partner__logo
+						img(src="img/part_mest.png", alt="img")
+					.partner__name name
+				a.partner__item.is-active(href="#")
+					.partner__logo
+						img(src="img/part_alfa.png", alt="img")
+					.partner__name Альфа банк
+				a.partner__item.is-green(href="#")
+					.partner__logo
+						img(src="img/part-sber.png", alt="img")
+					.partner__name name
+				a.partner__item.is-blue(href="#")
+					.partner__logo
+						img(src="img/part_mest.png", alt="img")
+					.partner__name name
+				a.partner__item(href="#")
+					.partner__logo
+						img(src="img/part_alfa.png", alt="img")
+					.partner__name name
+			ul.partner__inf
+				li 10 Банков
+				li 3 интернет-магазина
+				li 2 портала
+	
+	include ./includes/_reply.jade
+
+block footer
+	include ./includes/_footer.jade

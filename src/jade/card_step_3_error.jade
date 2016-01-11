@@ -17,9 +17,9 @@ block content
 						span.step__all из 4
 						+fa('check')
 					.step__title ПЕРЕВОД ДЕНЕГ С КАРТЫ НА КАРТУ
-					a.check(href="#") 
+					a.check(href="#")
 						+fa('refresh')
-						| Выбрать другой услугу
+						span Выбрать другой услугу
 					.step__stock
 						span Комиссия - 0.5% + 5 грн
 						+icon('stock_text')
@@ -167,16 +167,69 @@ block content
 										p Если Вы не знаете номер карты Получателя, но знаете номер его мобильного телефона, рекомендуем Вам воспользоваться этим сервисом . Получателю придет СМС-сообщение с номером перевода и проверочным кодом, ссылкой на наш сайт. Перейдя на сайт PAY2YOU.ua, Получатель самостоятельно вносит номер карты для получения денег. 
 										a.link(href="#") Подробнее
 			//- step
-			.step.is-active
+			.step.is-valid
 				.step__top
 					.step__numb
 						span 2
 						span.step__all из 4
 						+fa('check')
-					.step__title Ввод данных
+					.step__title Ввод данных 
+						span.card-numb 4102 **** **** 2959 
+						+fa('arrow-right') 
+						span.card-numb 4102 **** **** 2959
+						span.icon ∑
+						span.card-price 14 900 грн
+						span.card-commission (+ 55,00 грн. комиссии)
+					.step__right
+						a.edit(href="#")
+							+fa('pencil')
+							span Редактировать
 				.step__block
+					//- cards
+					.cards
+						form
+							.cards__wrap
+								//- card
+								.card.js-card
+									label.card__label(for="card-numb") 1. Отправитель
+									.card__row
+										input.input(type="text", name="card-numb" id="card-numb" placeholder="Номер карты")
+									.card__row
+										input.input.is-date(type="text", placeholder="Месяц")
+										input.input.is-date(type="text", placeholder="Год")
+										input.input.is-cvv(type="text", placeholder="CVV-код")
+									hr.line
+									.card__row
+										input.input.is-phone(type="text", placeholder="Номер телефона")
+								//- card
+								.card.js-card
+									label.card__label(for="card-numb-1") 2. Получатель
+										a.card__inf(href="#") Не знаю номер карты
+									.card__row
+										input.input(type="text", name="card-numb-1" id="card-numb-1" placeholder="Номер карты")
+									hr.line
+									label.card__label(for="sum") 3. Сумма перевода
+									.card__row
+										input.input.is-price(type="text", name="sum" id="sum" placeholder="от 1 до 15000")
+										span.card__cur грн
+									.card__foot 
+										span комиссия
+										a.card__inf(href="#") Есть Промо код
+											+fa('question-circle')
+							.cards__bott
+								button.btn.btn_blue.btn_big(type="submit") ВЫПОЛНИТЬ ПЕРЕВОД
+						.cards__foot
+							p Нажимая на кнопку «Выполнить перевод» Вы соглашаетесь с условиями 
+								a(href="#") Оферты
+						ul.cards__nav
+							li
+								a(href="#") Вопросы/Ответы
+							li
+								a(href="#") Видеоподсказка
+							li
+								a(href="#") Тарифы и Лимиты
 			//- step
-			.step
+			.step.is-active
 				.step__top
 					.step__numb
 						span 3
@@ -184,6 +237,15 @@ block content
 						+fa('check')
 					.step__title Проверка банка
 				.step__block
+					//- assay
+					.assay
+						.error
+							.error__title Ошибка
+							p Введен неправильный CVV-код
+							.error__img 
+								img(src="img/svg/error-cvv.svg", alt="img")
+							.error__butt
+								button.btn.btn_blue.btn_big(type="submit") исправить ошибку
 			//- step
 			.step
 				.step__top

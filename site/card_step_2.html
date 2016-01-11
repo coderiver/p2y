@@ -110,7 +110,7 @@
             <div class="step__top">
               <div class="step__numb"><span>1</span><span class="step__all">из 4</span><i class="fa fa-check"></i>
               </div>
-              <div class="step__title">ПЕРЕВОД ДЕНЕГ С КАРТЫ НА КАРТУ</div><a href="#" class="check"> <i class="fa fa-refresh"></i>Выбрать другой услугу</a>
+              <div class="step__title">ПЕРЕВОД ДЕНЕГ С КАРТЫ НА КАРТУ</div><a href="#" class="check"><i class="fa fa-refresh"></i><span>Выбрать другой услугу</span></a>
               <div class="step__stock"><span>Комиссия - 0.5% + 5 грн</span><i class="icon icon-stock_text"></i>
               </div>
             </div>
@@ -242,7 +242,52 @@
               </div>
               <div class="step__title">Ввод данных</div>
             </div>
-            <div class="step__block"></div>
+            <div class="step__block">
+              <div class="cards">
+                <form>
+                  <div class="cards__wrap">
+                    <div class="card js-card">
+                      <label for="card-numb" class="card__label">1. Отправитель</label>
+                      <div class="card__row">
+                        <input type="text" name="card-numb" id="card-numb" placeholder="Номер карты" class="input">
+                      </div>
+                      <div class="card__row">
+                        <input type="text" placeholder="Месяц" class="input is-date">
+                        <input type="text" placeholder="Год" class="input is-date">
+                        <input type="text" placeholder="CVV-код" class="input is-cvv">
+                      </div>
+                      <hr class="line">
+                      <div class="card__row">
+                        <input type="text" placeholder="Номер телефона" class="input is-phone">
+                      </div>
+                    </div>
+                    <div class="card js-card">
+                      <label for="card-numb-1" class="card__label">2. Получатель<a href="#" class="card__inf">Не знаю номер карты</a></label>
+                      <div class="card__row">
+                        <input type="text" name="card-numb-1" id="card-numb-1" placeholder="Номер карты" class="input">
+                      </div>
+                      <hr class="line">
+                      <label for="sum" class="card__label">3. Сумма перевода</label>
+                      <div class="card__row">
+                        <input type="text" name="sum" id="sum" placeholder="от 1 до 15000" class="input is-price"><span class="card__cur">грн</span>
+                      </div>
+                      <div class="card__foot"> <span>комиссия</span><a href="#" class="card__inf">Есть Промо код<i class="fa fa-question-circle"></i></a></div>
+                    </div>
+                  </div>
+                  <div class="cards__bott">
+                    <button type="submit" class="btn btn_blue btn_big">ВЫПОЛНИТЬ ПЕРЕВОД</button>
+                  </div>
+                </form>
+                <div class="cards__foot">
+                  <p>Нажимая на кнопку «Выполнить перевод» Вы соглашаетесь с условиями <a href="#">Оферты</a></p>
+                </div>
+                <ul class="cards__nav">
+                  <li><a href="#">Вопросы/Ответы</a></li>
+                  <li><a href="#">Видеоподсказка</a></li>
+                  <li><a href="#">Тарифы и Лимиты</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div class="step">
             <div class="step__top">

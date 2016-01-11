@@ -113,6 +113,12 @@ h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
 			box-shadow: none
 	&_middle
 		padding: 9px 20px
+	&_big
+		padding: 13px 38px
+		font-size: 14px
+		+r700
+		text-transform: uppercase
+		border-radius: 20px
 
 button.btn
 	line-height: 1
@@ -482,6 +488,19 @@ button.btn
 	padding: 20px 0
 	overflow: hidden
 	background: url(../img/bg-steps.png) repeat
+	&.is-valid
+		.steps__in
+			&:before
+				height: 242px
+		.step__title
+			color: $l_green
+		.step 
+			background: transparent
+			&:before,
+			&:after
+				display: none
+			.step__top
+				border-bottom-color: transparent
 	&__in
 		position: relative
 		@extend %in
@@ -512,16 +531,41 @@ button.btn
 		right: 50%
 	&:after
 		left: 50%
+	&:last-child
+		&.is-valid
+			.step__numb
+				margin-left: -1px
+				border: none
+				overflow: hidden
+				&:before
+					width: 50%
+					top: 2px
+					left: -2px
+					+arr(24,50,$l_green_2,l)
+					transform: rotate(-45deg)
+					background: transparent
+				.fa
+					margin-bottom: 7px
+					font-size: 20px
+					text-shadow: 0 0 2px rgba($black, .8)
 	&.is-active
 		.step__all
 			display: inline
 		.step__block
+			z-index: 1
 			display: block
 	&.is-valid
 		background: $white
 		&:before,
 		&:after
 			display: block
+		&:first-child
+			.step__title
+				color: $l_green
+				+r700
+				text-transform: uppercase
+		.step__top
+			border-bottom: 1px solid $bord_step
 		.step__numb
 			color: $white
 			font-size: 0
@@ -532,10 +576,6 @@ button.btn
 			.fa
 				font-size: 16px
 				display: inline-block
-		.step__title
-			color: $l_green
-			+r700
-			text-transform: uppercase
 		& + .is-active
 			background: $white
 			&:before,
@@ -548,14 +588,30 @@ button.btn
 		padding: 12px 0
 		z-index: 1
 		+clr
+		.check
+			margin-left: 15px
 	&__title
 		color: $l_gray
 		vertical-align: top 
 		display: inline-block
-	&__stock
+		& > .fa,
+		& > .icon
+			margin: 2px 8px 0
+			font-size: 14px
+			color: $l_green
+			vertical-align: top
+		& > .icon
+			margin-top: -1px
+	&__stock,
+	&__right
 		float: right
+		color: $l_gray
+		font-size: 12px
+		span
+			margin-top: 3px
+			display: inline-block
 		.icon
-			margin-top: -4px
+			margin: -5px 0 -6px 10px
 			vertical-align: top
 	&__numb
 		position: absolute
@@ -599,13 +655,57 @@ button.btn
 		letter-spacing: -.4px
 		display: none
 	&__block
+		position: relative
 		padding: 10px 0 5px
 		display: none
 
+// edit
+.edit
+	color: $l_blue
+	&:hover
+		span
+			border-color: $l_blue
+	.fa,
+	.icon
+		margin-right: 7px
+		font-size: 18px
+	span
+		line-height: 1.3
+		transition: border-color .2s
+		border-bottom: 1px solid transparent
+		display: inline-block
+
+
+// card-numb card-price
+.card-numb,
+.card-price	
+	font-size: 18px
+	line-height: 1
+	display: inline-block
+
+.card-commission
+	margin-left: 2px
+	font-size: 12px
+	display: inline-block
+
 // check
 .check
+	color: $l_blue
 	vertical-align: top
 	display: inline-block
+	&:hover
+		span
+			border-color: $l_blue
+	span
+		transition: border-color .2s
+		line-height: 1.3
+		border-bottom: 1px solid transparent
+		display: inline-block
+	.icon,
+	.fa
+		margin-right: 8px
+		font-size: 18px
+		vertical-align: middle
 
 // services
 .services
@@ -787,8 +887,62 @@ button.btn
 	&.is-orange
 		+altarr($orange)
 
+// assay
+.assay
+	padding: 20px 0 40px
+	text-align: center
+	&.is-load
+		height: 280px
+		text-transform: uppercase
+		color: $l_blue
+		+vertical
+	&__in
+		margin: -76px 0 0 -130px
+		vertical-align: middle
+		display: inline-block
+	&__text
+		margin-top: 40px
+		font-size: 16px
+	.loader
+		margin-right: 25px
+		vertical-align: middle
+	span
+		font-size: 14px
+		vertical-align: middle
+		display: inline-block
+	.pass
+		vertical-align: top
+		display: inline-block
+
+// loader
+.loader
+	width: 43px
+	height: 43px
+	text-align: center
+	display: inline-block
+	&__torus
+		width: 43px
+		height: 43px
+		margin: 0 auto
+		border: 4px solid
+		border-radius: 50%
+		border-color: transparent rgba($l_blue, 0.9) rgba($l_blue, 0.9)
+		animation: loader 690ms infinite linear
+
+@keyframes loader
+	100%
+		transform: rotate(360deg)
+
 // counter
 .counter
+	&.is-blue	
+		.counter__numb
+			background: $bord_timer
+	&.is-big
+		.counter__numb
+			padding: 0 6px
+			span
+				font-size: 22px
 	&__wrap
 		font-size: 0
 	&__numb,
@@ -1318,6 +1472,167 @@ button.btn
 			width: 4px
 			border-radius: 50%
 			background: $c_body
+
+// input
+.input
+	padding: 0 10px
+	width: 100%
+	height: 34px
+	+r400
+	font-size: 14px
+	transition: border-color .2s
+	border: 1px solid $bord_card
+	border-radius: 3px
+	background: $white
+	display: inline-block
+	&::placeholder
+		color: $l_gray
+	&:focus
+		border-color: $l_blue
+		&::placeholder
+			font-size: 0
+	&.is-date
+		width: 64px
+	&.is-cvv
+		width: 76px
+	&.is-price
+		width: 111px
+	&.is-phone
+		width: 142px
+
+// cards
+.cards
+	padding-bottom: 10px
+	color: $c_step_numb
+	text-align: center
+	&__wrap
+		margin: 0 auto
+		max-width: 630px
+		text-align: left
+		+clr
+	&__bott
+		margin-top: 24px
+	&__foot
+		margin-top: 22px
+	&__nav
+		margin-top: 10px
+		li
+			margin-left: 44px
+			vertical-align: top
+			display: inline-block
+			&:first-child
+				margin-left: 0
+	a
+		color: $c_card_inf
+
+// card
+.card
+	float: left
+	margin-left: 30px
+	padding: 12px 15px
+	width: 300px
+	overflow: hidden
+	border-radius: 6px
+	vertical-align: top
+	transition: box-shadow .2s, border-color .2s
+	border: 1px solid $bord_card
+	box-shadow: 0 1px 2px rgba($black, 0.2)
+	background: $bg_card
+	display: inline-block
+	&:first-child
+		margin-left: 0
+	&.is-active
+		box-shadow: 0 0 5px rgba($black, 0.3)
+		border-color: $bg_card
+	&__label
+		color: $c_body
+		cursor: pointer
+		user-select: none
+		display: block
+		+clr
+		& + .card__row
+			margin-top: 5px
+	&__row
+		margin-top: 13px
+		+clr
+		.input
+			&.is-date
+				float: left
+				margin-left: 9px
+				&:first-child
+					margin-left: 0
+			&.is-cvv
+				float: right
+	&__inf
+		float: right
+		color: $c_card_inf
+		a
+			color: inherit
+		.fa
+			margin-left: 2px
+	&__cur
+		margin-left: 5px
+	&__foot
+		margin-top: 10px
+
+// line
+.line
+	margin: 12px 0 10px
+	height: 2px 
+	border: none
+	border-bottom: 1px solid $bord_line
+	background: $white
+
+// error
+.error
+	font-size: 16px
+	&__title
+		color: $red
+		& + p
+			margin-top: 8px
+	&__img
+		margin-top: 22px
+	&__butt
+		margin-top: 44px
+
+// code
+.code
+	font-size: 16px
+	&__item
+		text-align: left
+		margin-top: 95px
+		width: 192px
+	&__img
+		position: relative
+		.input	
+			position: absolute
+			top: 108px
+			left: 24px
+			width: 110px
+	&__item,
+	&__img
+		margin-left: 30px
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+	&__phone
+		color: $c_text
+	a
+		color: $l_blue
+		transition: border-color .3s
+		border-bottom: 1px solid transparent
+		&:hover
+			border-color: $l_blue
+	&__count
+		margin-top: 5px
+	.counter
+		margin: 0 7px
+		vertical-align: middle
+		display: inline-block
+		& + span
+			vertical-align: middle
+			display: inline-block
 
 // footer
 .footer
