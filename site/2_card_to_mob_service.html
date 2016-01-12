@@ -243,7 +243,7 @@
               <div class="step__title">Ввод данных</div>
             </div>
             <div class="step__block">
-              <div class="cards">
+              <div class="cards is-phone">
                 <form>
                   <div class="cards__wrap">
                     <div class="card js-card">
@@ -261,17 +261,22 @@
                         <input type="text" placeholder="Номер телефона" class="input is-phone">
                       </div>
                     </div><i class="fa fa-angle-double-right"></i>
-                    <div class="card js-card">
-                      <label for="card-numb-1" class="card__label">2. Получатель<a href="#" class="card__inf">Не знаю номер карты</a></label>
-                      <div class="card__row">
-                        <input type="text" name="card-numb-1" id="card-numb-1" placeholder="Номер карты" class="input">
+                    <div class="card is-phone"> 
+                      <div class="card__in">
+                        <div class="card__left">
+                          <label for="card-numb-1" class="card__label">2. Получатель</label>
+                          <div class="card__row">
+                            <input type="text" name="card-numb-1" id="card-numb-1" placeholder="Номер карты" class="input">
+                          </div>
+                          <hr class="line">
+                          <label for="sum" class="card__label">3. Сумма перевода</label>
+                          <div class="card__row">
+                            <input type="text" name="sum" id="sum" placeholder="от 1 до 15000" class="input is-price"><span class="card__cur">грн</span>
+                          </div>
+                          <div class="card__foot"> <span>комиссия</span></div>
+                        </div>
+                        <div class="card__right"><a href="#" class="card__inf">Есть Промо код<i class="fa fa-question-circle"></i></a></div>
                       </div>
-                      <hr class="line">
-                      <label for="sum" class="card__label">3. Сумма перевода</label>
-                      <div class="card__row">
-                        <input type="text" name="sum" id="sum" placeholder="от 1 до 15000" class="input is-price"><span class="card__cur">грн</span>
-                      </div>
-                      <div class="card__foot"> <span>комиссия</span><a href="#" class="card__inf">Есть Промо код<i class="fa fa-question-circle"></i></a></div>
                     </div>
                   </div>
                   <div class="cards__bott">

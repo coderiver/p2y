@@ -7,7 +7,7 @@ block content
 	include ./includes/_header.jade
 	
 	//- Steps
-	section.steps.is-valid
+	section.steps
 		.steps__in
 			//- step
 			.step.is-valid
@@ -167,16 +167,16 @@ block content
 										p Если Вы не знаете номер карты Получателя, но знаете номер его мобильного телефона, рекомендуем Вам воспользоваться этим сервисом . Получателю придет СМС-сообщение с номером перевода и проверочным кодом, ссылкой на наш сайт. Перейдя на сайт PAY2YOU.ua, Получатель самостоятельно вносит номер карты для получения денег. 
 										a.link(href="#") Подробнее
 			//- step
-			.step.is-valid
+			.step.is-active
 				.step__top
 					.step__numb
 						span 2
 						span.step__all из 4
 						+fa('check')
-					.step__title Ввод данных 
+					.step__title Ввод данных
 				.step__block
 					//- cards
-					.cards
+					.cards.is-phone
 						form
 							.cards__wrap
 								//- card
@@ -191,21 +191,24 @@ block content
 									hr.line
 									.card__row
 										input.input.is-phone(type="text", placeholder="Номер телефона")
-								//- card
-								.card.js-card
-									label.card__label(for="card-numb-1") 2. Получатель
-										a.card__inf(href="#") Не знаю номер карты
-									.card__row
-										input.input(type="text", name="card-numb-1" id="card-numb-1" placeholder="Номер карты")
-									hr.line
-									label.card__label(for="sum") 3. Сумма перевода
-									.card__row
-										input.input.is-price(type="text", name="sum" id="sum" placeholder="от 1 до 15000")
-										span.card__cur грн
-									.card__foot 
-										span комиссия
-										a.card__inf(href="#") Есть Промо код
-											+fa('question-circle')
+								+fa('angle-double-right')
+								//- card-phone
+								.card.is-phone 
+									.card__in
+										.card__left
+											label.card__label(for="card-numb-1") 2. Получатель
+											.card__row
+												input.input(type="text", name="card-numb-1" id="card-numb-1" placeholder="Номер карты")
+											hr.line
+											label.card__label(for="sum") 3. Сумма перевода
+											.card__row
+												input.input.is-price(type="text", name="sum" id="sum" placeholder="от 1 до 15000")
+												span.card__cur грн
+											.card__foot 
+												span комиссия
+										.card__right
+											a.card__inf(href="#") Есть Промо код
+												+fa('question-circle')
 							.cards__bott
 								button.btn.btn_blue.btn_big(type="submit") ВЫПОЛНИТЬ ПЕРЕВОД
 						.cards__foot
@@ -219,7 +222,7 @@ block content
 							li
 								a(href="#") Тарифы и Лимиты
 			//- step
-			.step.is-valid
+			.step
 				.step__top
 					.step__numb
 						span 3
@@ -227,107 +230,23 @@ block content
 						+fa('check')
 					.step__title Проверка банка
 				.step__block
-					//- assay
-					.assay
-						.error
-							.error__title Ошибка
-							p Введен неправильный CVV-код
-							.error__img 
-								img(src="img/svg/error-cvv.svg", alt="img")
-							.error__butt
-								button.btn.btn_blue.btn_big(type="submit") исправить ошибку
 			//- step
-			.step.is-valid
+			.step
 				.step__top
 					.step__numb
 						span 4
+						span.step__all из 4
 						+fa('check')
 					.step__title Код подтверждения
 				.step__block
-					//- assay
-					.assay
-						.error
-							.error__title Ошибка
-							p Введен неправильный Пароль, 
-								br 
-								| который был отправлен Вам на мобильный телефон
-							.error__img 
-								img(src="img/svg/rocket.svg", alt="img")
-							.error__butt
-								button.btn.btn_blue.btn_big(type="submit") новый перевод
 			//- step
-			.step.is-valid
+			.step
 				.step__top
 					.step__numb.is-receipt
 						+fa('check')
 					.step__title Квитанция
-			//- receipt
-			.receipt
-				.receipt__top
-					//- ticket
-					.ticket
-						.ticket__top
-							.ticket__ico
-								+icon('ticket')
-							p Вы успешно перевели деньги!
-						.ticket__wrap
-							.ticket__row
-								.ticket__col Номер платежа:
-								.ticket__col 4556095
-							.ticket__row
-								.ticket__col Отправитель:
-								.ticket__col 4102 **** **** 2959
-							.ticket__row
-								.ticket__col Получатель:
-								.ticket__col 4102 **** **** 2959
-							.ticket__row
-								.ticket__col Сумма перевода:
-								.ticket__col 500,00 грн.
-							.ticket__row
-								.ticket__col Комиссия:
-								.ticket__col 10,00 грн.
-							.ticket__row
-								.ticket__col Списано:
-								.ticket__col 510,00 грн.
-						.ticket__foot
-							.ticket__col
-								a(href="#") 
-									+fa('download')
-									span Сохранить
-							.ticket__col
-								a(href="#") 
-									+fa('print')
-									span Распечатать
-				.receipt__wrap
-					.receipt__left
-						.receipt__row
-							p Поделитесь своим успехом с друзьями:
-							.receipt__soc
-								img(src="img/soc.png", alt="img")
-						.receipt__row
-							p Поддержите нас:
-							//- rating
-							.rating
-								ul.rating__list
-									li.rating__item.is-active
-										a(href="#")
-											+fa('star')
-									li.rating__item.is-active
-										a(href="#")
-											+fa('star')
-									li.rating__item.is-active
-										a(href="#")
-											+fa('star')
-									li.rating__item.is-active
-										a(href="#")
-											+fa('star')
-									li.rating__item.is-active
-										a(href="#")
-											+fa('star')
-								.rating__people
-									span.is-red 5,0 
-									span - 10750 человек
-					a.btn.btn_blue.btn_big(href="#") НОВЫЙ ПЕРЕВОД
+				.step__block
+	
 	//- inform
 	section.inform
 		.inform__in

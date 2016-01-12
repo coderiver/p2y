@@ -531,23 +531,6 @@ button.btn
 		right: 50%
 	&:after
 		left: 50%
-	&:last-child
-		&.is-valid
-			.step__numb
-				margin-left: -1px
-				border: none
-				overflow: hidden
-				&:before
-					width: 50%
-					top: 2px
-					left: -2px
-					+arr(24,50,$l_green_2,l)
-					transform: rotate(-45deg)
-					background: transparent
-				.fa
-					margin-bottom: 7px
-					font-size: 20px
-					text-shadow: 0 0 2px rgba($black, .8)
 	&.is-active
 		.step__all
 			display: inline
@@ -573,6 +556,21 @@ button.btn
 			background: $l_green
 			&:before
 				background: $l_green
+			&.is-receipt
+				margin-left: -1px
+				border: none
+				overflow: hidden
+				&:before
+					width: 50%
+					top: 2px
+					left: -2px
+					+arr(24,50,$l_green_2,l)
+					transform: rotate(-45deg)
+					background: transparent
+				.fa
+					margin-bottom: 7px
+					font-size: 20px
+					text-shadow: 0 0 2px rgba($black, .8)
 			.fa
 				font-size: 16px
 				display: inline-block
@@ -658,6 +656,89 @@ button.btn
 		position: relative
 		padding: 10px 0 5px
 		display: none
+
+// receipt
+.receipt
+	margin-left: -50px
+	background: url(../img/svg/receipt-bg.svg) no-repeat 50% 138px
+	&__wrap
+		position: relative
+		padding: 15px 0 20px
+		margin: 30px 0 -20px
+		color: $l_blue
+		background: $white
+		+clr
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 50%
+			bottom: 0
+			transform: translateX(-50%)
+			width: 1000%
+			background: $white
+		& > div
+			position: relative
+			z-index: 1
+		p
+			margin-bottom: 5px
+		.rating__list,
+		.rating__people
+			vertical-align: top
+			display: inline-block
+	&__row
+		margin-top: 18px
+		+clr
+		&:first-child
+			margin-top: 0
+	&__left
+		float: left
+		width: 374px
+
+// ticket
+.ticket
+	position: relative
+	margin: -170px auto 0
+	left: -2px
+	width: 278px
+	background: $white
+	border-radius: 4px
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3)
+	&__top
+		padding: 15px 0 10px
+		text-align: center
+		color: $l_green
+		p
+			margin-top: 12px
+	&__ico
+		font-size: 0
+		.icon
+			vertical-align: top
+	&__wrap
+		padding: 8px 12px
+		border-top: 1px solid $bord_serv
+		border-bottom: 1px solid $bord_serv
+	&__row
+		padding: 2px 0
+		border-top: 1px solid $bord_serv
+		+clr
+		&:first-child
+			border-top: none
+	&__foot
+		padding: 13px 15px 18px
+		+clr
+		.fa
+			margin-right: 10px
+			font-size: 20px
+			vertical-align: middle
+	&__col
+		float: left
+		padding-left: 5px
+		width: 50%
+		&:first-child
+			padding-left: 0
+	a
+		color: $l_blue
 
 // edit
 .edit
@@ -833,6 +914,13 @@ button.btn
 	&__quantity
 		margin-top: 5px
 		color: $c_step_numb
+	&__people
+		margin-left: 15px
+		color: $c_text
+		line-height: 20px
+		span
+			&.is-red
+				color: $orange
 
 // link
 .link
@@ -1505,9 +1593,20 @@ button.btn
 	padding-bottom: 10px
 	color: $c_step_numb
 	text-align: center
+	&.is-phone
+		.card
+			&:first-child
+				margin-top: 30px
+			& + .fa
+				top: 71px
 	&__wrap
+		position: relative
 		margin: 0 auto
 		max-width: 630px
+		text-align: left
+		+clr
+	&__in
+		position: relative
 		text-align: left
 		+clr
 	&__bott
@@ -1524,13 +1623,34 @@ button.btn
 				margin-left: 0
 	a
 		color: $c_card_inf
+	.card
+		& + .fa
+			position: absolute
+			top: 38px
+			left: 50%
+			transform: translateX(-50%)
+			font-size: 30px
+			color: $c_card_arr
+	.code
+		float: left
+		width: 410px
+		& + .card
+			margin-left: 10px
+		& + .fa
+			position: absolute
+			top: 108px
+			left: 405px
+			font-size: 30px
+			color: $c_card_arr
 
 // card
 .card
 	float: left
+	position: relative
 	margin-left: 30px
 	padding: 12px 15px
 	width: 300px
+	min-height: 190px
 	overflow: hidden
 	border-radius: 6px
 	vertical-align: top
@@ -1539,11 +1659,45 @@ button.btn
 	box-shadow: 0 1px 2px rgba($black, 0.2)
 	background: $bg_card
 	display: inline-block
+	+clr
 	&:first-child
 		margin-left: 0
 	&.is-active
 		box-shadow: 0 0 5px rgba($black, 0.3)
 		border-color: $bg_card
+	&.is-phone
+		padding: 12px 0
+		height: 251px
+		overflow: initial
+		border: none
+		box-shadow: none
+		background: none
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			+svg(card-phone,302,251)
+	&.is-mod
+		margin-top: 30px
+		padding-top: 50px
+		box-shadow: none
+		border: none
+	&__in
+		position: relative
+		z-index: 1
+		+clr
+	&__left
+		float: left
+		padding: 32px 15px 0
+		width: 170px
+	&__right
+		float: right
+		padding: 165px 0 0 14px
+		width: 130px
+		font-size: 12px
+		.card__inf
+			float: none
 	&__label
 		color: $c_body
 		cursor: pointer
@@ -1574,10 +1728,12 @@ button.btn
 		margin-left: 5px
 	&__foot
 		margin-top: 10px
+	.line
+		margin: 12px -15px 10px
 
 // line
 .line
-	margin: 12px 0 10px
+	margin: 0
 	height: 2px 
 	border: none
 	border-bottom: 1px solid $bord_line

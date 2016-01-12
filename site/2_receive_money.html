@@ -243,35 +243,25 @@
               <div class="step__title">Ввод данных</div>
             </div>
             <div class="step__block">
-              <div class="cards">
+              <div class="cards is-phone">
                 <form>
-                  <div class="cards__wrap">
-                    <div class="card js-card">
-                      <label for="card-numb" class="card__label">1. Отправитель</label>
-                      <div class="card__row">
-                        <input type="text" name="card-numb" id="card-numb" placeholder="Номер карты" class="input">
+                  <div class="cards__in">
+                    <div class="code">
+                      <div class="code__item">
+                        <p>Введите <a href="#">Код из СМС</a>, которое пришло на Ваш
+                          мобильный телефон
+                        </p>
+                        <div class="code__phone">+380 12 345 67 89</div>
                       </div>
-                      <div class="card__row">
-                        <input type="text" placeholder="Месяц" class="input is-date">
-                        <input type="text" placeholder="Год" class="input is-date">
-                        <input type="text" placeholder="CVV-код" class="input is-cvv">
-                      </div>
-                      <hr class="line">
-                      <div class="card__row">
-                        <input type="text" placeholder="Номер телефона" class="input is-phone">
+                      <div class="code__img"><img src="img/svg/sms-code.svg" alt="img">
+                        <input type="text" placeholder="6 цифр" class="input">
                       </div>
                     </div><i class="fa fa-angle-double-right"></i>
-                    <div class="card js-card">
-                      <label for="card-numb-1" class="card__label">2. Получатель<a href="#" class="card__inf">Не знаю номер карты</a></label>
+                    <div class="card is-mod">
+                      <label for="card-numb-1" class="card__label">2. Получатель</label>
                       <div class="card__row">
                         <input type="text" name="card-numb-1" id="card-numb-1" placeholder="Номер карты" class="input">
                       </div>
-                      <hr class="line">
-                      <label for="sum" class="card__label">3. Сумма перевода</label>
-                      <div class="card__row">
-                        <input type="text" name="sum" id="sum" placeholder="от 1 до 15000" class="input is-price"><span class="card__cur">грн</span>
-                      </div>
-                      <div class="card__foot"> <span>комиссия</span><a href="#" class="card__inf">Есть Промо код<i class="fa fa-question-circle"></i></a></div>
                     </div>
                   </div>
                   <div class="cards__bott">
