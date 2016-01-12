@@ -1,47 +1,83 @@
 $(document).ready(function() {
 	
-	$('.js-slider, .js-inform-slider, .js-question-slider').on('init', function(slick){
+	$('.js-slider, .js-inform-slider, .js-question-slider, .js-services').on('init', function(slick){
 		$(this).addClass('is-init');
 	});
 	
 	// slider
 	$('.js-slider').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		autoplay: true,
-		dots: true,
-		arrows: false,
-		infinite: true,
-		speed: 500,
-		fade: true,
-		cssEase: 'linear'
+		slidesToShow 	: 1,
+		slidesToScroll 	: 1,
+		autoplay		: true,
+		dots 			: true,
+		arrows 			: false,
+		infinite 		: true,
+		speed 			: 500,
+		fade 			: true,
+		cssEase 		: 'linear'
 	});
 
 	$('.js-inform-slider').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		autoplay: false,
-		dots: false,
-		infinite: true,
-		speed: 500,
-		cssEase: 'linear'
+		slidesToShow 	: 1,
+		slidesToScroll 	: 1,
+		autoplay 		: false,
+		dots 			: false,
+		infinite 		: true,
+		speed 			: 500,
+		cssEase 		: 'linear'
+	});
+
+	function servSlider(){
+		$('.js-services').each(function(){
+			var slider = $(this),
+				width = $(window).width();
+			if (width < 1010) {
+				setTimeout(function(){
+					slider.slick({
+						slidesToShow 	: 1,
+						autoplay 		: false,
+						dots 			: false,
+						infinite 		: true,
+						speed 			: 500,
+						adaptiveHeight 	: true,
+						cssEase 		: 'linear'
+					});
+				}, 100);
+			}
+			else if (width >= 1010 && slider.hasClass('is-init')) {
+				slider.slick('unslick');
+			}
+		});
+	}
+	servSlider();
+
+	$(window).resize(function() {
+		servSlider();
 	});
 
 	$('.js-question-slider').on('init', function(slick){
-		var this_ = $(this),
-			dots = this_.find('.slick-dots'),
-			bot = this_.find('.js-question-bot');
+		var this_ 	= $(this),
+			dots  	= this_.find('.slick-dots'),
+			bot  	= this_.find('.js-question-bot');
 		dots.appendTo(bot);
 	});
 
 	$('.js-question-slider').slick({
 		slidesToShow: 1,
-		slidesToScroll: 1,
-		autoplay: false,
-		dots: true,
-		infinite: true,
-		speed: 500,
-		cssEase: 'linear'
+		autoplay	: false,
+		dots 		: true,
+		infinite 	: true,
+		speed 		: 500,
+		cssEase 	: 'linear',
+		responsive 	: [
+			{
+				breakpoint: 768,
+				settings: {
+					autoplay: true,
+					dots 	: false
+				}
+			}
+		]
 	});
 
 	// accordion
@@ -83,5 +119,13 @@ $(document).ready(function() {
 		parent.removeClass('is-active');
 	});
 
+	// menu
+	$('.js-btn-menu').on('click', function(event){
+		$('.js-header-block').toggleClass('is-active');
+		event.stopPropagation();
+	});
+	$('body').on('click', function(){
+		$('.js-header-block').removeClass('is-active');
+	});
 	
 });

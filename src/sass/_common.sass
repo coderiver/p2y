@@ -178,12 +178,66 @@ button.btn
 		float: right
 		margin-top: 15px
 		+clr
+		&.is-active
+			visibility: visible
+			opacity: 1
+			z-index: 2
+		+r(768)
+			float: none
+			position: absolute
+			top: 62px
+			left: 0
+			right: 0
+			margin: 0
+			padding: 20px 15px 20px 10px
+			z-index: 2
+			visibility: hidden
+			opacity: 0
+			z-index: -1
+			will-change: opacity
+			transition: opacity .2s
+			box-shadow: inset 0 -1px 0 $shad_header
+			border-bottom: 1px solid $bord_header
+			background: $bg_blue
+	.timer
+		+r(960)
+			display: none
+
+// btn-menu
+.btn-menu
+	float: right
+	position: relative
+	margin-top: 20px
+	width: 20px
+	height: 17px
+	background: transparent
+	display: none
+	+r(768)
+		display: block
+	&:before,
+	&:after,
+	span
+		position: absolute
+		content: ''
+		top: 0
+		height: 3px
+		left: 0
+		width: 100%
+		border-radius: 2px
+		background: $white
+	span
+		top: 7px
+	&:after
+		top: auto
+		bottom: 0
 
 // logo
 .logo
 	position: relative
 	float: left
 	margin-top: 11px
+	+r(480)
+		font-size: 10px
 	&:hover
 		.hint
 			opacity: 1
@@ -374,11 +428,15 @@ button.btn
 	&__in
 		height: 139px
 		@extend %in
+		+r(768)
+			height: auto
 	&__slide
 		width: 100%
 	.slick-dots
 		right: 125px
 		bottom: 16px
+		+r(1024)
+			right: 155px
 
 .slick-slider
 	visibility: hidden
@@ -456,6 +514,8 @@ button.btn
 	text-align: center
 	color: $white
 	+r900
+	+r(960)
+		padding-left: 0
 	// &__top
 	&__text
 		margin-top: 45px
@@ -464,9 +524,22 @@ button.btn
 		text-shadow: 0px 0.82px 1.64px rgba($black, .2)
 		vertical-align: top
 		display: inline-block
+		+r(960)
+			font-size: 11px
+		+r(768)
+			font-size: 14px
+		+r(768)
+			margin-top: 10px
+			display: block
+			&:first-child
+				margin-top: 0
 		span
 			&.is-up
 				font-size: 22px
+				+r(960)
+					font-size: 12px
+				+r(768)
+					font-size: 18px
 			& + span
 				margin-left: 8px
 	&__disc
@@ -482,12 +555,16 @@ button.btn
 	&__more
 		text-align: right
 		margin-top: -10px
+		+r(768)
+			margin-top: 10px
 
 // steps
 .steps
 	padding: 20px 0
 	overflow: hidden
 	background: url(../img/bg-steps.png) repeat
+	+r(1024)
+		padding: 20px 10px
 	&.is-valid
 		.steps__in
 			&:before
@@ -505,6 +582,8 @@ button.btn
 		position: relative
 		@extend %in
 		padding-left: 50px
+		+r(1024)
+			padding-left: 50px
 		&:before
 			position: absolute
 			content: ''
@@ -797,24 +876,39 @@ button.btn
 		width: 360px
 		&:first-child
 			margin-left: 0
+	.slick-arrow
+		+r(480)
+			top: 112px
+	.service
+		+r(1024)
+			margin: 4px
+		& + .service
+			+r(1024)
+				margin: 4px
 
 // service
 .service
-	width: 100%
+	max-width: 360px
 	border-radius: 4px
-	box-shadow : 0px 2px 2px rgba($black, 0.3)
+	box-shadow: 0px 2px 2px rgba($black, 0.3)
 	background: $white
+	vertical-align: top
 	display: inline-table
 	+clr
+	+r(1024)
+		max-width: 100%
+		width: 100%
 	& + .service
 		margin-top: 10px
 	&.is-card
+		margin-right: 10px
 		.service__top
 			background: linear-gradient(28.44deg, $serv_green 0%, $l_serv_green 100%)
 		.service__ico
 			&:before
 				+svg(shad-step-card,129,127)
 	&.is-phone
+		margin-top: 0
 		.service__top
 			background: linear-gradient(28.44deg, $l_serv_green 0%, $l_serv_red 100%)
 		.service__ico
@@ -842,6 +936,13 @@ button.btn
 		border-left: 1px solid $bord_serv
 		vertical-align: top
 		display: table-cell
+		+r(1024)
+			width: 50%
+		+r(480)
+			width: 100%
+			display: block
+			& + .service__col
+				border-top: 1px solid $bord_line
 		&:first-child
 			text-align: center
 		.link
@@ -856,9 +957,14 @@ button.btn
 			margin-top: 15px
 	&__img
 		margin: 19px 0 9px
+		min-height: 130px
+		line-height: 130px
+		+r(1024)
+			min-height: initial
+			line-height: inherit
 	&__ico
 		position: relative
-		vertical-align: top
+		vertical-align: middle
 		display: inline-block
 		&:before
 			position: absolute
@@ -872,6 +978,8 @@ button.btn
 	&__bot
 		padding: 14px
 		border-top: 1px solid $bord_serv
+		+r(480)
+			display: none
 	.alert
 		margin-top: 4px
 
@@ -1092,10 +1200,18 @@ button.btn
 	&__right
 		vertical-align: top
 		display: table-cell
+		+r(480)
+			display: block
 	&__left
 		width: 214px
+		+r(960)
+			width: 50%
+		+r(480)
+			width: 100%
 	&__right
 		padding: 24px 10px 20px 30px
+		+r(480)
+			padding: 24px 10px 20px
 	.service
 		float: none
 		box-shadow: none
@@ -1111,11 +1227,17 @@ button.btn
 			font-size: 16px
 		&__img
 			margin: 8px 0 40px
+		+r(480)
+			border-right: none
 	.advance
 		margin-top: 20px
+	.slick-arrow
+		top: 130px
 
 // advance
 .advance
+	+r(960)
+		display: none
 	&__wrap
 		+clr
 	&__title
@@ -1126,6 +1248,8 @@ button.btn
 		float: left
 		margin-left: 34px
 		width: 133px
+		+r(1024)
+			margin-left: 30px
 		&:before
 			position: absolute
 			content: ''
@@ -1174,6 +1298,8 @@ button.btn
 .attend
 	margin-top: 48px
 	+clr
+	+r(960)
+		display: none
 	&__left
 		float: left
 		+clr
@@ -1287,6 +1413,8 @@ button.btn
 		width: 55.85%
 	&__bot
 		margin-top: 30px
+		+r(768)
+			display: none
 		.slick-dots
 			position: relative
 			margin-left: 20px
@@ -1306,6 +1434,9 @@ button.btn
 		text-shadow: none
 	.title-bord
 		margin-bottom: 10px
+	.slick-arrow
+		+r(768)
+			display: none !important
 
 // partner
 .partner
