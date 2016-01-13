@@ -564,7 +564,7 @@ button.btn
 	overflow: hidden
 	background: url(../img/bg-steps.png) repeat
 	+r(1024)
-		padding: 20px 10px
+		padding: 20px 30px 20px 10px
 	&.is-valid
 		.steps__in
 			&:before
@@ -1190,6 +1190,8 @@ button.btn
 	border-radius: 6px
 	box-shadow: 0px 2px 6px rgba($black, 0.3)
 	background: $white
+	+r(960)
+		margin-top: 16px
 	&__slide 
 		width: 100%
 		border-radius: 6px
@@ -1387,8 +1389,12 @@ button.btn
 .inform
 	padding: 38px 0
 	background: url(../img/bg-inform.png) repeat 0 0
+	+r(960)
+		padding: 24px 0
 	&__in
 		@extend %in
+		+r(1024)
+			padding: 0 30px
 
 // question
 .question
@@ -1398,8 +1404,14 @@ button.btn
 	border-bottom: 1px solid $l_gray
 	background: url(../img/question_bg.png) no-repeat 50% 100%
 	background-size: cover
+	+r(960)
+		padding: 37px 0
 	&__in
 		@extend %in
+		+r(1024)
+			padding: 0 30px
+		+r(768)
+			padding: 0 5px
 	// &__slider
 	&__slide
 		width: 100%
@@ -1408,9 +1420,20 @@ button.btn
 		float: left
 		padding: 0 20px
 		width: 44.15%
+		+r(768)
+			float: none
+			width: 100%
+			text-align: center
+		img
+			+r(768)
+				margin: 0 auto
 	&__right
 		float: right
 		width: 55.85%
+		+r(768)
+			float: none
+			padding: 0 30px
+			width: 100%
 	&__bot
 		margin-top: 30px
 		+r(768)
@@ -1425,15 +1448,28 @@ button.btn
 				outline: none
 	&__wrap
 		padding-right: 75px
+		+r(768)
+			padding-right: 0
 	p + p
 		margin-top: 20px
 	.title
+		float: right
 		margin-bottom: 30px
+		width: calc(100% - 44.15%)
 		color: $white
 		text-align: left
 		text-shadow: none
+		+r(768)
+			padding: 0 30px
+			width: 100%
+			text-align: center
+		+r(480)
+			margin-bottom: 0
+			text-align: left
 	.title-bord
 		margin-bottom: 10px
+		+r(480)
+			margin: 0 -12px 10px
 	.slick-arrow
 		+r(768)
 			display: none !important
@@ -1445,6 +1481,8 @@ button.btn
 	border-bottom: 1px solid $bord_par
 	background: url(../img/bg-part.png) no-repeat 50% 0
 	background-size: cover
+	+r(960)
+		padding: 30px 0
 	&__in
 		@extend %in
 	&__wrap
@@ -1452,6 +1490,11 @@ button.btn
 		text-align: center
 		font-size: 0
 		+clr
+		+r(960)
+			margin-top: 80px
+		+r(768)
+			margin: 40px auto 22px
+			width: 300px
 	&__item
 		position: relative
 		margin-left: 35px
@@ -1461,6 +1504,8 @@ button.btn
 		text-align: center
 		vertical-align: top
 		display: inline-block
+		+r(960)
+			margin-left: 27px
 		&:hover,
 		&.is-active
 			.partner__name
@@ -1469,6 +1514,25 @@ button.btn
 			.partner__logo
 				transform: translateY(-40px) rotate(-45deg)
 				box-shadow: -1px 1px 2px rgba($black, 0.3)
+		&.is-active
+			+r(768)
+				margin: 55px 0 -20px
+				display: block
+				& + .partner__item
+					margin-left: 0
+			.partner__logo
+				+r(768)
+					display: inline-block
+			.partner__name
+				+r(768)
+					position: relative
+					margin: -16px 35px 0 0
+					bottom: auto
+					right: auto
+					left: auto
+					max-width: 70px
+					vertical-align: top
+					display: inline-block
 		&:first-child
 			margin-left: 0
 		&.is-green
@@ -1488,6 +1552,10 @@ button.btn
 		transform: rotate(-45deg)
 		transition: transform .2s, box-shadow .2s
 		background: $l_red
+		+r(960)
+			width: 78px
+			height: 78px
+			line-height: 78px
 		img
 			transform: rotate(45deg)
 			vertical-align: middle
@@ -1502,6 +1570,9 @@ button.btn
 		transform: translate3d(0,0,0)
 		transition: transform .2s, opacity .2s
 		transform: scale(0)
+		+r(960)
+			right: -8px
+			left: -8px
 	&__inf
 		text-align: center
 		font-size: 16px
@@ -1510,6 +1581,13 @@ button.btn
 			margin-left: 8px
 			padding-left: 9px
 			display: inline-block
+			+r(480)
+				margin-top: 2px
+				display: block
+				&:before
+					display: none
+				&:first-child
+					margin-top: 0
 			&:first-child
 				margin-left: 0
 				padding-left: 0
@@ -1525,10 +1603,14 @@ button.btn
 .reply
 	padding: 50px 0 60px
 	border-bottom: 1px solid $bord_par
+	+r(960)
+		padding: 40px 0 25px
 	&__in
 		@extend %in
 	.title
 		margin-bottom: 40px
+		+r(960)
+			margin-bottom: 7px
 
 // accord
 .accord
@@ -1548,6 +1630,8 @@ button.btn
 		will-change: text-transform, font-weight
 		transform: translate3d(0,0,0)
 		transition: font-weight .2s, text-transform .2s
+		+r(335)
+			padding-right: 50px
 		&:before
 			position: absolute
 			content: ''
@@ -1558,6 +1642,8 @@ button.btn
 	&__block
 		padding: 0 45px 14px 10px
 		display: none
+		+r(960)
+			padding-right: 10px
 	p 
 		& + p,
 		& + .video
@@ -1570,6 +1656,12 @@ button.btn
 	height: 201px
 	max-width: 301px
 	border: 1px solid $bord_video
+	+r(335)
+		margin-left: -20px
+		margin-right: -20px
+		max-width: initial
+		border-left: none
+		border-right: none
 	&__title
 		position: absolute
 		top: 15px
@@ -1659,10 +1751,14 @@ button.btn
 // rates
 .rates
 	padding: 52px 0 52px
+	+r(960)
+		padding: 36px 0 0
 	&__in
 		@extend %in
 	.title
 		padding-bottom: 40px
+		+r(960)
+			padding-bottom: 20px
 	p
 		& + p,
 		& + .list,
@@ -1923,9 +2019,12 @@ button.btn
 
 // footer
 .footer
+	position: relative
 	color: $white
 	background: url(../img/bg-foot.png) no-repeat 50% 25px
 	background-size: cover
+	+r(768)
+		overflow: hidden
 	&__top
 		height: 25px
 	&__in
@@ -1934,24 +2033,42 @@ button.btn
 		max-width: 865px
 		text-align: center
 		+clr
+		+r(480)
+			padding: 10px 10px 33px
 	&__left
 		float: left
 		text-align: left
 		font-size: 12px
+		+r(768)
+			float: none
 	&__center
-		margin-top: -45px
+		margin: -45px -20px 0
 		display: inline-block
+		+r(768)
+			position: absolute
+			top: 103px
+			right: -36px
+			margin: 0
 	&__right
 		float: right
 		text-align: left
+		+r(768)
+			float: none
+			margin-top: 25px
 	&__row
 		margin-top: 18px
 		+clr
+		+r(480)
+			margin-top: 32px
 		.soc,
 		.support
 			float: left
+			+r(480)
+				float: none
 		.support
 			margin-left: 20px
+			+r(480)
+				margin: 25px 0 0 
 	&__partners
 		padding: 24px 0 36px
 		border-top: 1px solid $blue
@@ -1959,6 +2076,8 @@ button.btn
 	.logo
 		margin-top: 0
 		float: none
+		+r(900)
+			display: none
 	.title-small
 		margin-bottom: 12px
 
@@ -1976,6 +2095,8 @@ button.btn
 		margin-left: 22px
 		vertical-align: top
 		display: inline-block
+		+r(480)
+			margin-left: 5px
 		&:first-child
 			margin-left: 0
 
@@ -1993,6 +2114,11 @@ button.btn
 		line-height: 30px
 		border: 1px solid $white
 		border-radius: 4px
+		+r(480)
+			float: none
+			margin: 7px 0 0 
+			width: auto
+			display: table
 		&:hover
 			color: $blue
 			box-shadow: 0px 2px 2px rgba($black, 0.3)

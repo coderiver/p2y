@@ -96,8 +96,9 @@ $(document).ready(function() {
 			{
 				breakpoint: 768,
 				settings: {
-					autoplay: true,
-					dots 	: false
+					adaptiveHeight 	: true,
+					autoplay		: true,
+					dots 			: false
 				}
 			}
 		]
