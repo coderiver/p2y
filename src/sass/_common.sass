@@ -566,18 +566,33 @@ button.btn
 	+r(1024)
 		padding: 20px 30px 20px 10px
 	&.is-valid
+		+r(768)
+			padding: 20px 30px
 		.steps__in
 			&:before
 				height: 242px
+				+r(768)
+					display: none
 		.step__title
 			color: $l_green
 		.step 
 			background: transparent
+			+r(768)
+				display: none
+				&:first-child
+					display: block
+					.step__numb:before
+						display: none
 			&:before,
 			&:after
 				display: none
 			.step__top
 				border-bottom-color: transparent
+				+r(768)
+					&:before
+						display: none
+		.check
+			display: none
 	&__in
 		position: relative
 		@extend %in
@@ -628,6 +643,16 @@ button.btn
 				text-transform: uppercase
 		.step__top
 			border-bottom: 1px solid $bord_step
+			&:before
+				position: absolute
+				content: ''
+				left: -40px
+				width: 20px
+				bottom: -1px
+				border-bottom: 1px solid $bord_step
+				display: none
+				+r(768)
+					display: block
 		.step__numb
 			color: $white
 			font-size: 0
@@ -651,13 +676,23 @@ button.btn
 					font-size: 20px
 					text-shadow: 0 0 2px rgba($black, .8)
 			.fa
+				position: relative
 				font-size: 16px
+				z-index: 2
 				display: inline-block
 		& + .is-active
 			background: $white
 			&:before,
 			&:after
 				display: block
+	&:nth-child(2)
+		&.is-valid
+			.step__numb
+				&:before
+					+r(768)
+						height: 150%
+					+r(480)
+						height: 220%
 	& + .step
 		margin-top: 5px
 	&__top
@@ -665,12 +700,31 @@ button.btn
 		padding: 12px 0
 		z-index: 1
 		+clr
+		+r(768)
+			margin: 0 -40px 0 -20px
+			padding: 12px 40px 12px 20px
 		.check
 			margin-left: 15px
+			+r(768)
+				position: absolute
+				top: 12px 
+				right: 10px
+				margin-left: 0
+		.edit	
+			+r(768)
+				font-size: 0
+				position: absolute
+				top: 12px 
+				right: 10px
+				.fa
+					margin-right: 0
 	&__title
+		width: calc(100% - 120px)
 		color: $l_gray
 		vertical-align: top 
 		display: inline-block
+		+r(768)
+			width: 100%
 		& > .fa,
 		& > .icon
 			margin: 2px 8px 0
@@ -690,6 +744,9 @@ button.btn
 		.icon
 			margin: -5px 0 -6px 10px
 			vertical-align: top
+	&__stock
+		+r(768)
+			display: none
 	&__numb
 		position: absolute
 		top: 0
@@ -704,6 +761,8 @@ button.btn
 		border-radius: 50%
 		border: 1px solid $bord_step
 		background: $white
+		+r(768)
+			left: -30px
 		&:before
 			position: absolute
 			content: ''
@@ -720,6 +779,8 @@ button.btn
 			height: 35px
 			border-radius: 4px
 			transform: rotate(45deg)
+			+r(768)
+				left: -27px
 			.fa
 				transform: rotate(-45deg)
 				margin-bottom: 8px
@@ -735,11 +796,23 @@ button.btn
 		position: relative
 		padding: 10px 0 5px
 		display: none
+		+r(768)
+			margin: 2px -40px 0 -60px
+			padding: 15px 18px 60px
+			border-top: 1px solid $bord_step
+			border-bottom: 1px solid $bord_step
+			z-index: 3
+			background: $white
 
 // receipt
 .receipt
 	margin-left: -50px
 	background: url(../img/svg/receipt-bg.svg) no-repeat 50% 138px
+	+r(768)
+		text-align: center
+		background: none
+	+r(335)
+		text-align: left
 	&__wrap
 		position: relative
 		padding: 15px 0 20px
@@ -761,6 +834,11 @@ button.btn
 			z-index: 1
 		p
 			margin-bottom: 5px
+		& > .btn
+			+r(335)
+				position: relative
+				left: 50%
+				transform: translateX(-50%)
 		.rating__list,
 		.rating__people
 			vertical-align: top
@@ -768,11 +846,20 @@ button.btn
 	&__row
 		margin-top: 18px
 		+clr
+		+r(768)
+			margin-top: 15px
 		&:first-child
 			margin-top: 0
 	&__left
 		float: left
 		width: 374px
+		+r(768)
+			float: none
+			margin-top: 15px
+			width: 100%
+	&__soc
+		img
+			max-width: 100%
 
 // ticket
 .ticket
@@ -783,6 +870,8 @@ button.btn
 	background: $white
 	border-radius: 4px
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3)
+	+r(768)
+		margin-top: 10px
 	&__top
 		padding: 15px 0 10px
 		text-align: center
@@ -853,6 +942,8 @@ button.btn
 	color: $l_blue
 	vertical-align: top
 	display: inline-block
+	+r(768)
+		font-size: 0
 	&:hover
 		span
 			border-color: $l_blue
@@ -866,6 +957,8 @@ button.btn
 		margin-right: 8px
 		font-size: 18px
 		vertical-align: middle
+		+r(768)
+			margin-right: 0
 
 // services
 .services
@@ -1087,15 +1180,22 @@ button.btn
 .assay
 	padding: 20px 0 40px
 	text-align: center
+	+r(768)
+		padding: 0
 	&.is-load
 		height: 280px
 		text-transform: uppercase
 		color: $l_blue
 		+vertical
+		+r(768)
+			margin-bottom: -40px
+			height: 104px
 	&__in
 		margin: -76px 0 0 -130px
 		vertical-align: middle
 		display: inline-block
+		+r(768)
+			margin: 0
 	&__text
 		margin-top: 40px
 		font-size: 16px
@@ -1822,10 +1922,22 @@ button.btn
 	text-align: center
 	&.is-phone
 		.card
+			+r(900)
+				float: none
+				margin: 10px auto
+				display: block
 			&:first-child
 				margin-top: 30px
 			& + .fa
 				top: 71px
+				&.is-mod
+					+r(900)
+						position: relative
+						top: 0
+						transform: rotate(90deg)
+		.code__item
+			+r(900)
+				display: inline-block
 	&__wrap
 		position: relative
 		margin: 0 auto
@@ -1842,6 +1954,8 @@ button.btn
 		margin-top: 22px
 	&__nav
 		margin-top: 10px
+		+r(678)
+			display: none
 		li
 			margin-left: 44px
 			vertical-align: top
@@ -1858,9 +1972,17 @@ button.btn
 			transform: translateX(-50%)
 			font-size: 30px
 			color: $c_card_arr
+			+r(768)
+				position: relative
+				top: auto
+				margin: 5px 0
+				transform: rotate(90deg)
 	.code
 		float: left
 		width: 410px
+		+r(900)
+			width: 100%
+			text-align: center
 		& + .card
 			margin-left: 10px
 		& + .fa
@@ -1869,6 +1991,12 @@ button.btn
 			left: 405px
 			font-size: 30px
 			color: $c_card_arr
+			+r(900)
+				position: relative
+				top: 0
+				left: 50%
+				transform: translateX(-50%)
+				transform: rotate(90deg)
 
 // card
 .card
@@ -1887,8 +2015,16 @@ button.btn
 	background: $bg_card
 	display: inline-block
 	+clr
+	+r(768)
+		float: none
+		margin: 0 auto
+		display: block
+	+r(335)
+		width: 100%
 	&:first-child
 		margin-left: 0
+		+r(768)
+			margin: 0 auto
 	&.is-active
 		box-shadow: 0 0 5px rgba($black, 0.3)
 		border-color: $bg_card
@@ -1905,11 +2041,15 @@ button.btn
 			top: 0
 			left: 0
 			+svg(card-phone,302,251)
+			+r(335)
+				width: 100%
 	&.is-mod
 		margin-top: 30px
 		padding-top: 50px
 		box-shadow: none
 		border: none
+		+r(768)
+			margin-top: 0
 	&__in
 		position: relative
 		z-index: 1
@@ -1987,6 +2127,10 @@ button.btn
 		width: 192px
 	&__img
 		position: relative
+		& + .code__item
+			+r(768)
+				margin-bottom: -35px
+				display: none
 		.input	
 			position: absolute
 			top: 108px
@@ -1997,6 +2141,8 @@ button.btn
 		margin-left: 30px
 		vertical-align: top
 		display: inline-block
+		+r(768)
+			margin: 10px 0 0
 		&:first-child
 			margin-left: 0
 	&__phone

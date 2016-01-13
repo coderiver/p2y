@@ -200,6 +200,7 @@ button.btn { line-height: 1; }
 .steps.is-valid .step { background: transparent; }
 .steps.is-valid .step:before, .steps.is-valid .step:after { display: none; }
 .steps.is-valid .step .step__top { border-bottom-color: transparent; }
+.steps.is-valid .check { display: none; }
 .steps__in { position: relative; padding-left: 50px; }
 .steps__in:before { position: absolute; content: ""; top: 0; left: 20px; bottom: 6px; z-index: 1; width: 1px; background: #ccc; }
 
@@ -213,19 +214,20 @@ button.btn { line-height: 1; }
 .step.is-valid:before, .step.is-valid:after { display: block; }
 .step.is-valid:first-child .step__title { color: #22B473; font-family: "Roboto", sans-serif; font-weight: 700; text-transform: uppercase; }
 .step.is-valid .step__top { border-bottom: 1px solid #ccc; }
+.step.is-valid .step__top:before { position: absolute; content: ""; left: -40px; width: 20px; bottom: -1px; border-bottom: 1px solid #ccc; display: none; }
 .step.is-valid .step__numb { color: #fff; font-size: 0; border-color: #22B473; background: #22B473; }
 .step.is-valid .step__numb:before { background: #22B473; }
 .step.is-valid .step__numb.is-receipt { margin-left: -1px; border: none; overflow: hidden; }
 .step.is-valid .step__numb.is-receipt:before { width: 50%; top: 2px; left: -2px; width: 0px; height: 0px; border-style: solid; border-width: 25px 24px 25px 0; border-color: transparent #27CE82 transparent transparent; -webkit-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); background: transparent; }
 .step.is-valid .step__numb.is-receipt .fa { margin-bottom: 7px; font-size: 20px; text-shadow: 0 0 2px rgba(0, 0, 0, 0.8); }
-.step.is-valid .step__numb .fa { font-size: 16px; display: inline-block; }
+.step.is-valid .step__numb .fa { position: relative; font-size: 16px; z-index: 2; display: inline-block; }
 .step.is-valid + .is-active { background: #fff; }
 .step.is-valid + .is-active:before, .step.is-valid + .is-active:after { display: block; }
 .step + .step { margin-top: 5px; }
 .step__top { position: relative; padding: 12px 0; z-index: 1; *zoom: 1; }
 .step__top:after { content: " "; display: table; clear: both; }
 .step__top .check { margin-left: 15px; }
-.step__title { color: #999; vertical-align: top; display: inline-block; }
+.step__title { width: -webkit-calc(100% - 120px); width: calc(100% - 120px); color: #999; vertical-align: top; display: inline-block; }
 .step__title > .fa, .step__title > .icon { margin: 2px 8px 0; font-size: 14px; color: #22B473; vertical-align: top; }
 .step__title > .icon { margin-top: -1px; }
 .step__stock, .step__right { float: right; color: #999; font-size: 12px; }
@@ -250,6 +252,7 @@ button.btn { line-height: 1; }
 .receipt__row:after { content: " "; display: table; clear: both; }
 .receipt__row:first-child { margin-top: 0; }
 .receipt__left { float: left; width: 374px; }
+.receipt__soc img { max-width: 100%; }
 
 .ticket { position: relative; margin: -170px auto 0; left: -2px; width: 278px; background: #fff; -webkit-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); }
 .ticket__top { padding: 15px 0 10px; text-align: center; color: #22B473; }
@@ -667,6 +670,11 @@ button.btn { line-height: 1; }
  .rates{ padding: 36px 0 0; }
  .rates .title{ padding-bottom: 20px; } }
 @media only screen and (max-width: 900px){
+ .cards.is-phone .card{ float: none; margin: 10px auto; display: block; }
+ .cards.is-phone .card + .fa.is-mod{ position: relative; top: 0; -webkit-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg); }
+ .cards.is-phone .code__item{ display: inline-block; }
+ .cards .code{ width: 100%; text-align: center; }
+ .cards .code + .fa{ position: relative; top: 0; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); -webkit-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg); }
  .footer .logo{ display: none; } }
 @media only screen and (max-width: 768px){
  .header__right{ float: none; position: absolute; top: 62px; left: 0; right: 0; margin: 0; padding: 20px 15px 20px 10px; z-index: 2; visibility: hidden; opacity: 0; z-index: -1; will-change: opacity; -webkit-transition: opacity 0.2s; transition: opacity 0.2s; -webkit-box-shadow: inset 0 -1px 0 #3498db; box-shadow: inset 0 -1px 0 #3498db; border-bottom: 1px solid #21618c; background: #2a7cb3; }
@@ -677,6 +685,32 @@ button.btn { line-height: 1; }
  .stock__text:first-child{ margin-top: 0; }
  .stock__text span.is-up{ font-size: 18px; }
  .stock__more{ margin-top: 10px; }
+ .steps.is-valid{ padding: 20px 30px; }
+ .steps.is-valid .steps__in:before{ display: none; }
+ .steps.is-valid .step{ display: none; }
+ .steps.is-valid .step:first-child{ display: block; }
+ .steps.is-valid .step:first-child .step__numb:before{ display: none; }
+ .steps.is-valid .step .step__top:before{ display: none; }
+ .step.is-valid .step__top:before{ display: block; }
+ .step:nth-child(2).is-valid .step__numb:before{ height: 150%; }
+ .step__top{ margin: 0 -40px 0 -20px; padding: 12px 40px 12px 20px; }
+ .step__top .check{ position: absolute; top: 12px; right: 10px; margin-left: 0; }
+ .step__top .edit{ font-size: 0; position: absolute; top: 12px; right: 10px; }
+ .step__top .edit .fa{ margin-right: 0; }
+ .step__title{ width: 100%; }
+ .step__stock{ display: none; }
+ .step__numb{ left: -30px; }
+ .step__numb.is-receipt{ left: -27px; }
+ .step__block{ margin: 2px -40px 0 -60px; padding: 15px 18px 60px; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; z-index: 3; background: #fff; }
+ .receipt{ text-align: center; background: none; }
+ .receipt__row{ margin-top: 15px; }
+ .receipt__left{ float: none; margin-top: 15px; width: 100%; }
+ .ticket{ margin-top: 10px; }
+ .check{ font-size: 0; }
+ .check .icon, .check .fa{ margin-right: 0; }
+ .assay{ padding: 0; }
+ .assay.is-load{ margin-bottom: -40px; height: 104px; }
+ .assay__in{ margin: 0; }
  .question__in{ padding: 0 5px; }
  .question__left{ float: none; width: 100%; text-align: center; }
  .question__left img{ margin: 0 auto; }
@@ -690,13 +724,22 @@ button.btn { line-height: 1; }
  .partner__item.is-active + .partner__item{ margin-left: 0; }
  .partner__item.is-active .partner__logo{ display: inline-block; }
  .partner__item.is-active .partner__name{ position: relative; margin: -16px 35px 0 0; bottom: auto; right: auto; left: auto; max-width: 70px; vertical-align: top; display: inline-block; }
+ .cards .card + .fa{ position: relative; top: auto; margin: 5px 0; -webkit-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg); }
+ .card{ float: none; margin: 0 auto; display: block; }
+ .card:first-child{ margin: 0 auto; }
+ .card.is-mod{ margin-top: 0; }
+ .code__img + .code__item{ margin-bottom: -35px; display: none; }
+ .code__item, .code__img{ margin: 10px 0 0; }
  .footer{ overflow: hidden; }
  .footer__left{ float: none; }
  .footer__center{ position: absolute; top: 103px; right: -36px; margin: 0; }
  .footer__right{ float: none; margin-top: 25px; } }
+@media only screen and (max-width: 678px){
+ .cards__nav{ display: none; } }
 @media only screen and (max-width: 480px){
  .icon-logo{ background: url("../img/svg/logo.svg") no-repeat 0 0; background-size: 150px 38px; width: 150px; height: 38px; display: inline-block; }
  .logo{ font-size: 10px; }
+ .step:nth-child(2).is-valid .step__numb:before{ height: 220%; }
  .services .slick-arrow{ top: 112px; }
  .service__col{ width: 100%; display: block; }
  .service__col + .service__col{ border-top: 1px solid #dcdcdc; }
@@ -717,8 +760,12 @@ button.btn { line-height: 1; }
  .partners__item{ margin-left: 5px; }
  .app__item{ float: none; margin: 7px 0 0; width: auto; display: table; } }
 @media only screen and (max-width: 335px){
+ .receipt{ text-align: left; }
+ .receipt__wrap > .btn{ position: relative; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); }
  .accord__top{ padding-right: 50px; }
- .video{ margin-left: -20px; margin-right: -20px; max-width: initial; border-left: none; border-right: none; } }
+ .video{ margin-left: -20px; margin-right: -20px; max-width: initial; border-left: none; border-right: none; }
+ .card{ width: 100%; }
+ .card.is-phone:before{ width: 100%; } }
 
 
 
