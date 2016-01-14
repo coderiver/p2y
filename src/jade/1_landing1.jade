@@ -1,0 +1,100 @@
+extends _layout
+
+block title
+	title Title of template
+
+block content
+	include ./includes/_header_new.jade
+	
+	//- compare
+	section.compare
+		.compare__in
+			//- stock
+			.stock
+				.stock__top
+					.stock__text
+						span ПереВЕСТИ ДЕНЬГИ 
+						span.is-up Всего за
+					.stock__disc
+						i.icon
+							img(src="img/stock.png", alt="img")
+						.stock__plus + 5 грн
+					.stock__text
+						span.is-up КОМИССИИ
+						span онлайн в интернете!
+			.compare__text Сравните наш сервис с другими и узнайте, почему наша комиссия лучше:
+			.compare__wrap
+				.compare__top
+					img(src="img/compare-top.png", alt="img")
+					a.compare__link(href="#")
+						span сравнить
+						+fa('arrow-down')
+			.compare__block
+				.title-little Например, Вы переводите
+				//- simile
+				.simile
+					.arr 
+						+fa('arrow-down')
+					.circle
+						.circle__price 500
+						span грн
+					.simile__wrap
+						.simile__col
+							.simile__top
+								.title-bord.is-red другие сервисы
+								.simile__row
+									.simile__circle
+										+fa('times')
+										span Комиссия -
+										span.simile__price 1%+5грн
+								.simile__row
+									.simile__circle
+										+fa('times')
+										span Комиссия в гривнах - 
+										span.simile__price 10,00 грн
+								.simile__row
+									.simile__circle
+										+fa('times')
+										span Сумма к списанию - 
+										span.simile__price 510,00 грн
+								.simile__bot
+									button.btn.btn_rad-non.btn_red(type="button") Вы заплатили 
+										span.is-up 10,00 
+										| грн комиссии
+						.simile__col
+							.simile__top
+								img(src="img/svg/.svg", alt="img")
+								.simile__row
+									.simile__circle
+										+fa('check')
+										span Наша Комиссия -
+										span.simile__price 0,5% + 5 грн
+								.simile__row
+									.simile__circle
+										+fa('check')
+										span Комиссия в гривнах - 
+										span.simile__price 7,50 грн
+								.simile__row
+									.simile__circle
+										+fa('check')
+										span Сумма к списанию - 
+										span.simile__price 507,50 грн
+								.simile__bot
+									button.btn.btn_rad-non.btn_blue(type="button") Вы заплатили 
+										span.is-up 7,50
+										| грн комиссии
+				.title-dashed.is-big Убедитесь в том, сколько Вы можете сэкономить:
+				//- simile
+				.simile
+					.title-little 
+					.arr 
+						+fa('arrow-down')
+					.circle
+						.circle__price 500
+						span грн
+					.simile__wrap
+						.simile__col
+	include ./includes/_reply.jade
+
+block footer
+	include ./includes/_footer.jade
