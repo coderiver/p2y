@@ -33,10 +33,10 @@ block content
 				.compare__block 
 					.title-little Например, Вы переводите
 					//- simile
-					.simile
+					.simile.is-comp
 						.arr 
 							+fa('arrow-down')
-						.circle
+						.circle.is-mob
 							.circle__in
 								.circle__price 500
 								span грн
@@ -50,24 +50,35 @@ block content
 										.simile__circle.is-red
 											+fa('times')
 										span Комиссия -
-										span.simile__price.is-red 1%+5грн
+										span.simile__price.is-red 1% + 5грн
+										.simile__text.is-mob-show
+											| Комиссия,
+											| тариф
 									.simile__row
 										.simile__circle.is-red
 											+fa('times')
 										span Комиссия в гривнах - 
 										span.simile__price.is-red 10,00 грн
+										.simile__text.is-mob-show
+											| Комиссия,
+											| грн
 									.simile__row
 										.simile__circle.is-red
 											+fa('times')
 										span Сумма к списанию - 
 										span.simile__price.is-red 510,00 грн
+										.simile__text.is-mob-show
+											| Сумма
+											| к списанию
 								.simile__bot
 									button.btn.btn_rad-non.btn_red.btn_great(type="button") Вы заплатили 
 										span.is-up 10,00 
 										| грн комиссии
 							.simile__col
 								.simile__top
-									img(src="img/svg/simile_logo.svg", alt="img")
+									img.is-mob-hide(src="img/svg/simile_logo.svg", alt="img")
+									.title-bord-double.is-blue.is-mob-show
+										span PAY2YOU
 								.simile__serv
 									.simile__row
 										.simile__circle
@@ -95,7 +106,7 @@ block content
 						.arr 
 							+fa('arrow-down')
 						.simile__wrap
-							.simile__item
+							.simile__item.js-simile-item#arr
 								.simile__point
 									.simile__col
 										.summ
@@ -103,17 +114,27 @@ block content
 												.summ__top 15
 												.summ__cur грн
 										.simile__field Экономия - 0 грн.
+											.res
+												.res__top Комиссия - 15 грн 
+												.res__bot Экономия - 0 грн
+										button.simile__arr.js-sim-arr-left(type="button")
+											+fa('chevron-left')
 									.circle
 										.circle__in
 											.circle__price 500
 											span грн
 									.simile__col
 										.simile__field Экономия - 5 грн.
+											.res.is-blue
+												.res__top Комиссия - 15 грн 
+												.res__bot Экономия - 0 грн
 										.summ
 											.summ__in
 												.summ__top 10
 												.summ__cur грн
-							.simile__item
+										button.simile__arr.js-sim-arr-right(type="button")
+											+fa('chevron-right')
+							.simile__item.js-simile-item
 								.arr 
 									+fa('arrow-down')
 								.simile__point
@@ -123,17 +144,27 @@ block content
 												.summ__top 105
 												.summ__cur грн
 										.simile__field Экономия - 0 грн.
+											.res
+												.res__top Комиссия - 15 грн 
+												.res__bot Экономия - 0 грн
+										button.simile__arr.js-sim-arr-left(type="button")
+											+fa('chevron-left')
 									.circle
 										.circle__in
 											.circle__price 10 000
 											span грн
 									.simile__col
 										.simile__field Экономия - 50 грн.
+											.res.is-blue
+												.res__top Комиссия - 15 грн 
+												.res__bot Экономия - 0 грн
 										.summ
 											.summ__in
 												.summ__top 55
 												.summ__cur грн
-							.simile__item
+										button.simile__arr.js-sim-arr-right(type="button")
+											+fa('chevron-right')
+							.simile__item.js-simile-item
 								.arr 
 									+fa('arrow-down')
 								.simile__point
@@ -143,16 +174,26 @@ block content
 												.summ__top 155
 												.summ__cur грн
 										.simile__field  Экономия - 0 грн.
+											.res
+												.res__top Комиссия - 15 грн 
+												.res__bot Экономия - 0 грн
+										button.simile__arr.js-sim-arr-left(type="button")
+											+fa('chevron-left')
 									.circle
 										.circle__in
 											.circle__price 500
 											span грн
 									.simile__col
 										.simile__field Экономия - 75 грн.
+											.res.is-blue
+												.res__top Комиссия - 15 грн 
+												.res__bot Экономия - 0 грн
 										.summ
 											.summ__in
 												.summ__top 80
 												.summ__cur грн
+										button.simile__arr.js-sim-arr-right(type="button")
+											+fa('chevron-right')
 			//- saving
 			.saving
 				.saving__top

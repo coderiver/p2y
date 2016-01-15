@@ -58,10 +58,10 @@
             <div class="compare__top"><img src="img/compare-top.png" alt="img"><a href="#" class="compare__link"><span>сравнить</span><i class="fa fa-arrow-down"></i></a></div>
             <div class="compare__block"> 
               <div class="title-little">Например, Вы переводите</div>
-              <div class="simile">
+              <div class="simile is-comp">
                 <div class="arr"> <i class="fa fa-arrow-down"></i>
                 </div>
-                <div class="circle">
+                <div class="circle is-mob">
                   <div class="circle__in">
                     <div class="circle__price">500</div><span>грн</span>
                   </div>
@@ -74,15 +74,27 @@
                     <div class="simile__serv">
                       <div class="simile__row">
                         <div class="simile__circle is-red"><i class="fa fa-times"></i>
-                        </div><span>Комиссия -</span><span class="simile__price is-red">1%+5грн</span>
+                        </div><span>Комиссия -</span><span class="simile__price is-red">1% + 5грн</span>
+                        <div class="simile__text is-mob-show">
+                          Комиссия,
+                          тариф
+                        </div>
                       </div>
                       <div class="simile__row">
                         <div class="simile__circle is-red"><i class="fa fa-times"></i>
                         </div><span>Комиссия в гривнах - </span><span class="simile__price is-red">10,00 грн</span>
+                        <div class="simile__text is-mob-show">
+                          Комиссия,
+                          грн
+                        </div>
                       </div>
                       <div class="simile__row">
                         <div class="simile__circle is-red"><i class="fa fa-times"></i>
                         </div><span>Сумма к списанию - </span><span class="simile__price is-red">510,00 грн</span>
+                        <div class="simile__text is-mob-show">
+                          Сумма
+                          к списанию
+                        </div>
                       </div>
                     </div>
                     <div class="simile__bot">
@@ -90,7 +102,9 @@
                     </div>
                   </div>
                   <div class="simile__col">
-                    <div class="simile__top"><img src="img/svg/simile_logo.svg" alt="img"></div>
+                    <div class="simile__top"><img src="img/svg/simile_logo.svg" alt="img" class="is-mob-hide">
+                      <div class="title-bord-double is-blue is-mob-show"><span>PAY2YOU</span></div>
+                    </div>
                     <div class="simile__serv">
                       <div class="simile__row">
                         <div class="simile__circle"><i class="fa fa-check"></i>
@@ -117,7 +131,7 @@
                 <div class="arr"> <i class="fa fa-arrow-down"></i>
                 </div>
                 <div class="simile__wrap">
-                  <div class="simile__item">
+                  <div id="arr" class="simile__item js-simile-item">
                     <div class="simile__point">
                       <div class="simile__col">
                         <div class="summ">
@@ -126,7 +140,14 @@
                             <div class="summ__cur">грн</div>
                           </div>
                         </div>
-                        <div class="simile__field">Экономия - 0 грн.</div>
+                        <div class="simile__field">Экономия - 0 грн.
+                          <div class="res">
+                            <div class="res__top">Комиссия - 15 грн </div>
+                            <div class="res__bot">Экономия - 0 грн</div>
+                          </div>
+                        </div>
+                        <button type="button" class="simile__arr js-sim-arr-left"><i class="fa fa-chevron-left"></i>
+                        </button>
                       </div>
                       <div class="circle">
                         <div class="circle__in">
@@ -134,17 +155,24 @@
                         </div>
                       </div>
                       <div class="simile__col">
-                        <div class="simile__field">Экономия - 5 грн.</div>
+                        <div class="simile__field">Экономия - 5 грн.
+                          <div class="res is-blue">
+                            <div class="res__top">Комиссия - 15 грн </div>
+                            <div class="res__bot">Экономия - 0 грн</div>
+                          </div>
+                        </div>
                         <div class="summ">
                           <div class="summ__in">
                             <div class="summ__top">10</div>
                             <div class="summ__cur">грн</div>
                           </div>
                         </div>
+                        <button type="button" class="simile__arr js-sim-arr-right"><i class="fa fa-chevron-right"></i>
+                        </button>
                       </div>
                     </div>
                   </div>
-                  <div class="simile__item">
+                  <div class="simile__item js-simile-item">
                     <div class="arr"> <i class="fa fa-arrow-down"></i>
                     </div>
                     <div class="simile__point">
@@ -155,7 +183,14 @@
                             <div class="summ__cur">грн</div>
                           </div>
                         </div>
-                        <div class="simile__field">Экономия - 0 грн.</div>
+                        <div class="simile__field">Экономия - 0 грн.
+                          <div class="res">
+                            <div class="res__top">Комиссия - 15 грн </div>
+                            <div class="res__bot">Экономия - 0 грн</div>
+                          </div>
+                        </div>
+                        <button type="button" class="simile__arr js-sim-arr-left"><i class="fa fa-chevron-left"></i>
+                        </button>
                       </div>
                       <div class="circle">
                         <div class="circle__in">
@@ -163,17 +198,24 @@
                         </div>
                       </div>
                       <div class="simile__col">
-                        <div class="simile__field">Экономия - 50 грн.</div>
+                        <div class="simile__field">Экономия - 50 грн.
+                          <div class="res is-blue">
+                            <div class="res__top">Комиссия - 15 грн </div>
+                            <div class="res__bot">Экономия - 0 грн</div>
+                          </div>
+                        </div>
                         <div class="summ">
                           <div class="summ__in">
                             <div class="summ__top">55</div>
                             <div class="summ__cur">грн</div>
                           </div>
                         </div>
+                        <button type="button" class="simile__arr js-sim-arr-right"><i class="fa fa-chevron-right"></i>
+                        </button>
                       </div>
                     </div>
                   </div>
-                  <div class="simile__item">
+                  <div class="simile__item js-simile-item">
                     <div class="arr"> <i class="fa fa-arrow-down"></i>
                     </div>
                     <div class="simile__point">
@@ -184,7 +226,14 @@
                             <div class="summ__cur">грн</div>
                           </div>
                         </div>
-                        <div class="simile__field"> Экономия - 0 грн.</div>
+                        <div class="simile__field"> Экономия - 0 грн.
+                          <div class="res">
+                            <div class="res__top">Комиссия - 15 грн </div>
+                            <div class="res__bot">Экономия - 0 грн</div>
+                          </div>
+                        </div>
+                        <button type="button" class="simile__arr js-sim-arr-left"><i class="fa fa-chevron-left"></i>
+                        </button>
                       </div>
                       <div class="circle">
                         <div class="circle__in">
@@ -192,13 +241,20 @@
                         </div>
                       </div>
                       <div class="simile__col">
-                        <div class="simile__field">Экономия - 75 грн.</div>
+                        <div class="simile__field">Экономия - 75 грн.
+                          <div class="res is-blue">
+                            <div class="res__top">Комиссия - 15 грн </div>
+                            <div class="res__bot">Экономия - 0 грн</div>
+                          </div>
+                        </div>
                         <div class="summ">
                           <div class="summ__in">
                             <div class="summ__top">80</div>
                             <div class="summ__cur">грн</div>
                           </div>
                         </div>
+                        <button type="button" class="simile__arr js-sim-arr-right"><i class="fa fa-chevron-right"></i>
+                        </button>
                       </div>
                     </div>
                   </div>

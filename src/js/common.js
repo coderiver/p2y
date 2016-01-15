@@ -128,5 +128,32 @@ $(document).ready(function() {
 	$('body').on('click', function(){
 		$('.js-header-block').removeClass('is-active');
 	});
+
+	// hammer
+	var item = $('.js-simile-item'),
+		touch = item.hammer();
+	touch
+	.on('swipeleft', function(ev) {
+		var this_ = $(this);
+
+		if (this_.hasClass('is-right')){
+			this_.removeClass('is-right');
+			return false;
+		}
+		else {
+			this_.addClass('is-left');
+		}
+	})
+	.on('swiperight', function(ev) {
+		var this_ = $(this);
+
+		if (this_.hasClass('is-left')){
+			this_.removeClass('is-left');
+			return false;
+		}
+		else {
+			this_.addClass('is-right');
+		}
+	});
 	
 });

@@ -133,6 +133,8 @@ h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
 		border-radius: 0
 	span.is-up
 		font-size: 32px
+		+r(960)
+			font-size: 24px
 
 button.btn
 	line-height: 1
@@ -170,6 +172,17 @@ button.btn
 	text-align: center
 	color: $bord_title_bou
 	font-size: 24px
+	+r(768)
+		font-size: 14px
+		color: $white
+		background: $bord_title_bou
+	&.is-blue
+		color: $l_blue
+		+r(768)
+			color: $white
+			background: $l_blue
+		span
+			border-color: $l_blue
 	span
 		padding: 5px
 		+r400
@@ -203,6 +216,10 @@ button.btn
 	text-align: center
 	border-top: 1px dashed $bord_step
 	border-bottom: 1px dashed $bord_step
+	+r(768)
+		padding: 25px
+		font-size: 16px
+		border-top-style: solid
 
 // header
 .header
@@ -2353,6 +2370,9 @@ button.btn
 		margin: 30px 0 15px 25px
 		color: $white
 		font-size: 18px
+		+r(768)
+			margin: 20px 10px
+			font-size: 12px
 	&__top
 		position: relative
 		img
@@ -2363,6 +2383,8 @@ button.btn
 			top: 50%
 			left: 50%
 			transform: translate(calc(-50% + .5px),5px)
+			+r(768)
+				font-size: 14px
 	&__link
 		color: $white
 		+r700
@@ -2501,15 +2523,27 @@ button.btn
 		.circle
 			margin: -7px -60px
 			color: $c_body
+			+r(768)
+				margin: 0 -60px
 		.simile__field
 			padding: 8px 20px 8px 45px
 			width: calc(100% - 106px)
 			line-height: 1.4
 			background: $bord_foot
 			display: inline-block
+			+r(960)
+				padding-left: 35px
+			+r(768)
+				height: 120px
+				width: 100%
+				font-size: 0
+				vertical-align: top
 		.simile__col
 			padding-bottom: 0
 			line-height: 120px
+			+r(768)
+				position: relative
+				padding: 0
 			&:first-child
 				.simile__field
 					background: $bg_sim_field
@@ -2517,14 +2551,67 @@ button.btn
 					background: $bg_sim_field
 					&:before
 						+s(simile-circle-red)
+					&:after
+						background: $bg_sim_field
+		.simile__arr
+			position: absolute
+			top: 50%
+			left: 50%
+			color: $white
+			font-size: 24px
+			transform: translate(-50%,-50%)
+			background: transparent
+			display: none
+			+r(768)
+				display: block
 		.arr
 			color: $c_body
+		.summ
+			+r(768)
+				display: none
+		.simile__wrap
+			+r(960)
+				padding: 0 10px
+			+r(768)
+				padding: 0
+	&.is-comp
+		+r(768)
+			&:before
+				bottom: auto
+				height: 136px
+			.simile__col
+				padding: 0
+				&:first-child
+					padding-right: 2px
+					.simile__row
+						padding: 29px 70px 22px 0
+						&:before
+							background: linear-gradient(to left, #937891, #f05849)
+			.simile__row
+				position: relative
+				padding: 29px 0 22px 60px
+				+box
+				&:before
+					position: absolute
+					content: ''
+					left: 0
+					right: 0
+					height: 2px
+					top: 0
+					background: linear-gradient(to left, #3598db, #917893)
+				&:first-child
+					&:before
+						display: none
+			.simile__wrap
+				padding: 15px 10px 0
+				border-top: 1px solid $bord_step
 	&:before
 		position: absolute
 		content: ''
 		top: 0
 		left: 50%
 		bottom: 0
+		margin-left: -1px
 		width: 1px
 		background: $bord_step
 	&__col
@@ -2533,34 +2620,66 @@ button.btn
 		width: 50%
 		&:first-child
 			.simile__bot
-				margin-left: -55px
+				margin-left: -35px
+				+r(960)
+					margin-left: -20px
 			.simile__top
 				margin-left: -50px
+				+r(768)
+					margin-left: 0
 		&:last-child
 			.simile__serv
 				margin-right: -30px
 				margin-left: 35px
+				+r(960)
+					margin-left: 0
+				+r(768)
+					margin-right: 0
 			.simile__bot
-				margin-right: -55px
+				margin-right: -35px
+				+r(960)
+					margin-right: -20px
 			.simile__top
 				padding-left: 80px
+				+r(768)
+					padding-left: 0
 		& + .circle
 			float: left
 		.btn
 			width: 100%
 	&__top
 		margin-bottom: 60px
+		+r(768)
+			margin-bottom: 0
 		img
-			margin: -7px auto 0
+			margin: -7px auto -7px
 			display: block
+			+r(768)
+				display: none
 	&__wrap
 		padding: 0 52px
 		+clr
+		+r(960)
+			padding: 0 20px
 	&__row
 		margin-top: 20px
 		color: $c_text
 		font-size: 18px
 		line-height: 39px
+		+r(960)
+			font-size: 16px
+		+r(768)
+			position: relative
+			text-align: center
+			font-size: 0
+			.simile__text
+				position: absolute
+				top: 50%
+				left: 100%
+				width: 80px
+				color: $c_body
+				font-size: 14px
+				transform: translate(-40px,-50%)
 		&:first-child
 			margin-top: 0
 		span,
@@ -2579,27 +2698,83 @@ button.btn
 		border-radius: 50%
 		background: $l_blue
 		display: inline-block
+		+r(768)
+			margin: 0
 		&.is-red
 			background: $l_red
 		.fa
 			vertical-align: middle
 	&__price
 		color: $l_blue
+		+r(768)
+			margin: 10px 0 0
+			font-size: 14px
+			display: block
 		&.is-red
 			color: $l_red
 	&__serv
 		padding-left: 20px
+		+r(960)
+			margin-left: -35px
+			padding-left: 0
+		+r(768)
+			margin-left: 0
 	&__bot
 		margin-top: 60px
+		+r(960)
+			display: none
 	&__point
 		margin: 23px 0 24px
 		font-size: 0
 		+clr
 		.simile__field
 			font-size: 18px
+			+r(960)
+				font-size: 14px
 	&__item
+		+r(768)
+			position: relative
+			overflow: hidden
+			&:hover
+				cursor: move
+		&.is-left
+			text-align: center
+			.simile__col
+				&:first-child
+					position: absolute
+					right: 0
+					width: 100%
+					.res
+						margin-left: 105px
+						display: inline-block
+				&:last-child
+					transform: translateX(-100%)
+			.circle	
+				position: absolute
+				left: 60px
+			.simile__arr
+				visibility: hidden
+		&.is-right
+			text-align: center
+			.simile__col
+				&:first-child
+					transform: translateX(-100%)
+				&:last-child
+					position: absolute
+					right: 0
+					width: 100%
+				.res
+					margin-right: 105px
+					display: inline-block
+			.circle	
+				position: absolute
+				right: 60px
+			.simile__arr
+				visibility: hidden
 		&:last-child
 			margin-bottom: 45px
+			.simile__point
+				margin-bottom: 0
 		$rotate: 0deg
 		$padding: 14px
 		@for $i from 1 through 3
@@ -2625,6 +2800,21 @@ button.btn
 								transform: rotate($rotate)
 								$rotate: $rotate + 70deg
 
+.res
+	margin-top: 12px
+	font-size: 18px
+	color: $white
+	line-height: 1.2
+	display: none
+	&.is-blue
+		.res__top
+			border-color: #2B7DB5
+	&__top
+		padding: 8px 0
+		border-bottom: 1px solid #cc4B3e
+	&__bot
+		padding: 8px 0
+
 // summ
 .summ
 	position: relative
@@ -2634,9 +2824,17 @@ button.btn
 	line-height: 106px
 	text-align: center
 	vertical-align: top
-	border-radius: 50%
-	background: $bord_foot
 	display: inline-block
+	&:after
+		position: absolute
+		content: ''
+		top: 0
+		left: 0
+		height: 106px
+		width: 106px
+		z-index: 1
+		border-radius: 50%
+		background: $bord_foot
 	&:before
 		position: absolute
 		top: -20px
@@ -2647,7 +2845,7 @@ button.btn
 		position: relative
 		line-height: 1.4
 		font-size: 24px
-		z-index: 1
+		z-index: 2
 		vertical-align: middle
 		display: inline-block
 	&__top
@@ -2684,6 +2882,13 @@ button.btn
 	border-radius: 50%
 	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3)
 	background: $white
+	+r(768)
+		z-index: 1
+	&.is-mob
+		margin-bottom: 20px
+		height: 80px
+		line-height: 80px
+		width: 80px
 	&__price
 		+r700
 		font-size: 25px
@@ -2692,6 +2897,14 @@ button.btn
 		line-height: 1.1
 		vertical-align: middle
 		display: inline-block
+
+.is-mob-hide
+	+r(768)
+		display: none
+.is-mob-show
+	display: none
+	+r(768)
+		display: block
 
 // soc
 .soc
