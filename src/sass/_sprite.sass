@@ -1,5 +1,7 @@
 $icons: (0:0)
-$icons: map-merge($icons,(stock: (X: 0px, Y:0px, W: 122px, H: 100px, TW: 122px, TH: 100px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(simile-circle-blue: (X: -152px, Y:0px, W: 147px, H: 146px, TW: 299px, TH: 252px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(simile-circle-red: (X: 0px, Y:0px, W: 148px, H: 148px, TW: 299px, TH: 252px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(stock: (X: 0px, Y:-152px, W: 122px, H: 100px, TW: 299px, TH: 252px, IMG: '../img/icons.png')))
 
 
 // Gets an attribute from the sass map
@@ -36,9 +38,21 @@ $icons: map-merge($icons,(stock: (X: 0px, Y:0px, W: 122px, H: 100px, TW: 122px, 
 	+sprite-retina($i)	
 
 //
+//.icon-simile-circle-blue
+//	width: 147px
+//	height: 146px
+//	background-image: url('../img/icons.png')
+//	background-position: -152px 0px
+//
+//.icon-simile-circle-red
+//	width: 148px
+//	height: 148px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px 0px
+//
 //.icon-stock
 //	width: 122px
 //	height: 100px
 //	background-image: url('../img/icons.png')
-//	background-position: 0px 0px
+//	background-position: 0px -152px
 //

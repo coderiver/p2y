@@ -111,6 +111,13 @@ h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
 			color: $l_blue
 			background: $white
 			box-shadow: none
+	&_red
+		border-color: $bg_red_btn
+		background: $bg_red_btn
+		&:hover
+			color: $bg_red_btn
+			background: $white
+			box-shadow: none
 	&_middle
 		padding: 9px 20px
 	&_big
@@ -119,6 +126,13 @@ h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
 		+r700
 		text-transform: uppercase
 		border-radius: 20px
+	&_great
+		padding: 15px 38px
+		+r700
+	&_rad-non
+		border-radius: 0
+	span.is-up
+		font-size: 32px
 
 button.btn
 	line-height: 1
@@ -151,16 +165,44 @@ button.btn
 		position: relative
 		z-index: 1
 
+// title-bord-double
+.title-bord-double
+	text-align: center
+	color: $bord_title_bou
+	font-size: 24px
+	span
+		padding: 5px
+		+r400
+		vertical-align: top
+		border-top: 1px solid $bord_title_bou
+		border-bottom: 1px solid $bord_title_bou
+		display: inline-block
+
 // title-small
 .title-small
 	+r700
 	text-transform: uppercase
 	font-size: 12px
 
+// title-little
+.title-little
+	+r400
+	font-size: 16px
+	text-align: center
+
 // title-middle
 .title-middle
 	+r700
 	font-size: 16px
+
+// title-dashed
+.title-dashed
+	padding: 29px 0
+	+r400
+	font-size: 24px
+	text-align: center
+	border-top: 1px dashed $bord_step
+	border-bottom: 1px dashed $bord_step
 
 // header
 .header
@@ -2283,8 +2325,22 @@ button.btn
 
 // compare
 .compare
-	background: url(../img/clouds.png) no-repeat 50% 300px, linear-gradient(to top, $white, $bg_blue)
+	position: relative
+	background: url(../img/compare-bg.png) 50% 650px repeat
+	&__top-bg
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		height: 640px
+		background: url(../img/clouds.png) no-repeat 50% 300px, linear-gradient(to top, $white, $bg_blue)
+		+r(975)
+			height: 0
+			padding-bottom: 66.5%
+		+r(768)
+			padding-bottom: 100%
 	&__in
+		position: relative
 		margin: 0 auto
 		padding: 0 12px
 		max-width: 960px
@@ -2292,6 +2348,7 @@ button.btn
 		border-radius: 4px
 		overflow: hidden
 		box-shadow: 0px 1.33px 1.33px rgba($black, 0.3)
+		background: $white
 	&__text
 		margin: 30px 0 15px 25px
 		color: $white
@@ -2320,7 +2377,10 @@ button.btn
 			transform: translate3d(0,0,0)
 			display: block
 	.stock
+		position: relative
 		background: url(../img/cloud-top.png) no-repeat 50% 0
+	.title-little
+		margin: 25px 0 16px
 
 @keyframes arrTopBot
 	0%
@@ -2330,6 +2390,308 @@ button.btn
 	100%
 		transform: translateY(0)
 
+// saving
+.saving
+	padding: 40px 0 318px
+	&:before
+		position: absolute
+		content: ''
+		left: 0
+		right: 0
+		bottom: 0
+		height: 536px
+		background: url(../img/saving_bg.png) 0 0 no-repeat
+		background-size: 100% 
+	&__top
+		position: relative
+		margin: 104px 0
+		text-align: center
+	&__title
+		position: relative
+		padding: 22px 44px
+		+r700
+		font-size: 24px
+		color: $white
+		text-transform: uppercase
+		vertical-align: top
+		background: $l_blue
+		display: inline-block
+		.rhomb
+			margin: -84px 50px -84px
+	&__left,
+	&__right
+		&:before,
+		&:after
+			position: absolute
+			content: ''
+	&__left
+		&:before
+			left: -11px
+			top: 0
+			+arr(11,40,$l_blue,tr)
+		&:after
+			left: -11px
+			bottom: 0
+			+arr(11,40,$l_blue,br)
+	&__right
+		&:before
+			right: -11px
+			top: 0
+			+arr(11,40,$l_blue,tl)
+		&:after
+			right: -11px
+			bottom: 0
+			+arr(11,40,$l_blue,bl)
+
+// rhomb
+.rhomb
+	position: relative
+	width: 188px
+	height: 188px
+	+rotate(45)
+	text-shadow: 0px 2px 2px rgba($black, 0.3)
+	border-radius: 30px
+	box-shadow: 2px 2px 2px rgba($black, 0.3)
+	background: $l_blue
+	vertical-align: top
+	display: inline-block
+	&:before
+		position: absolute
+		content: ''
+		top: -10px
+		bottom: -10px
+		left: -10px
+		right: -10px
+		border-radius: 32px
+		border: 1px solid $l_blue
+	&__in
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%) rotate(-45deg)
+	&__top
+		margin-top: 35px
+		font-size: 64px
+		line-height: 1
+	&__price
+		font-size: 24px
+
+// join
+.join
+	padding: 30px 0
+	font-size: 24px
+	text-align: center
+	box-shadow: 0px 2px 2px rgba($black, 0.3), 0px -2px 2px rgba($bord_step, 0.3)
+	background: $white
+	&__in
+		@extend %in
+	&__row
+		margin-top: 20px
+		&:first-child
+			margin-top: 0
+
+// simile
+.simile
+	position: relative
+	+clr
+	&.is-exemple
+		color: $white
+		&:before
+			bottom: 60px
+		.circle
+			margin: -7px -60px
+			color: $c_body
+		.simile__field
+			padding: 8px 20px 8px 45px
+			width: calc(100% - 106px)
+			line-height: 1.4
+			background: $bord_foot
+			display: inline-block
+		.simile__col
+			padding-bottom: 0
+			line-height: 120px
+			&:first-child
+				.simile__field
+					background: $bg_sim_field
+				.summ
+					background: $bg_sim_field
+					&:before
+						+s(simile-circle-red)
+		.arr
+			color: $c_body
+	&:before
+		position: absolute
+		content: ''
+		top: 0
+		left: 50%
+		bottom: 0
+		width: 1px
+		background: $bord_step
+	&__col
+		float: left
+		padding: 0 35px 60px
+		width: 50%
+		&:first-child
+			.simile__bot
+				margin-left: -55px
+			.simile__top
+				margin-left: -50px
+		&:last-child
+			.simile__serv
+				margin-right: -30px
+				margin-left: 35px
+			.simile__bot
+				margin-right: -55px
+			.simile__top
+				padding-left: 80px
+		& + .circle
+			float: left
+		.btn
+			width: 100%
+	&__top
+		margin-bottom: 60px
+		img
+			margin: -7px auto 0
+			display: block
+	&__wrap
+		padding: 0 52px
+		+clr
+	&__row
+		margin-top: 20px
+		color: $c_text
+		font-size: 18px
+		line-height: 39px
+		&:first-child
+			margin-top: 0
+		span,
+		div
+			line-height: 1.3
+			vertical-align: middle
+	&__circle
+		margin-right: 18px
+		width: 39px
+		height: 39px
+		color: $white
+		font-size: 16px
+		line-height: 39px !important
+		text-align: center
+		vertical-align: top
+		border-radius: 50%
+		background: $l_blue
+		display: inline-block
+		&.is-red
+			background: $l_red
+		.fa
+			vertical-align: middle
+	&__price
+		color: $l_blue
+		&.is-red
+			color: $l_red
+	&__serv
+		padding-left: 20px
+	&__bot
+		margin-top: 60px
+	&__point
+		margin: 23px 0 24px
+		font-size: 0
+		+clr
+		.simile__field
+			font-size: 18px
+	&__item
+		&:last-child
+			margin-bottom: 45px
+		$rotate: 0deg
+		$padding: 14px
+		@for $i from 1 through 3
+			&:nth-child(#{$i})
+				.simile__col
+					&:last-child
+						.summ
+							&:before
+								transform: rotate($rotate)
+								$rotate: $rotate + 30deg
+						.simile__field
+							padding-top: $padding
+							padding-bottom: $padding
+							$padding: $padding + 6px
+
+		$rotate: 0deg
+		@for $i from 1 through 3
+			&:nth-child(#{$i})
+				.simile__col
+					&:first-child
+						.summ
+							&:before
+								transform: rotate($rotate)
+								$rotate: $rotate + 70deg
+
+// summ
+.summ
+	position: relative
+	line-height: 1.4
+	height: 106px
+	width: 106px
+	line-height: 106px
+	text-align: center
+	vertical-align: top
+	border-radius: 50%
+	background: $bord_foot
+	display: inline-block
+	&:before
+		position: absolute
+		top: -20px
+		left: -20px
+		content: ''
+		+s(simile-circle-blue)
+	&__in
+		position: relative
+		line-height: 1.4
+		font-size: 24px
+		z-index: 1
+		vertical-align: middle
+		display: inline-block
+	&__top
+		position: relative
+		+r700
+		font-size: 32px
+		&:before
+			position: absolute
+			content: ''
+			left: 50%
+			bottom: 0
+			margin-left: -17px
+			width: 34px
+			height: 1px
+			background: $white
+
+// arr
+.arr
+	position: relative
+	font-size: 16px
+	text-align: center
+	line-height: 1
+	z-index: 1
+
+// circle
+.circle	
+	position: relative
+	margin: 20px auto -23px
+	width: 120px
+	height: 120px
+	line-height: 120px
+	font-size: 16px
+	text-align: center
+	border-radius: 50%
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3)
+	background: $white
+	&__price
+		+r700
+		font-size: 25px
+	&__in
+		width: 100%
+		line-height: 1.1
+		vertical-align: middle
+		display: inline-block
 
 // soc
 .soc

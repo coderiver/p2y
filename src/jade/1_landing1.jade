@@ -8,6 +8,7 @@ block content
 	
 	//- compare
 	section.compare
+		.compare__top-bg
 		.compare__in
 			//- stock
 			.stock
@@ -29,71 +30,149 @@ block content
 					a.compare__link(href="#")
 						span сравнить
 						+fa('arrow-down')
-			.compare__block
-				.title-little Например, Вы переводите
-				//- simile
-				.simile
-					.arr 
-						+fa('arrow-down')
-					.circle
-						.circle__price 500
-						span грн
-					.simile__wrap
-						.simile__col
-							.simile__top
-								.title-bord.is-red другие сервисы
-								.simile__row
-									.simile__circle
-										+fa('times')
+				.compare__block 
+					.title-little Например, Вы переводите
+					//- simile
+					.simile
+						.arr 
+							+fa('arrow-down')
+						.circle
+							.circle__in
+								.circle__price 500
+								span грн
+						.simile__wrap
+							.simile__col
+								.simile__top
+									.title-bord-double
+										span другие сервисы
+								.simile__serv
+									.simile__row
+										.simile__circle.is-red
+											+fa('times')
 										span Комиссия -
-										span.simile__price 1%+5грн
-								.simile__row
-									.simile__circle
-										+fa('times')
+										span.simile__price.is-red 1%+5грн
+									.simile__row
+										.simile__circle.is-red
+											+fa('times')
 										span Комиссия в гривнах - 
-										span.simile__price 10,00 грн
-								.simile__row
-									.simile__circle
-										+fa('times')
+										span.simile__price.is-red 10,00 грн
+									.simile__row
+										.simile__circle.is-red
+											+fa('times')
 										span Сумма к списанию - 
-										span.simile__price 510,00 грн
+										span.simile__price.is-red 510,00 грн
 								.simile__bot
-									button.btn.btn_rad-non.btn_red(type="button") Вы заплатили 
+									button.btn.btn_rad-non.btn_red.btn_great(type="button") Вы заплатили 
 										span.is-up 10,00 
 										| грн комиссии
-						.simile__col
-							.simile__top
-								img(src="img/svg/.svg", alt="img")
-								.simile__row
-									.simile__circle
-										+fa('check')
+							.simile__col
+								.simile__top
+									img(src="img/svg/simile_logo.svg", alt="img")
+								.simile__serv
+									.simile__row
+										.simile__circle
+											+fa('check')
 										span Наша Комиссия -
 										span.simile__price 0,5% + 5 грн
-								.simile__row
-									.simile__circle
-										+fa('check')
+									.simile__row
+										.simile__circle
+											+fa('check')
 										span Комиссия в гривнах - 
 										span.simile__price 7,50 грн
-								.simile__row
-									.simile__circle
-										+fa('check')
+									.simile__row
+										.simile__circle
+											+fa('check')
 										span Сумма к списанию - 
 										span.simile__price 507,50 грн
 								.simile__bot
-									button.btn.btn_rad-non.btn_blue(type="button") Вы заплатили 
-										span.is-up 7,50
+									button.btn.btn_rad-non.btn_blue.btn_great(type="button") Вы заплатили 
+										span.is-up 7,50 
 										| грн комиссии
-				.title-dashed.is-big Убедитесь в том, сколько Вы можете сэкономить:
-				//- simile
-				.simile
-					.title-little 
-					.arr 
-						+fa('arrow-down')
-					.circle
-						.circle__price 500
-						span грн
-					.simile__wrap
-						.simile__col
+					.title-dashed Убедитесь в том, сколько Вы можете сэкономить:
+					.title-little Например, Вы переводите
+					//- simile
+					.simile.is-exemple
+						.arr 
+							+fa('arrow-down')
+						.simile__wrap
+							.simile__item
+								.simile__point
+									.simile__col
+										.summ
+											.summ__in
+												.summ__top 15
+												.summ__cur грн
+										.simile__field Экономия - 0 грн.
+									.circle
+										.circle__in
+											.circle__price 500
+											span грн
+									.simile__col
+										.simile__field Экономия - 5 грн.
+										.summ
+											.summ__in
+												.summ__top 10
+												.summ__cur грн
+							.simile__item
+								.arr 
+									+fa('arrow-down')
+								.simile__point
+									.simile__col
+										.summ
+											.summ__in
+												.summ__top 105
+												.summ__cur грн
+										.simile__field Экономия - 0 грн.
+									.circle
+										.circle__in
+											.circle__price 10 000
+											span грн
+									.simile__col
+										.simile__field Экономия - 50 грн.
+										.summ
+											.summ__in
+												.summ__top 55
+												.summ__cur грн
+							.simile__item
+								.arr 
+									+fa('arrow-down')
+								.simile__point
+									.simile__col
+										.summ
+											.summ__in
+												.summ__top 155
+												.summ__cur грн
+										.simile__field  Экономия - 0 грн.
+									.circle
+										.circle__in
+											.circle__price 500
+											span грн
+									.simile__col
+										.simile__field Экономия - 75 грн.
+										.summ
+											.summ__in
+												.summ__top 80
+												.summ__cur грн
+			//- saving
+			.saving
+				.saving__top
+					.saving__title
+						span.saving__left мы сэкономили
+						.rhomb 
+							.rhomb__in
+								.rhomb__top 7800
+								.rhomb__price грн
+						span.saving__right нашим клиентам
+		
+		//- join
+		.join
+			.join__in
+				.join__row 
+					p 720 000 человек уже перевели свои деньги.
+					p Присоединяйтесь:)
+				.join__row 
+					a.btn.btn_blue.btn_big(href="#") ВЫПОЛНИТЬ ПЕРЕВОД
+
 	include ./includes/_reply.jade
 
 block footer
