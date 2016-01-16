@@ -2415,6 +2415,8 @@ button.btn
 // saving
 .saving
 	padding: 40px 0 318px
+	+r(768)
+		padding: 20px 0 204px
 	&:before
 		position: absolute
 		content: ''
@@ -2422,12 +2424,14 @@ button.btn
 		right: 0
 		bottom: 0
 		height: 536px
-		background: url(../img/saving_bg.png) 0 0 no-repeat
+		background: url(../img/saving_bg.png) 0 100% no-repeat
 		background-size: 100% 
 	&__top
 		position: relative
 		margin: 104px 0
 		text-align: center
+		+r(768)
+			margin: 0 -12px
 	&__title
 		position: relative
 		padding: 22px 44px
@@ -2438,14 +2442,31 @@ button.btn
 		vertical-align: top
 		background: $l_blue
 		display: inline-block
+		+r(960)
+			font-size: 18px
+		+r(768)
+			padding-bottom: 80px
+			width: 100%
+			+r400
+			text-transform: initial
 		.rhomb
 			margin: -84px 50px -84px
+			+r(768)
+				position: absolute
+				top: 100%
+				left: 50%
+				transform: translate(-50%,-50%) rotate(45deg)
+				margin: 0
 	&__left,
 	&__right
+		+r(480)
+			display: block
 		&:before,
 		&:after
 			position: absolute
 			content: ''
+			+r(768)
+				display: none
 	&__left
 		&:before
 			left: -11px
@@ -2477,6 +2498,10 @@ button.btn
 	background: $l_blue
 	vertical-align: top
 	display: inline-block
+	+r(768)
+		box-shadow: 2px 2px 2px rgba($black, 0.3), -1px -1px 2px rgba($black, 0.2)
+		width: 88px
+		height: 88px
 	&:before
 		position: absolute
 		content: ''
@@ -2495,8 +2520,17 @@ button.btn
 		margin-top: 35px
 		font-size: 64px
 		line-height: 1
+		+r(768)
+			margin-top: 5px
+			font-size: 35px
 	&__price
 		font-size: 24px
+		+r(768)
+			font-size: 14px
+	.icon
+		display: none
+		+r(768)
+			display: inline-block
 
 // join
 .join
@@ -2505,12 +2539,18 @@ button.btn
 	text-align: center
 	box-shadow: 0px 2px 2px rgba($black, 0.3), 0px -2px 2px rgba($bord_step, 0.3)
 	background: $white
+	+r(768)
+		font-size: 14px
+		letter-spacing: -.2px
 	&__in
 		@extend %in
 	&__row
 		margin-top: 20px
 		&:first-child
 			margin-top: 0
+	.btn
+		+r(480)
+			width: 100%
 
 // simile
 .simile
@@ -2534,6 +2574,7 @@ button.btn
 			+r(960)
 				padding-left: 35px
 			+r(768)
+				padding: 8px 15px !important
 				height: 120px
 				width: 100%
 				font-size: 0
@@ -2727,6 +2768,9 @@ button.btn
 		margin: 23px 0 24px
 		font-size: 0
 		+clr
+		+r(768)
+			&:hover
+				cursor: move
 		.simile__field
 			font-size: 18px
 			+r(960)
@@ -2735,8 +2779,6 @@ button.btn
 		+r(768)
 			position: relative
 			overflow: hidden
-			&:hover
-				cursor: move
 		&.is-left
 			text-align: center
 			.simile__col
@@ -2745,8 +2787,10 @@ button.btn
 					right: 0
 					width: 100%
 					.res
-						margin-left: 105px
 						display: inline-block
+						+r(480)
+							font-size: 18px
+							margin-left: 105px
 				&:last-child
 					transform: translateX(-100%)
 			.circle	
@@ -2764,15 +2808,18 @@ button.btn
 					right: 0
 					width: 100%
 				.res
-					margin-right: 105px
 					display: inline-block
+					+r(480)
+						font-size: 18px
+						margin-right: 105px
 			.circle	
 				position: absolute
 				right: 60px
 			.simile__arr
 				visibility: hidden
 		&:last-child
-			margin-bottom: 45px
+			padding-bottom: 5px
+			margin-bottom: 40px
 			.simile__point
 				margin-bottom: 0
 		$rotate: 0deg

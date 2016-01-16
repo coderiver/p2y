@@ -117,7 +117,7 @@ block content
 											.res
 												.res__top Комиссия - 15 грн 
 												.res__bot Экономия - 0 грн
-										button.simile__arr.js-sim-arr-left(type="button")
+										.simile__arr
 											+fa('chevron-left')
 									.circle
 										.circle__in
@@ -132,7 +132,7 @@ block content
 											.summ__in
 												.summ__top 10
 												.summ__cur грн
-										button.simile__arr.js-sim-arr-right(type="button")
+										.simile__arr
 											+fa('chevron-right')
 							.simile__item.js-simile-item
 								.arr 
@@ -147,7 +147,7 @@ block content
 											.res
 												.res__top Комиссия - 15 грн 
 												.res__bot Экономия - 0 грн
-										button.simile__arr.js-sim-arr-left(type="button")
+										.simile__arr
 											+fa('chevron-left')
 									.circle
 										.circle__in
@@ -162,7 +162,7 @@ block content
 											.summ__in
 												.summ__top 55
 												.summ__cur грн
-										button.simile__arr.js-sim-arr-right(type="button")
+										.simile__arr
 											+fa('chevron-right')
 							.simile__item.js-simile-item
 								.arr 
@@ -177,7 +177,7 @@ block content
 											.res
 												.res__top Комиссия - 15 грн 
 												.res__bot Экономия - 0 грн
-										button.simile__arr.js-sim-arr-left(type="button")
+										.simile__arr
 											+fa('chevron-left')
 									.circle
 										.circle__in
@@ -192,15 +192,16 @@ block content
 											.summ__in
 												.summ__top 80
 												.summ__cur грн
-										button.simile__arr.js-sim-arr-right(type="button")
+										.simile__arr
 											+fa('chevron-right')
 			//- saving
 			.saving
 				.saving__top
 					.saving__title
-						span.saving__left мы сэкономили
+						span.saving__left Мы сэкономили
 						.rhomb 
 							.rhomb__in
+								+icon('rocket-small')
 								.rhomb__top 7800
 								.rhomb__price грн
 						span.saving__right нашим клиентам
