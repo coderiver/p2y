@@ -778,7 +778,7 @@ button.btn
 				.fa
 					margin-right: 0
 	&__title
-		width: calc(100% - 120px)
+		width: calc(100% - 208px)
 		color: $l_gray
 		vertical-align: top 
 		display: inline-block
@@ -1256,7 +1256,7 @@ button.btn
 		+r(768)
 			margin: 0
 	&__text
-		margin-top: 40px
+		margin-top: 20px
 		font-size: 16px
 	.loader
 		margin-right: 25px
@@ -1264,9 +1264,6 @@ button.btn
 	span
 		font-size: 14px
 		vertical-align: middle
-		display: inline-block
-	.pass
-		vertical-align: top
 		display: inline-block
 
 // loader
@@ -1675,7 +1672,7 @@ button.btn
 				box-shadow: -1px 1px 2px rgba($black, 0.3)
 		&.is-active
 			+r(768)
-				margin: 55px 0 -20px
+				margin: 70px 0 -5px
 				display: block
 				& + .partner__item
 					margin-left: 0
@@ -1937,6 +1934,8 @@ button.btn
 	li
 		position: relative
 		text-indent: 37px
+		+r(768)
+			text-indent: 0
 		&:before
 			position: absolute
 			content: ''
@@ -1946,6 +1945,8 @@ button.btn
 			width: 4px
 			border-radius: 50%
 			background: $c_body
+			+r(768)
+				display: none
 
 // input
 .input
@@ -2184,12 +2185,14 @@ button.btn
 		text-align: left
 		margin-top: 95px
 		width: 192px
+		.btn
+			margin-top: 10px
 	&__img
 		position: relative
 		& + .code__item
 			+r(768)
-				margin-bottom: -35px
-				display: none
+				margin: 10px auto 0
+				display: block
 		.input	
 			position: absolute
 			top: 108px
@@ -2204,6 +2207,9 @@ button.btn
 			margin: 10px 0 0
 		&:first-child
 			margin-left: 0
+			+r(768)
+				margin: 20px auto 10px
+				display: block
 	&__phone
 		color: $c_text
 	a

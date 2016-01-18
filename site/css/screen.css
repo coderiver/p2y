@@ -242,7 +242,7 @@ button.btn { line-height: 1; }
 .step__top { position: relative; padding: 12px 0; z-index: 1; *zoom: 1; }
 .step__top:after { content: " "; display: table; clear: both; }
 .step__top .check { margin-left: 15px; }
-.step__title { width: -webkit-calc(100% - 120px); width: calc(100% - 120px); color: #999; vertical-align: top; display: inline-block; }
+.step__title { width: -webkit-calc(100% - 208px); width: calc(100% - 208px); color: #999; vertical-align: top; display: inline-block; }
 .step__title > .fa, .step__title > .icon { margin: 2px 8px 0; font-size: 14px; color: #22B473; vertical-align: top; }
 .step__title > .icon { margin-top: -1px; }
 .step__stock, .step__right { float: right; color: #999; font-size: 12px; }
@@ -364,10 +364,9 @@ button.btn { line-height: 1; }
 .assay.is-load { height: 280px; text-transform: uppercase; color: #3498db; text-align: center; font-size: 0; }
 .assay.is-load:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
 .assay__in { margin: -76px 0 0 -130px; vertical-align: middle; display: inline-block; }
-.assay__text { margin-top: 40px; font-size: 16px; }
+.assay__text { margin-top: 20px; font-size: 16px; }
 .assay .loader { margin-right: 25px; vertical-align: middle; }
 .assay span { font-size: 14px; vertical-align: middle; display: inline-block; }
-.assay .pass { vertical-align: top; display: inline-block; }
 
 .loader { width: 43px; height: 43px; text-align: center; display: inline-block; }
 .loader__torus { width: 43px; height: 43px; margin: 0 auto; border: 4px solid; -webkit-border-radius: 50%; border-radius: 50%; border-color: transparent rgba(52, 152, 219, 0.9) rgba(52, 152, 219, 0.9); -webkit-animation: loader 690ms infinite linear; animation: loader 690ms infinite linear; }
@@ -602,6 +601,7 @@ button.btn { line-height: 1; }
 
 .code { font-size: 16px; }
 .code__item { text-align: left; margin-top: 95px; width: 192px; }
+.code__item .btn { margin-top: 10px; }
 .code__img { position: relative; }
 .code__img .input { position: absolute; top: 108px; left: 24px; width: 110px; }
 .code__item, .code__img { margin-left: 30px; vertical-align: top; display: inline-block; }
@@ -879,16 +879,19 @@ button.btn { line-height: 1; }
  .question .title{ padding: 0 30px; width: 100%; text-align: center; }
  .question .slick-arrow{ display: none !important; }
  .partner__wrap{ margin: 40px auto 22px; width: 300px; }
- .partner__item.is-active{ margin: 55px 0 -20px; display: block; }
+ .partner__item.is-active{ margin: 70px 0 -5px; display: block; }
  .partner__item.is-active + .partner__item{ margin-left: 0; }
  .partner__item.is-active .partner__logo{ display: inline-block; }
  .partner__item.is-active .partner__name{ position: relative; margin: -16px 35px 0 0; bottom: auto; right: auto; left: auto; max-width: 70px; vertical-align: top; display: inline-block; }
+ .list li{ text-indent: 0; }
+ .list li:before{ display: none; }
  .cards .card + .fa{ position: relative; top: auto; margin: 5px 0; -webkit-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg); }
  .card{ float: none; margin: 0 auto; display: block; }
  .card:first-child{ margin: 0 auto; }
  .card.is-mod{ margin-top: 0; }
- .code__img + .code__item{ margin-bottom: -35px; display: none; }
+ .code__img + .code__item{ margin: 10px auto 0; display: block; }
  .code__item, .code__img{ margin: 10px 0 0; }
+ .code__item:first-child, .code__img:first-child{ margin: 20px auto 10px; display: block; }
  .footer{ overflow: hidden; }
  .footer__left{ float: none; }
  .footer__center{ position: absolute; top: 103px; right: -36px; margin: 0; }
