@@ -1,0 +1,90 @@
+extends _layout_mod
+
+block title
+	title Title of template
+
+block content
+	include ./includes/_header_terminal.jade
+	
+	//- topic
+	section.topic(style="background-image: url(./img/topic_bg.png)")
+		.topic__in
+			.title-big ПОПОЛНЯЙТЕ КАРТЫ 
+				br 
+				|В ТЕРМИНАЛАХ
+			.field
+				a.scroll-to(href="#info")
+					i.fa.fa-arrow-down
+			.topic__bot
+				.topic__left
+					.topic__row
+						.topic__text 
+							| Выберите
+							span.icon 
+								img(src="img/svg/pay_search.svg", alt="img")
+							| в терминалах страны:
+					.topic__row
+						a.btn.btn_middle.btn_bord-op(href="#") City-pay
+						a.btn.btn_middle.btn_bord-op(href="#") 24 Non Stop
+						a.btn.btn_middle.btn_bord-op(href="#") Банк Народнй Капитал
+						a.btn.btn_middle.btn_bord-op(href="#") Regul Pay
+				.topic__right
+					.topic__row
+						.topic__text Пополните банковскую карту:
+					.topic__row
+						ul.partners
+							li.partners__item
+								a(href="#")
+									img(src="img/svg/visa_action.svg", alt="img")
+							li.partners__item
+								a(href="#")
+									img(src="img/svg/mc_white.svg", alt="img")
+							li.partners__item
+								a(href="#")
+									img(src="img/svg/maestro_white.svg", alt="img")
+	//- inform
+	section.info#info
+		.info__in
+			.info__col
+				img(src="img/about-img-1.png", alt="img")
+				h3.title-average О сервисе
+				.info__text Посмотрите для чего пополняют карту в терминалах страны
+				a.btn.btn_blue.btn_middle(href="#") Поcмотреть
+			.info__col
+				img(src="img/about-img-2.png", alt="img")
+				h3.title-average Как пополнить?
+				.info__text Узнайте, как быстро пополнить банковскую карту
+				a.btn.btn_blue.btn_middle(href="#") Узнать
+			.info__col
+				img(src="img/about-img-3.png", alt="img")
+				h3.title-average Где пополнить?
+				.info__text Выберите на карте ближайший от Вас терминал
+				a.btn.btn_blue.btn_middle(href="#") Выбрать
+			.field
+				a.scroll-to(href="#about")
+					i.fa.fa-arrow-down
+	//- about
+	section.about#about
+		h3.title-rocket
+			span.title-rocket__text 
+				span О сервисе
+				i.fa.fa-rocket
+				i.fa.fa-rocket.is-right
+		.about__hand 
+			img(src="img/hand-left.png", alt="img")
+		.about__hand.is-right
+			img(src="img/hand-right.png", alt="img")
+		.about__in
+			.about__topic
+				.about__text 
+					|Пополняйте карту
+					|любого банка Украины,
+				small_terminal.svg
+				.about__text используя терминал
+				.text-arr и
+					.text-arr__top быстро
+					.text-arr__bot просто
+
+
+block footer
+	include ./includes/_footer.jade

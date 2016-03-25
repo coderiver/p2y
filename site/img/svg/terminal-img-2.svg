@@ -1,0 +1,13 @@
+<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" width="62.88" height="55.73" viewBox="0 0 62.88 55.73">
+  <title>terminal-img-2</title>
+  <circle cx="51.88" cy="11" r="11" fill="#7bc144"/>
+  <text transform="translate(45.38 16.16)" font-size="14" fill="#fff" font-family="FontAwesome"></text>
+  <g>
+    <path d="M7.5,42.16V27.63l-4.78-.41S0.5,27.29.5,30v9.47c0,2.7,2,2.7,2,2.7V55.23h8V44.87s-3,0-3-2.71h0Zm-0.37,0" fill="none" stroke="#f8994b" stroke-miterlimit="10"/>
+    <path d="M8.13,24.93a4,4,0,0,0,1.93-.51l0.26-.14a4.05,4.05,0,1,0-2.19.65h0Zm0,0" fill="none" stroke="#f8994b" stroke-miterlimit="10"/>
+    <path d="M35.19,27.23l-4.69.41V42.16c0,2.71-3,2.71-3,2.71V55.23h8V42.16s2,0,2-2.7V30s0.39-2.76-2.31-2.76h0Zm0,0.06" fill="none" stroke="#f8994b" stroke-miterlimit="10"/>
+    <path d="M27.58,24.28l0.26,0.15a3.87,3.87,0,1,0-.26-0.15h0Zm0,0" fill="none" stroke="#f8994b" stroke-miterlimit="10"/>
+    <path d="M23,20.87A4.06,4.06,0,1,1,19,16.82,4.06,4.06,0,0,1,23,20.87h0Zm0,0" fill="none" stroke="#f8994b" stroke-miterlimit="10"/>
+    <path d="M27.5,30a3.25,3.25,0,0,0-3.14-2.76H13.54s-3,.06-3,2.76v9.47c0,2.7,3,2.7,3,2.7V55.23h11V42.16s3,0,3-2.7V30Zm-0.43,0" fill="none" stroke="#f8994b" stroke-miterlimit="10"/>
+  </g>
+</svg>

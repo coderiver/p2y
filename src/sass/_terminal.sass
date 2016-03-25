@@ -1,0 +1,120 @@
+body.is-terminal
+	min-width: 960px
+	.header
+		background: transparent
+		box-shadow: none
+		border: none
+
+// topic
+.topic
+	position: relative
+	margin-top: -62px
+	padding-top: 62px
+	min-height: 638px
+	text-align: center
+	color: $white 
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: 50% 0 
+	&__in
+		padding: 180px 0 22px
+		@extend %in
+	&__bot
+		margin-top: 165px
+		text-align: left
+		+clr
+		.btn
+			margin-left: 10px
+			&:first-child
+				margin-left: 0
+	&__left
+		float: left
+	&__text
+		line-height: 28px
+		.icon
+			margin: 0 4px 
+			vertical-align: top
+	&__row
+		margin-top: 14px
+		&:first-child
+			margin-top: 0
+	&__right
+		float: right
+	.title-big
+		line-height: 1.1
+	.field
+		margin-top: 15px
+	.partners
+		padding: 0
+	.partners__item
+		margin-top: 0
+		&:first-child
+			margin-top: 5px
+
+// scroll-to
+.scroll-to
+	position: relative
+	height: 45px
+	width: 45px
+	font-size: 16px
+	color: $bord_scroll-to  
+	border-radius: 50%
+	border: 1px solid 
+	vertical-align: top
+	display: inline-block
+	&:hover
+		.fa
+			animation: scroll .9s infinite linear
+	.fa
+		margin-top: 14px
+
++keyframes(scroll)
+	0%
+		transform: translateY(0)
+	25%
+		transform: translateY(-3px)
+	75%
+		transform: translateY(3px)
+	100%
+		transform: translateY(0)
+	
+.info
+	padding: 50px 0 40px
+	text-align: center
+	&__in
+		@extend %in
+	&__col
+		margin-left: 85px
+		width: 170px
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+	&__text
+		margin-top: 15px
+		text-align: left
+	.title-average
+		margin-top: 15px
+		color: $c_about_blue 
+	.field
+		margin-top: 50px
+	.btn
+		margin-top: 15px
+		min-width: 155px
+
+// abou
+.about
+	position: relative
+	&__hand
+		position: absolute
+		top: 35px
+		left: 0
+		&.is-right
+			left: auto
+			right: 0
+		img
+			display: block
+	&__in
+		margin: 165px auto 0
+		padding: 0 10px
+		width: 540px

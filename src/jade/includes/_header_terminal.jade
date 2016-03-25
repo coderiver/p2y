@@ -1,0 +1,30 @@
+header.header
+	.header__in
+		//- logo
+		.logo
+			a(href="#")
+				+icon('logo')
+				span.logo__text Сервис денежных переводов
+			//- hint
+			.hint 
+				span больше сервисов!
+		.header__right.js-header-block
+			//- cont
+			.cont
+				+fa('medkit')
+				.cont__right
+					a(href="tel:+380444954955") +38 044 495 49 55
+					a(href="mailto:help@p2y.com.ua") help@p2y.com.ua
+			//- lang
+			ul.lang
+				li.lang__item
+					a(href="#") 
+						span УКР
+				li.lang__item
+					a(href="#") 
+						span ENG
+				li.lang__item.is-active
+					a(href="#") 
+						span РУС
+		button.btn-menu.js-btn-menu(type="button") 
+			span

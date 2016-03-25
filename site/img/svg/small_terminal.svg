@@ -1,0 +1,17 @@
+<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" width="27" height="54" viewBox="0 0 27 54">
+  <title>small_terminal</title>
+  <g>
+    <g>
+      <line x1="18.5" y1="2" x2="18.5" y2="12" fill="none" stroke="#f8994b" stroke-miterlimit="10"/>
+      <circle cx="18.5" cy="2.26" r="2.26" fill="#f8994b"/>
+    </g>
+    <rect x="3" y="9" width="21" height="14" rx="2" ry="2" fill="#f8994b"/>
+    <rect x="5" y="11" width="17" height="10" fill="#fff"/>
+    <path d="M4.88,24H22a2,2,0,0,1,2,2V54a0,0,0,0,1,0,0H3a0,0,0,0,1,0,0V25.88A1.88,1.88,0,0,1,4.88,24Z" fill="#f8994b"/>
+    <path d="M2,50H24.72A2.28,2.28,0,0,1,27,52.28V54a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V52A2,2,0,0,1,2,50Z" fill="#f8994b"/>
+    <rect x="6" y="27" width="3" height="2" fill="#fff"/>
+    <rect x="18" y="27" width="3" height="1" fill="#fff"/>
+    <rect x="11" y="27" width="5" height="5" fill="#fff"/>
+    <polyline points="9.83 15.53 12.47 18.18 17.17 13.48" fill="none" stroke="#f8994b" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>

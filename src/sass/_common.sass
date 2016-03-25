@@ -47,8 +47,11 @@
 // p
 // 	+jpg(bla)
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,700italic,900)
-
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,900)
+=r300
+	font-family: 'Roboto', sans-serif
+	font-weight: 300
+	
 =r400
 	font-family: 'Roboto', sans-serif
 	font-weight: 400
@@ -94,6 +97,8 @@ h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
 	+r400
 	font-size: 12px
 	line-height: 1.1
+	will-change: border-color
+	transform: translate3d(0,0,0)
 	transition: color .2s, box-shadow .2s, background .2s
 	border: 1px solid $white
 	border-radius: 25px
@@ -131,6 +136,8 @@ h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
 		+r700
 	&_rad-non
 		border-radius: 0
+	&_bord-op
+		border-color: rgba($white, .5) 
 	span.is-up
 		font-size: 32px
 		+r(960)
@@ -208,6 +215,15 @@ button.btn
 	+r700
 	font-size: 16px
 
+.title-average
+	font-size: 20px
+	+r700
+
+// title-big
+.title-big
+	font-size: 32px
+	+r300
+
 // title-dashed
 .title-dashed
 	padding: 29px 0
@@ -220,6 +236,43 @@ button.btn
 		padding: 25px
 		font-size: 16px
 		border-top-style: solid
+
+.title-rocket
+	position: relative
+	text-transform: uppercase
+	text-align: center
+	color: $c_title_roc 
+	+r700
+	font-size: 24px
+	&:before
+		position: absolute
+		content: ""
+		top: 50%
+		height: 1px
+		left: 0 
+		right: 0
+		margin-top: -1px
+		border-bottom: 1px solid 
+	&__text
+		position: relative
+		padding: 0 48px
+		background: $white 
+		display: inline-block
+		span
+			color: $c_about_blue
+	.fa
+		position: absolute
+		left: 0
+		top: 50%
+		font-size: 22px
+		margin-top: -11px
+		color: inherit 
+		+rotate(45)
+		&.is-right
+			left: auto
+			right: 0
+			+rotate(-135)
+
 
 // header
 .header

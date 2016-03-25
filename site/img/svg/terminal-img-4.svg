@@ -1,0 +1,10 @@
+<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" width="68.38" height="55.73" viewBox="0 0 68.38 55.73">
+  <title>terminal-img-4</title>
+  <circle cx="57.38" cy="11" r="11" fill="#7bc144"/>
+  <text transform="translate(50.88 16.16)" font-size="14" fill="#fff" font-family="FontAwesome"></text>
+  <g>
+    <path d="M20.5,15.23a20,20,0,1,0,20,20,20,20,0,0,0-20-20h0Z" fill="none" stroke="#f8994b" stroke-miterlimit="10"/>
+    <path d="M20.5,20.71A14.52,14.52,0,1,0,35,35.23,14.54,14.54,0,0,0,20.5,20.71Z" fill="none" stroke="#f8994b" stroke-linejoin="round" stroke-width="2" stroke-dasharray="0.95 10.45"/>
+    <polyline points="20 20.73 20 35.65 27.06 42.34" fill="none" stroke="#f8994b" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
