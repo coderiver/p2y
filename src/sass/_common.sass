@@ -97,6 +97,7 @@ h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
 	+r400
 	font-size: 12px
 	line-height: 1.1
+	text-align: center
 	will-change: border-color
 	transform: translate3d(0,0,0)
 	transition: color .2s, box-shadow .2s, background .2s
@@ -121,6 +122,13 @@ h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
 		background: $bg_red_btn
 		&:hover
 			color: $bg_red_btn
+			background: $white
+			box-shadow: none
+	&_orange
+		border-color: $bg_orange
+		background: $bg_orange
+		&:hover
+			color: $bg_orange
 			background: $white
 			box-shadow: none
 	&_middle
@@ -244,6 +252,12 @@ button.btn
 	color: $c_title_roc 
 	+r700
 	font-size: 24px
+	&.is-orange
+		color: $white 
+		.title-rocket__text
+			background: $bg_refill
+			span
+				color: $white 
 	&:before
 		position: absolute
 		content: ""

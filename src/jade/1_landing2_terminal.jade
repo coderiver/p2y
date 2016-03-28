@@ -79,12 +79,165 @@ block content
 				.about__text 
 					|Пополняйте карту
 					|любого банка Украины,
-				small_terminal.svg
+				.about__img
+					.icon
+						img(src="img/svg/small_terminal.svg", alt="img")
 				.about__text используя терминал
 				.text-arr и
 					.text-arr__top быстро
 					.text-arr__bot просто
-
+			.about__title 
+				span Пополните кредитку
+			.about__wrap
+				.about__ico
+					i.fa.fa-money
+				.about__left
+					p Погасите кредитку, пополняя карту в терминале
+					a.btn.btn_orange.btn_middle(href="#") Выбрать терминал
+				img(src="img/about-img-4.png", alt="img")
+			.about__title 
+				span Оплатите товар
+			.about__wrap.is-right
+				.about__ico
+					i.fa.fa-tags
+				img(src="img/about-img-5.png", alt="img")
+				.about__right
+					p Покупайте товары по объявле- нию - платите в терминале
+					a.btn.btn_orange.btn_middle(href="#") Выбрать терминал
+			.about__title 
+				span Помогите родным
+			.about__wrap.is-mod
+				.about__ico
+					i.fa.fa-heart
+				img(src="img/about-img-6.png", alt="img")
+				.about__left
+					p Пополняйте карту родным в терминале
+					a.btn.btn_orange.btn_middle(href="#") Выбрать терминал
+		.about__wrapper
+			.terminal
+				.terminal__wrap
+					.terminal__left
+						.terminal__text Избавьтесь от лишних расходов, длинных очередей и посещения банка!
+						ul.terminal__icons
+							li
+								img(src="img/svg/terminal-icon-1.svg", alt="img")
+							li
+								img(src="img/svg/terminal-icon-2.svg", alt="img")
+							li
+								img(src="img/svg/terminal-icon-3.svg", alt="img")
+					.terminal__img
+						img(src="img/about-img-7.png", alt="img")
+					.terminal__right
+						.terminal__text Теперь больше свободного времени для семьи и отдыха с 
+							span.terminal__bold PAY2YOU! 
+						ul.terminal__icons
+							li
+								img(src="img/svg/terminal-icon-4.svg", alt="img")
+							li
+								img(src="img/svg/terminal-icon-5.svg", alt="img")
+							li
+								img(src="img/svg/terminal-icon-6.svg", alt="img")
+				.terminal__title
+					span Зачем еще 
+						br
+						|пополнять карту в терминале?
+				ul.terminal__items
+					li
+						span.terminal__top
+							span.terminal__img-wrap
+								img(src="img/about-img-8.png", alt="img")
+						span.terminal__name 
+							span Аренда 
+							span Квартиры
+					li
+						span.terminal__top
+							span.terminal__img-wrap
+								img(src="img/about-img-9.png", alt="img")
+						span.terminal__name 
+							span Возврат 
+							span Долга
+					li
+						span.terminal__top
+							span.terminal__img-wrap
+								img(src="img/about-img-10.png", alt="img")
+						span.terminal__name 
+							span Помощь
+							span Волонтерам
+					li
+						span.terminal__top
+							span.terminal__img-wrap
+								img(src="img/about-img-11.png", alt="img")
+						span.terminal__name 
+							|Помощь 
+							br
+							|в зоне АТО
+					li
+						span.terminal__top
+							span.terminal__img-wrap
+								img(src="img/about-img-12.png", alt="img")
+						span.terminal__name 
+							span Пополнение
+							span Карт АЗС
+	//- refill
+	section.refill 
+		.field
+			a.scroll-to(href="#refill")
+				i.fa.fa-arrow-down
+		h3.title-rocket.is-orange#refill
+			span.title-rocket__text 
+				span КАК ПОПОЛНИТЬ КАРТУ?
+				i.fa.fa-rocket
+				i.fa.fa-rocket.is-right
+		.refill__in
+			.refill__left
+				.refill__item
+					.refill__text 
+						span Выберите в терминале 
+							br
+							|сервис PAY2YOU*
+					.refill__img
+						.refill__numb 1
+						img(src="img/refill-img-1.png", alt="img")
+				.refill__item
+					.refill__text 
+						span Введите номер банковской карты, которую хотите пополнить
+					.refill__img
+						.refill__numb 2
+						img(src="img/refill-img-2.png", alt="img")
+				.refill__item
+					.refill__text 
+						span Введите свой номер 
+							br
+							|телефона
+					.refill__img
+						.refill__numb 3
+						img(src="img/refill-img-3.png", alt="img")
+				.refill__item
+					.refill__text 
+						span Внесите сумму
+					.refill__img
+						.refill__numb 4
+						img(src="img/refill-img-4.png", alt="img")
+				.refill__item
+					.refill__text 
+						span Получите чек
+					.refill__img
+						.refill__numb 5
+						img(src="img/refill-img-5.png", alt="img")
+			.refill__right
+				.share
+					.share__topic
+						img(src="img/stock-topic.png", alt="img")
+					.share__in
+						.share__title Ваша карта начинается на 4?
+						.share__card 
+							img(src="img/stock-card.png", alt="img")
+						.share__title.is-middle Пополняйте свою карту в терминалах
+						.share__title.is-big БЕЗ КОМИССИИ
+						.share__info 
+							p Максимальная сумма - 500 грн за одно пополнение.
+							p Всего четыре пополнения в сутки.
+							p Акция действует до 15.05.2016
 
 block footer
 	include ./includes/_footer.jade

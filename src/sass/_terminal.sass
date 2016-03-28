@@ -105,6 +105,7 @@ body.is-terminal
 // abou
 .about
 	position: relative
+	padding-bottom: 63px
 	&__hand
 		position: absolute
 		top: 35px
@@ -114,7 +115,381 @@ body.is-terminal
 			right: 0
 		img
 			display: block
+	&__topic
+		margin-bottom: 205px
+		text-align: center
 	&__in
-		margin: 165px auto 0
+		position: relative
+		margin: 165px auto 60px
 		padding: 0 10px
 		width: 540px
+		&:before
+			position: absolute
+			content: ""
+			top: 100%
+			left: 15px
+			margin-top: 16px
+			width: 253px
+			height: 10px
+			border-top: 1px dashed $bord_orange 
+			border-right: 1px dashed $bord_orange 
+			border-top-right-radius: 10px
+		&:after
+			position: absolute
+			content: ""
+			top: 100%
+			left: 267px
+			margin-top: 26px
+			height: 47px
+			border-right: 1px dashed $bord_orange 
+	&__text
+		margin-top: 20px
+		width: 170px
+		text-align: right
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: -10px
+	&__img
+		position: relative
+		margin: 0 10px 0 20px
+		width: 75px
+		height: 75px
+		text-align: center
+		line-height: 71px
+		border: 1px dashed $bord_orange 
+		border-radius: 50%
+		vertical-align: top
+		background: $white 
+		display: inline-block
+		&:before
+			position: absolute
+			content: ""
+			left: 50%
+			top: 100%
+			height: 110px
+			width: 223px
+			border-left: 1px dashed $bord_orange 
+			border-bottom: 1px dashed $bord_orange
+			border-bottom-left-radius: 10px
+		&:after
+			position: absolute
+			content: ""
+			top: 100%
+			left: 100%
+			margin: 109px 0 0 186px
+			height: 114px
+			width: 11px 
+			border-right: 1px dashed $bord_orange 
+			border-top: 1px dashed $bord_orange
+			border-bottom: 1px dashed $bord_orange
+			border-top-right-radius: 10px
+			border-bottom-right-radius: 10px
+		.icon
+			vertical-align: middle
+		& + .about__text
+			width: 76px
+		img
+			display: block
+	&__title
+		position: relative
+		text-align: center
+		font-size: 24px
+		color: $c_orange 
+		&:before
+			position: absolute
+			content: ""
+			top: 50%
+			left: 10px
+			right: 10px
+			border-bottom: 1px dashed $bord_orange 
+		span
+			position: relative
+			padding: 0 10px
+			background: $white 
+			display: inline-block
+	&__wrap
+		position: relative
+		+clr
+		&:before
+			position: absolute
+			content: "" 
+			top: -15px
+			bottom: -17px
+			width: 13px
+			border-top: 1px dashed $bord_orange 
+			border-bottom: 1px dashed $bord_orange 
+			border-left: 1px dashed $bord_orange
+			border-top-left-radius: 10px
+			border-bottom-left-radius: 10px
+		&.is-right
+			&:before
+				right: 0
+				border-left: none
+				border-right: 1px dashed $bord_orange 
+				border-top-right-radius: 10px
+				border-bottom-right-radius: 10px
+				border-top-left-radius: 0
+				border-bottom-left-radius: 0
+			& > img
+				right: 53px 
+			.about__ico
+				margin-top: 5px
+				left: auto
+				right: -27px
+		&.is-mod
+			.about__left
+				padding-top: 300px
+			.about__ico
+				margin-top: 10px
+		& > img
+			position: absolute
+			top: 50px
+			right: 0
+			top: 67px
+		.btn
+			position: relative
+			margin-top: 35px
+			min-width: 195px
+			z-index: 1
+	&__left
+		float: left
+		text-align: right
+		padding: 224px 0 132px 60px
+		width: 260px
+	&__right
+		float: right
+		padding: 295px 55px 145px 0
+		width: 262px
+	&__ico
+		position: absolute
+		top: 50%
+		left: -27px
+		width: 55px
+		height: 55px
+		margin-top: -27px
+		text-align: center
+		line-height: 55px
+		color: $c_orange
+		font-size: 28px 
+		border: 1px dashed
+		border-radius: 50%
+		background: $white 
+	&__wrapper
+		@extend %in
+		
+// text-arr
+.text-arr
+	position: relative
+	margin: 30px 0 0 30px
+	vertical-align: top
+	display: inline-block
+	.text-arr__top,
+	.text-arr__bot
+		position: absolute
+		right: 0
+	.text-arr__top
+		top: -26px
+		+rotate(45)
+	.text-arr__bot
+		bottom: -26px
+		+rotate(-45)
+
+// terminal
+.terminal
+	text-align: center
+	&__wrap
+		+clr
+	&__left,
+	&__img,
+	&__right
+		vertical-align: top
+		display: inline-block
+	&__left,
+	&__right
+		padding-top: 130px
+		width: 260px
+	&__img
+		position: relative
+		z-index: 1
+	&__left
+		margin-right: 20px
+		text-align: right
+	&__right
+		text-align: left
+	&__icons
+		margin-top: 32px
+		font-size: 0
+		li
+			margin-left: 8px
+			vertical-align: top
+			display: inline-block
+			&:first-child
+				margin-left: 0
+	&__bold
+		+r700
+	&__title
+		position: relative
+		margin: 54px 0 27px
+		font-size: 24px
+		text-align: center
+		&:before
+			position: absolute
+			content: ""
+			top: -75px
+			left: 50% 
+			height: 75px
+			margin-left: -1px
+			width: 1px
+			border-right: 1px dashed $bord_orange 
+		&:after
+			position: absolute
+			content: ""
+			bottom: -25px
+			left: 50% 
+			height: 25px
+			margin-left: -1px
+			width: 1px
+			border-right: 1px dashed $bord_orange 
+		span
+			position: relative
+			padding: 8px
+			width: 365px
+			vertical-align: top
+			color: $c_orange 
+			background: $white 
+			display: inline-block
+	&__items
+		position: relative
+		padding-top: 43px
+		font-size: 0
+		&:before,
+		&:after
+			position: absolute
+			content: ""
+			top: 0
+			width: calc(50% - 96px)
+			height: 10px
+			border-bottom: 1px dashed $bord_orange
+		&:before
+			left: 96px
+			border-right: 1px dashed $bord_orange
+			border-bottom-right-radius: 10px
+		&:after 
+			right: 85px
+			width: calc(50% - 85px)
+			border-left: 1px dashed $bord_orange
+			border-bottom-left-radius: 10px
+		li
+			position: relative
+			margin-left: 35px 
+			font-size: 14px
+			vertical-align: top
+			display: inline-block
+			&:before
+				position: absolute
+				content: ""
+				top: -34px
+				height: 34px
+				width: 10px
+				margin-left: -5px
+				border-top: 1px dashed $bord_orange 
+				border-right: 1px dashed $bord_orange 
+				border-top-right-radius: 10px
+			&:first-child
+				margin-left: 0
+			&:nth-child(3)
+				&:before
+					margin-left: 0
+					right: 33px
+			&:nth-child(-n+2)
+				&:before
+					margin-left: 5px
+					border-top: 1px dashed $bord_orange 
+					border-right: none
+					border-left: 1px dashed $bord_orange 
+					border-top-right-radius: 0
+					border-top-left-radius: 10px
+			span
+				display: block
+	&__top
+		padding: 3px
+		border-radius: 15px 
+		border: 1px dashed $bord_orange
+	&__img-wrap
+		border-radius: 15px 
+		overflow: hidden
+		img
+			display: block
+	&__name 
+		padding-top: 20px
+
+.refill 
+	color: $white 
+	background: $bg_refill
+	&__in
+		@extend %in
+		margin-top: 40px
+		+clr
+	&__left
+		float: left
+		width: 606px
+		font-size: 0
+		text-align: right
+	&__right
+		float: right
+		width: 262px
+	&__item
+		margin: 0 0 25px 10px
+		width: 298px
+		font-size: 14px
+		text-align: left
+		vertical-align: top
+		display: inline-block
+		&:nth-child(odd)
+			margin-left: 0
+		&:last-child,
+		&:nth-last-child(2)
+			margin-bottom: 0
+	&__text
+		margin-bottom: 10px
+		padding: 0 55px 0 13px
+		min-height: 36px
+		line-height: 36px
+		span
+			line-height: 1.4
+			vertical-align: middle
+			display: inline-block
+	&__img
+		position: relative
+		font-size: 0
+		overflow: hidden
+		box-shadow: 0 0 10px rgba($black, .2)
+		border-radius: 10px 
+		border: 1px solid $bg_refill
+		img
+			display: block
+	&__numb
+		position: absolute
+	.field
+		text-align: center
+	.scroll-to
+		margin-top: -22px
+		color: $white 
+		text-align: center
+		border-color: $bg_refill
+		background: $bg_refill 
+
+// stock
+.share
+	padding: 2px
+	color: $black 
+	box-shadow: 0 0 10px rgba($black, .2)
+	border-radius: 10px
+	background: $white 
+	&__topic
+		border-radius: 10px 0 0 10px
+		overflow: hidden
+	&__in
+		padding: 20px 24px 24px 28px
+		background: $bg_share
