@@ -218,5 +218,13 @@ $(document).ready(function() {
 			this_.addClass('is-right');
 		}
 	});
+
+	$(".scroll-to").on('click', function(){
+		var page = $(this).attr("href");
+		$('html, body').animate({
+			scrollTop: $(page).offset().top
+		}, 600);
+		return false;
+	});
 	
 });

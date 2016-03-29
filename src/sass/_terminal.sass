@@ -4,6 +4,8 @@ body.is-terminal
 		background: transparent
 		box-shadow: none
 		border: none
+	.field
+		text-align: center
 
 // topic
 .topic
@@ -57,6 +59,7 @@ body.is-terminal
 	height: 45px
 	width: 45px
 	font-size: 16px
+	text-align: center
 	color: $bord_scroll-to  
 	border-radius: 50%
 	border: 1px solid 
@@ -216,6 +219,7 @@ body.is-terminal
 			content: "" 
 			top: -15px
 			bottom: -17px
+			left: 0
 			width: 13px
 			border-top: 1px dashed $bord_orange 
 			border-bottom: 1px dashed $bord_orange 
@@ -225,6 +229,7 @@ body.is-terminal
 		&.is-right
 			&:before
 				right: 0
+				left: auto
 				border-left: none
 				border-right: 1px dashed $bord_orange 
 				border-top-right-radius: 10px
@@ -425,6 +430,7 @@ body.is-terminal
 		padding-top: 20px
 
 .refill 
+	padding-bottom: 54px
 	color: $white 
 	background: $bg_refill
 	&__in
@@ -438,6 +444,7 @@ body.is-terminal
 		text-align: right
 	&__right
 		float: right
+		padding-top: 45px
 		width: 262px
 	&__item
 		margin: 0 0 25px 10px
@@ -462,21 +469,43 @@ body.is-terminal
 			display: inline-block
 	&__img
 		position: relative
-		font-size: 0
-		overflow: hidden
+		border: 1px solid $bg_refill
 		box-shadow: 0 0 10px rgba($black, .2)
 		border-radius: 10px 
-		border: 1px solid $bg_refill
+	&__icon
+		font-size: 0
+		overflow: hidden
+		border-radius: 10px 
 		img
 			display: block
 	&__numb
 		position: absolute
-	.field
+		top: -30px
+		right: 26px
+		width: 53px
+		height: 53px
+		+r700
+		line-height: 53px
+		font-size: 32px
 		text-align: center
+		color: $c_orange 
+		z-index: 1
+		border-radius: 50% 
+		box-shadow: 0 0 10px rgba($black, .2)
+		background: $white 
+	&__info
+		position: relative
+		margin-top: 240px
+		font-size: 12px
+		padding: 12px 30px 0 60px
+		.fa
+			position: absolute
+			top: 0
+			left: 29px
+			font-size: 24px
 	.scroll-to
 		margin-top: -22px
 		color: $white 
-		text-align: center
 		border-color: $bg_refill
 		background: $bg_refill 
 
@@ -490,6 +519,101 @@ body.is-terminal
 	&__topic
 		border-radius: 10px 0 0 10px
 		overflow: hidden
+		img
+			display: block
 	&__in
 		padding: 20px 24px 24px 28px
+		border-radius: 0 0 10px 10px
 		background: $bg_share
+	&__title
+		font-size: 18px
+		+r700 
+		&.is-middle
+			+r400
+		&.is-big
+			text-transform: uppercase
+	&__card
+		margin: 20px 0 20px -26px
+		img
+			display: block
+	&__info
+		margin-top: 78px
+		font-size: 10px
+
+// maps
+.maps 
+	.scroll-to
+		margin-top: -22px
+		color: $white 
+		border-color: $bg_refill
+		background: $bg_refill 
+	.title-rocket
+		margin: 34px 0 46px
+
+// 
+.partn
+	padding: 32px 0 52px
+	&__in
+		margin: 0 auto
+		padding: 0 10px
+		max-width: 865px
+	&__list
+		font-size: 0
+	li
+		margin-left: 18px
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+	a, img
+		display: block
+		
+// solutions
+.solutions
+	margin-bottom: -25px 
+	padding: 25px 0 55px
+	background: $bg_share 
+	&__in
+		margin: 0 auto
+		padding: 0 10px
+		max-width: 865px
+	&__title
+		margin-bottom: 25px
+	&__wrap
+		font-size: 0
+	&__item	
+		margin-left: 40px
+		width: 136px
+		color: $white 
+		font-size: 12px
+		vertical-align: top
+		overflow: hidden
+		box-shadow: 0 0 10px rgba($black, .2)
+		border-radius: 10px
+		display: inline-block
+		&:first-child
+			margin-left: 0
+	&__top
+		padding: 12px 10px 9px
+		background: url(../img/shad-img.png) no-repeat 50% 50%, $bg_solut
+	&__text
+		margin-bottom: 6px
+	&__bot
+		padding: 15px 16px 12px
+		text-align: right
+		font-size: 12px
+		a
+			color: $c_blue_solut 
+			transition: border-color .2s
+			border-bottom: 1px solid transparent 
+			&:hover
+				border-color: $c_blue_solut 
+	.stock
+		padding-left: 0
+		font-size: 10px
+		img[src*="stock.png"]
+			height: 80px
+	.stock__disc
+		padding-left: 20px
+	.stock__plus
+		margin-top: 3px
