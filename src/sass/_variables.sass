@@ -57,3 +57,30 @@ $l_serv_green: rgba(246, 255, 247, 1)
 $l_serv_red: rgba(213, 243, 255, 1)
 $serv_blue: rgba(250, 255, 232, 1)
 $l_serv_blue: rgba(255, 246, 249, 1)
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,900)
+=r300
+	font-family: 'Roboto', sans-serif
+	font-weight: 300
+	
+=r400
+	font-family: 'Roboto', sans-serif
+	font-weight: 400
+
+=r700
+	font-family: 'Roboto', sans-serif
+	font-weight: 700
+
+=r900
+	font-family: 'Roboto', sans-serif
+	font-weight: 900
+
+// extend
+.in
+	padding: 0 10px
+	margin: 0 auto
+	max-width: 960px
+	+clr
+
+%in
+	@extend .in

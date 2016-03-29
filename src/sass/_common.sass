@@ -8,7 +8,7 @@
 //        from
 //           +rotate(0)
 //        to
-//           +rotate(360)
+//           +rotate(360) 
 // ## animation usage
 //     body:hover
 // 	    +animation(rotate 200s linear infinite)
@@ -47,23 +47,6 @@
 // p
 // 	+jpg(bla)
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,900)
-=r300
-	font-family: 'Roboto', sans-serif
-	font-weight: 300
-	
-=r400
-	font-family: 'Roboto', sans-serif
-	font-weight: 400
-
-=r700
-	font-family: 'Roboto', sans-serif
-	font-weight: 700
-
-=r900
-	font-family: 'Roboto', sans-serif
-	font-weight: 900
-
 // body 
 body
 	color: $c_body
@@ -79,15 +62,6 @@ a
 h1, h2, h3, h4, h5, h6, em, b, strong, i, th, td
 	font-weight: normal
 
-// extend
-.in
-	padding: 0 10px
-	margin: 0 auto
-	max-width: 960px
-	+clr
-
-%in
-	@extend .in
 
 // btn
 .btn
