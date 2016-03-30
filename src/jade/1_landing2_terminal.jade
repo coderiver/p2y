@@ -32,16 +32,51 @@ block content
 					.topic__row
 						.topic__text Пополните банковскую карту:
 					.topic__row
-						ul.partners
-							li.partners__item
-								a(href="#")
-									img(src="img/svg/visa_action.svg", alt="img")
-							li.partners__item
-								a(href="#")
-									img(src="img/svg/mc_white.svg", alt="img")
-							li.partners__item
-								a(href="#")
-									img(src="img/svg/maestro_white.svg", alt="img")
+						.js-popup-out
+							ul.partners
+								li.partners__item
+									a.js-open-popup(href="#")
+										img(src="img/svg/visa_action.svg", alt="img")
+								li.partners__item
+									a(href="#")
+										img(src="img/svg/mc_white.svg", alt="img")
+								li.partners__item
+									a(href="#")
+										img(src="img/svg/maestro_white.svg", alt="img")
+							.popup.js-popup
+								.popup__in
+									button.popup__close.js-popup-close(type="button") 
+										i.fa.fa-times
+									img(src="img/visa-inf.png", alt="img")
+									.popup__title Шановний клієнте!
+									p Раді повідомити вам, що з 5 квітня по 20 травня 2016 року ви зможете поповнювати картки Visa абсолютно безкоштовно. Переказуйте гроші рідним, сплачуйте за покупки та послуги без жодної комісії!
+									ul.popup__list
+										li
+											strong Як отримати економію
+											|Скористайтеся послугою поповнення картки Visa через сервіс Pay2You та у терміналах IBOX.
+										li
+											strong  Коли можна отримати економію
+											| Перші 4 рази, коли ви поповнюєте картку Visa.
+										li
+											strong На яку суму відсутня комісія
+											|Комісія відсутня при поповненні картки на суму до 500 грн.
+										li
+											strong Скільки триває акція
+											| Акція триває з 5 квітня по 20 травня 2016 року.
+										p Дякуємо, що обираєте зручні та прості оплати з Visa!
+										p Компания visa
+									ul.partners
+										li.partners__item
+											img(src="img/cardhero.png", alt="img")
+										li.partners__item
+											img(src="img/svg/p2y-logo.svg", alt="img")
+										li.partners__item
+											img(src="img/svg/ibox.svg", alt="img")
+										li.partners__item
+											img(src="img/svg/visa-direct.svg", alt="img")
+									.popup__inf Акція триває з 5 квітня по 20 травня 2016 року на території України, крім тимчасово окупованих територій та територій, 
+										br
+										|на яких проводиться антитерористична операція. Подробиці на visa.com.ua та fb.com/VisaUA.
 	//- inform
 	section.info#info
 		.info__in
@@ -94,13 +129,13 @@ block content
 				.about__left
 					p Погасите кредитку, пополняя карту в терминале
 					a.btn.btn_orange.btn_middle(href="#") Выбрать терминал
-				img(src="img/about-img-4.png", alt="img")
+				img(src="img/about-img-4.png", alt="img", width="372")
 			.about__title 
 				span Оплатите товар
 			.about__wrap.is-right
 				.about__ico
 					i.fa.fa-tags
-				img(src="img/about-img-5.png", alt="img")
+				img(src="img/about-img-5.png", alt="img", width="536")
 				.about__right
 					p Покупайте товары по объявле- нию - платите в терминале
 					a.btn.btn_orange.btn_middle(href="#") Выбрать терминал
@@ -109,7 +144,7 @@ block content
 			.about__wrap.is-mod
 				.about__ico
 					i.fa.fa-heart
-				img(src="img/about-img-6.png", alt="img")
+				img(src="img/about-img-6.png", alt="img", width="420")
 				.about__left
 					p Пополняйте карту родным в терминале
 					a.btn.btn_orange.btn_middle(href="#") Выбрать терминал

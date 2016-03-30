@@ -96,6 +96,8 @@ body.is-terminal
 		display: inline-block
 		&:first-child
 			margin-left: 0
+		& > img
+			width: 169px
 	&__text
 		margin-top: 15px
 		text-align: left
@@ -116,10 +118,17 @@ body.is-terminal
 		position: absolute
 		top: 35px
 		left: 0
+		+r(1200)
+			left: -75px
 		&.is-right
 			left: auto
 			right: 0
+			+r(1200)
+				right: -105px
+			img
+				width: 386px
 		img
+			width: 378px
 			display: block
 	&__topic
 		margin-bottom: 205px
@@ -320,6 +329,10 @@ body.is-terminal
 	&__img
 		position: relative
 		z-index: 1
+		width: 306px
+		img
+			width: 100%
+			display: block
 	&__left
 		margin-right: 20px
 		text-align: right
@@ -426,8 +439,11 @@ body.is-terminal
 		border: 1px dashed $bord_orange
 	&__img-wrap
 		border-radius: 15px 
+		width: 152px
+		height: 152px
 		overflow: hidden
 		img
+			width: 100%
 			display: block
 	&__name 
 		padding-top: 20px
@@ -464,17 +480,21 @@ body.is-terminal
 	&__text
 		margin-bottom: 10px
 		padding: 0 55px 0 13px
-		min-height: 36px
-		line-height: 36px
+		min-height: 38px
+		line-height: 38px
 		span
 			line-height: 1.4
 			vertical-align: middle
 			display: inline-block
 	&__img
 		position: relative
+		width: 296px
 		border: 1px solid $bg_refill
 		box-shadow: 0 0 10px rgba($black, .2)
-		border-radius: 10px 
+		border-radius: 10px  
+		img
+			width: 100%
+			display: block
 	&__icon
 		font-size: 0
 		overflow: hidden
@@ -523,6 +543,7 @@ body.is-terminal
 		border-radius: 10px 0 0 10px
 		overflow: hidden
 		img
+			width: 100% 
 			display: block
 	&__in
 		padding: 20px 24px 24px 28px
@@ -535,9 +556,11 @@ body.is-terminal
 			+r400
 		&.is-big
 			text-transform: uppercase
-	&__card
+	&__card 
 		margin: 20px 0 20px -26px
+		width: 232px
 		img
+			width: 100%
 			display: block
 	&__info
 		margin-top: 78px
@@ -570,6 +593,8 @@ body.is-terminal
 			margin-left: 0
 	a, img
 		display: block
+	img
+		height: 75px
 		
 // solutions
 .solutions
@@ -620,3 +645,85 @@ body.is-terminal
 		padding-left: 20px
 	.stock__plus
 		margin-top: 3px
+
+// popup
+.popup
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	+mpl
+	overflow-y: auto
+	line-height: 1.2
+	z-index: 101
+	color: #5c5c5c 
+	background: rgba($black, .5) 
+	display: none
+	+vertical
+	&__in
+		position: relative
+		margin: 40px 0
+		padding: 45px 48px
+		width: 827px
+		font-size: 24px
+		text-align: left
+		vertical-align: middle
+		display: inline-block
+		background: $white 
+		& > img 
+			width: 100%
+			display: block
+			& + .popup__title
+				margin-top: 50px
+	&__close
+		position: absolute
+		top: -38px
+		right: 0
+		font-size: 0
+		color: $white 
+		transition: opacity .2s
+		background: transparent
+		&:hover
+			opacity: .8
+		.fa,
+		.icon
+			font-size: 32px
+	&__title
+		margin: 10px 0
+		+mp
+	&__list
+		margin: 5px 0
+		li
+			position: relative
+			margin-top: 5px
+			padding-left: 25px
+			&:first-child
+				margin-top: 0
+			&:before
+				position: absolute
+				content: ""
+				top: 9px
+				left: 2px
+				height: 5px
+				width: 5px
+				border-radius: 50%
+				background: $bg_lc 
+		strong
+			+mp
+			display: block
+	&__inf
+		font-size: 11px
+		margin-top: 54px
+		+mp
+	.partners
+		font-size: 0
+		line-height: 85px
+		&__item
+			margin-left: 59px
+			line-height: 1
+			vertical-align: middle
+			&:first-child
+				margin: 0
+	p
+		margin: 22px 0

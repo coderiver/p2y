@@ -42,6 +42,8 @@ html { -webkit-box-sizing: border-box; box-sizing: border-box; }
 .icon-ticket { background: url("../img/svg/ticket-arr.svg") no-repeat 0 0; background-size: 87px 87px; width: 87px; height: 87px; display: inline-block; }
 .icon-rocket-small { background: url("../img/svg/rocket-small.svg") no-repeat 0 0; background-size: 33px 23px; width: 33px; height: 23px; display: inline-block; }
 
+@font-face { font-family: "MyriadPro-Light"; src: url("fonts/MyriadPro-Light.eot"); src: url("fonts/MyriadPro-Light.eot?#iefix") format("embedded-opentype"), url("fonts/MyriadPro-Light.woff2") format("woff2"), url("fonts/MyriadPro-Light.woff") format("woff"), url("fonts/MyriadPro-Light.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: "MyriadPro-Regular"; src: url("fonts/MyriadPro-Regular.eot"); src: url("fonts/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/MyriadPro-Regular.woff2") format("woff2"), url("fonts/MyriadPro-Regular.woff") format("woff"), url("fonts/MyriadPro-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 .in, .header__in, .slider__in, .steps__in, .inform__in, .question__in, .partner__in, .reply__in, .rates__in, .partners, .join__in, .tabs__list { padding: 0 10px; margin: 0 auto; max-width: 960px; *zoom: 1; }
 .in:after, .header__in:after, .slider__in:after, .steps__in:after, .inform__in:after, .question__in:after, .partner__in:after, .reply__in:after, .rates__in:after, .partners:after, .join__in:after, .tabs__list:after { content: " "; display: table; clear: both; }
 
@@ -86,6 +88,7 @@ html { -webkit-box-sizing: border-box; box-sizing: border-box; }
 .slick-dots button:hover { -webkit-box-shadow: none; box-shadow: none; }
 
 body { color: #4D4D4D; font-family: "Roboto", sans-serif; font-weight: 400; font-size: 14px; line-height: 1.3; }
+body.is-hidden { overflow: hidden; }
 
 a { text-decoration: none; }
 
@@ -650,6 +653,7 @@ button.btn { line-height: 1; }
 .partners { text-align: center; }
 .partners__item { margin-top: 12px; margin-left: 22px; vertical-align: top; display: inline-block; }
 .partners__item:first-child { margin-left: 0; }
+.partners img[src*='cardhero.png'] { width: 136px; }
 
 .app { margin-top: 10px; *zoom: 1; }
 .app:after { content: " "; display: table; clear: both; }
