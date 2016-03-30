@@ -146,7 +146,7 @@ body.is-terminal .field { text-align: center; }
 .share__title.is-big { text-transform: uppercase; }
 .share__card { margin: 20px 0 20px -15px; width: 232px; }
 .share__card img { width: 100%; display: block; }
-.share__info { margin-top: 78px; font-size: 10px; }
+.share__info { margin-top: 73px; font-size: 10px; }
 
 .maps .scroll-to { margin-top: -22px; color: #fff; border-color: #fb8421; background: #fb8421; }
 .maps .title-rocket { margin: 34px 0 46px; }
