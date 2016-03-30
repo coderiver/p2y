@@ -144,7 +144,7 @@ body.is-terminal .field { text-align: center; }
 .share__title { font-size: 18px; font-family: "Roboto", sans-serif; font-weight: 700; }
 .share__title.is-middle { font-family: "Roboto", sans-serif; font-weight: 400; }
 .share__title.is-big { text-transform: uppercase; }
-.share__card { margin: 20px 0 20px -26px; width: 232px; }
+.share__card { margin: 20px 0 20px -15px; width: 232px; }
 .share__card img { width: 100%; display: block; }
 .share__info { margin-top: 78px; font-size: 10px; }
 
